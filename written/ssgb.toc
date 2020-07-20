@@ -1,1 +1,7 @@
-\contentsline {chapter}{\numberline {1}Vorwort}{2}%
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Vorwort}{2}%
+\contentsline {section}{\numberline {2}Danksagung}{2}%
+\contentsline {section}{\numberline {3}Der Plan}{2}%
+\contentsline {subsection}{\numberline {3.1}Wachstumsbedingungen}{2}%
+\contentsline {subsubsection}{\numberline {3.1.1}Licht}{2}%
+\contentsline {section}{Glossar}{2}%
