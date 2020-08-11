@@ -82,10 +82,12 @@ class Relay {
     }
 
     void switch_to_startdelay(){
+      
       if (start_delay != 0){
         timer = start_delay;
         start_delay = 0;
         phase = 'w';
+        Serial.println("#### A NEW STARTDELAY HAS BEEN DETECTED, SWITCHING NOW $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
       }
     }
     
@@ -145,8 +147,8 @@ void arrStr2Int() {
 //######################################33
 
 
-Relay rl1(1,RLP1, 2, 2, 10);
-//Relay rl2(2,RLP2, 2, 2, 1);
+Relay rl1(1,RLP1, 50, 10, 0);
+//Relay rl2(2,RLP2, 2, 2, 2);
 
 
 //#######################3##########333
@@ -166,12 +168,12 @@ void reinit_rl(int _id, int _ontime, int _offtime, int _start_delay){
       rl1.start_delay = _start_delay;
       break;
 
-//    case 2:
-//      Serial.println("### CHANGING RL2 SETTINGS ###");
-//      rl2.ontime = _ontime;
-//      rl2.offtime = _offtime;
-//      rl2.start_delay = _start_delay;
-//      break;
+    case 2:
+      Serial.println("### CHANGING //rl2 SETTINGS ###");
+      //rl2.ontime = _ontime;
+      //rl2.offtime = _offtime;
+      //rl2.start_delay = _start_delay;
+      break;
 //    case 3:
 //      Serial.println("### CHANGING RL3 SETTINGS ###");
 //      rl3.ontime = _ontime;
@@ -190,8 +192,12 @@ void reinit_rl(int _id, int _ontime, int _offtime, int _start_delay){
         break;
   }
   Serial.println("###########Updating TIMERS");
-  rl1.update_timers((int)time_passed_until_reinit / 1000);
-//  rl2.update_timers(time_passed_until_reinit);
+  rl1.switch_to_startdelay(); 
+  //rl2.switch_to_startdelay(); 
+//  rl3.switch_to_startdelay(); 
+//  rl4.switch_to_startdelay(); 
+//  rl1.update_timers((int)time_passed_until_reinit / 1000);  
+//  //rl2.update_timers(time_passed_until_reinit);
 //  r3.update_timers(time_passed_until_reinit);
 //  r4.update_timers(time_passed_until_reinit);
   
@@ -245,7 +251,7 @@ void loop() {
     Serial.println("+ Time is over");
     Timer1.detachInterrupt();
     rl1.update_timers(all_timers[0]);
-  //  rl2.update_timers(all_timers[0]);
+    //rl2.update_timers(all_timers[0]);
     time_running = false;
   } else {
     Timer1.attachInterrupt(isr, 1000000); // wait another second

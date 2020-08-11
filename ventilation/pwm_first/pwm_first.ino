@@ -16,7 +16,7 @@ void loop(void)
 {
   dutycycle = analogRead(potiPin); //get the poti value
 
-  Timer1.setPwmDuty(pwmPin, dutycycle); // set the new poti value as dutycycle
+  Timer1.setPwmDuty(pwmPin, 362); // set the new poti value as dutycycle
 
   Serial.println(dutycycle / 10.23); //print dutycycle in percentages
 }
