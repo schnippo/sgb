@@ -1,0 +1,6 @@
+{
+    "board": "arduino:avr:leonardo",
+    "programmer": "AVR ISP",
+    "sketch": "arduino/EventHandler_Delay-Based_/EventHandler_Delay-Based_.ino",
+    "port": "/dev/ttyACM0"
+}
