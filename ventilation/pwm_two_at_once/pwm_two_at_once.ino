@@ -1,3 +1,5 @@
+//i also tried to measure how fast the fans were going, didnt really work.
+
 #include <TimerOne.h>
 
 int pwmPin1 = 10;
