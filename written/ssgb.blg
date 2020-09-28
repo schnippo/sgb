@@ -2,45 +2,47 @@ This is BibTeX, Version 0.99d (TeX Live 2019/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: ssgb.aux
 The style file: agsm.bst
-Database file #1: ssgb.bib
-You've used 1 entry,
+I found no \citation commands---while reading file ssgb.aux
+I found no \bibdata command---while reading file ssgb.aux
+You've used 0 entries,
             2909 wiz_defined-function locations,
-            643 strings with 4836 characters,
-and the built_in function-call counts, 3740 in all, are:
-= -- 607
-> -- 47
+            637 strings with 4724 characters,
+and the built_in function-call counts, 32 in all, are:
+= -- 0
+> -- 0
 < -- 0
-+ -- 286
-- -- 14
-* -- 316
-:= -- 773
-add.period$ -- 1
-call.type$ -- 1
-change.case$ -- 14
-chr.to.int$ -- 1
-cite$ -- 1
-duplicate$ -- 15
-empty$ -- 27
-format.name$ -- 20
-if$ -- 665
++ -- 0
+- -- 0
+* -- 0
+:= -- 18
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
 int.to.chr$ -- 5
 int.to.str$ -- 0
-missing$ -- 1
-newline$ -- 6
-num.names$ -- 10
-pop$ -- 4
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
 preamble$ -- 1
-purify$ -- 15
+purify$ -- 0
 quote$ -- 0
-skip$ -- 15
+skip$ -- 1
 stack$ -- 0
-substring$ -- 840
-swap$ -- 2
-text.length$ -- 14
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 0
 warning$ -- 0
-while$ -- 21
+while$ -- 0
 width$ -- 0
-write$ -- 14
+write$ -- 2
+(There were 2 error messages)

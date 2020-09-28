@@ -1,15 +1,20 @@
 \documentclass[12pt,titlepage,a4paper]{article}
-
+\usepackage{graphicx}
+\graphicspath{./Pictures/}
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{color}
-\usepackage[a4paper,lmargin={4cm},rmargin={2cm},
+\usepackage[a4paper,lmargin={2cm},rmargin={2cm},
 tmargin={2.5cm},bmargin = {2.5cm}]{geometry}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{graphicx}
 %\usepackage{cite}
 \usepackage{natbib}
+\usepackage{blindtext}
+\usepackage{enumitem}
+
+%\setlist[description]{leftmargin=\parindent, labelindent=\parindent}
 
 
 
@@ -28,21 +33,94 @@ tmargin={2.5cm},bmargin = {2.5cm}]{geometry}
 \section{Vorwort}
 Dies ist der schriftliche Teil meiner Maturarbeit, bei welcher ich mich  mit der Konstruktion einer smarten \& solarbetriebenen Growbox auseinandersetze. Ich stelle hier vor allem die Probleme und Fragestellungen vor, welche mich während den einzelnen Phasen beschäftigten. Darauf folgen gelungene und gescheiterte Lösungsansätze. Ganz am Schluss werden im Glossar Begriffe erklärt.
 
-\section{Danksagung}
-Vielen Dank Papa für deine unendlich ansteckende Begeisterung für die Materie der Technik.
-\section{Der Plan}
+\section{Erste Herangehensweise}
 Ich mag Petersilie, Solarzellen, Arduinos und Effizienz. Was ich nicht mag, ist es, mich jede Woche aufraffen zu müssen um meine Pflanzen zu giessen. Ausserdem möchte ich in die Ferien fahren können, ohne meinem Grossvater zur Last zu werden, da er normalerweise immer unsere Pflanzen giesst, wenn wir als Familie verreisen. Im Sommer 2019 passierte genau das, meine Cherietomaten wurden durch ihn am Leben gehalten, was ich sehr schätze. Doch es wird Zeit für eine Lösung. \\Die Lösung muss so autonom und ökologisch wie möglich sein. Ausserdem soll sie Pflanzen schnell wachsen lassen können, sie muss also gute Wachstumsbedingungen liefern. \\ Vorab kann ich schon sagen, dass etwa 85\% meines neu gelernten Wissens aus Internetportalen, welche sich mit Cannabiszüchtung beschäftigen, stammt. Auch meine Bauteile kommen praktisch ausschliesslich von 420-Onlineshops. 
 \subsection{Wachstumsbedingungen}
-Alle haben es in dieser Schule gelernt, die einen sogar schon im U1; Pflanzen brauchen Wasser, Luft, Licht und Nährstoffe für richtiges Wachstum. Die ersten drei sind notwendig für die Photosyntese. Ausserdem ist auch ein ädequates Klima von grosser Bedeutung; Eine Temperatur von 25-35°C und eine relative Luftfeuchtigkeit, welche sich je nach Wachstumsphase und Pflanze unterscheidet.
+Das Hauptziel in dieser Arbeit ist die Lebenserhaltung von Pflanzen und das setzt gewisse Umgebungsaspekte voraus.
+Auf die genauen Techniken und den  Aufbau wird im Kapitel \textit{Konstruktion} eingegangen.
 
-\subsubsection{Wasser} 
-Das Wasser erhalten meine Pflanzen durch eine Technologie namens Aeroponik. Sie ist eine Unterkategorie der Hydroponik. Ich verwende einen sogenannten Fogger/Nebulizer. Durch fünf kleine Porzellanplättchen, welche mit 1.9MHz vibrieren katapultiert er Wasserteilchen in die Luft. Der daraus entstehende Nebel verteilt sich im Behälter und kann von den Wurzeln aufgenommen werden. Die Wasstertröpfchen haben im Mittel eine Grösse von fünf Mikron, also ein Zweihundertstel von einem Millimeter. Je kleiner die Tröpchen sind, desto besser werden sie von den Wurzeln aufgenommen - Fünf Mikron sind sehr klein, was diese Bewässerungsmethode äusserst effizient macht. 
+\subsubsection{Wasser}
+Meine Pflanzen brauchen Wasser für den Transport von Nährstoffen, für die Photosynthese und um den Zelldruck und die damit verbundene Stabilität zu erhalten - unbewässerte Pflanzen lassen bekanntlich ihre Köpchen hängen.
 
 
 \subsubsection{Licht}
-Licht ist die Energieform, welche sich die Pflanze bei der Photosynthese zunutze macht, um energiearme Baustoffe in energiereiche und somit nützlichere Bausteine zu verwandeln. Auf den genauen Prozess gehe ich hier nicht ein. Da die Growbox nicht draussen steht und sie auch über das recht nützliche Attribut einer Decke verfügt, bin ich gezwungen, meine Pflanzen künstliche zu beleuchten. Nach kurzer Recherche habe ich mich für LED-Lampen entschieden; Sie sind günstig, effizient und werden somit auch nicht zu heiss.\\
+Licht ist die Energieform, welche sich die Pflanze bei der Photosynthese zunutze macht, um energiearme Baustoffe in Energiereiche zu verwandeln. Diese werden für den Bau und die Energiespeicherung verwendet. Auf den genauen Prozess wird hier nicht eingegangen.
+
+\subsubsection{Luft}
+Luft, auch wenn eigentlich überall vorhanden, muss einen genügend grossen CO2-Anteil bergen, um der Pflanze die Photosynthese zu ermöglichen. Sie wird wie ebenfalls über die Blätter aufgenommen.
+
+\subsubsection{Nährstoffe}
+Nebst der selbst hergestellten Glucose verwendet die Pflanze auch noch andere Bausteine um sich Struktur zu geben, diese können nicht aus der Luft gefischt werden, sondern werden in gelöster Form von den Wurzeln aufgenommen.
 
 
+
+
+
+
+
+\section{Konstruktion}
+Jetzt gehts ans Eingemachte, der Bauprozess fängt an. Als erstes muss ich herausfinden, welche Teile ich für meine Konstruktion brauche. Nach fast endloser Recherche habe ich das meiste beisammen. Ein guter Teil meines Materials hatte ich zum Glück schon zuhause.
+
+\subsection{Bauteile}
+\begin{description}
+\item[Grow Box] Die Hülle stellt meine Grow Box dar, sie besteht aus einem Plastikgewebe, das an der Innenseite mit Mylar beschichtet ist - es reflektiert zu einem hohen Bestandteil Licht. 
+\item[LEDs] Ich beleuchte meine Pflanzen künstlich und zwar mit zwei 50 Watt LEDs. Beide sind auf die für die Pflanze essentiellen Lichtspektren eingestellt, was sich für das menschliche Auge als ein pinkes Helligkeitswunder herausstellt - sie schmerzen, ich hätte besser nicht reingeschaut..
+\item[Fogger] Ein Wundergerät, es macht aus flüssigem Wasser Nebel. Damit kann ich die Wurzeln über die Luft mit Wasser und Nährstoffen versorgen.
+\item[Wasserbecken] Hornbach hat ein beachtliches Sortiment an \textit{Zementmischeimern}.
+\item[Sensoren] Ich habe mehrere Temparatur- und Luftfeuchtigkeitssensore im Internet bestellt.
+\item[Microcontroller] Die meisten Microcontroller, namentlich Arduinos und einen Raspberry Pi hatte ich dank meinem \textit{Geekvater} schon zuhause
+\item[Sonstige Elektronik] Kleinere Bauteile für die verschiedenen Schaltungen hat ebenfalls die Kellerwerkstatt meines Vaters beigesteuert. Darunter befinden sich vor allem Drähte, Kabel, Widerstände,  Transistoren und Dioden.
+\item[Lüfter] Mein Vater sammelt gerne Elektroschrott, aus seiner CPU-Lüftersammlung konnte ich vier DC-Lüfter ergattern.
+\item[Pflanze] Das ganze Projekt würde ohne eine Pflanze gar nicht funktionieren. Beim Gartenmeier Center bescherte ich mich mit Tomatenstecklingen.
+\item[Nährstofflösung/Dünger] Mit einer Universalnährstofflösung (die sogar den richtigen pH-Wert mit sich bringt) kann ich nichts falsch machen - Jackpot.
+\item[Netcups und Steinwolle] In der gleichen Bestellung erwarb ich auch kleinere Sachen wie Netcups und Steinwolle, Sie dienen den Pflanzen als Halterung.
+\end{description}
+
+
+Die Recherche dauerte lange, vorallem weil ich nicht alles auf einmal bestellte. Viele Dinge ergaben erst im Laufe des Prozesses Sinn. So wollte ich die Wurzeln z.B. erst  mit Düsen besprühen, doch als ich merkte, dass der Bau eines solchen Systems \textit{giga-aufwändig} ist, musste ich meinen Horizont erweitern.
+Durch Zufall stiess ich auf Fogponics, was sich als recht eleganten Ansatz herausstellt.
+Die Lüfter waren ebenfalls ein lustiges (\textit{trockenes, ironisches Lachen...}) Teilprojekt: Um ein Lüftungssystem zu bauen, braucht man offensichtlich einen Lüfter, am besten gleich mehrere. Es gilt zwischen EC- und DC-Lüftern zu unterscheiden, wobei EC-Lüfter generell leiser und energieeffizienter sind. Naheliegenderweise hätte ich gerne einen Lüfter der EC-Gattung, doch da mein Vater wie schon erwähnt ein leidenschaftlicher Sammler jeglichen Elektroschrotts ist, konnte ich mich einfach im Keller bedienen.
+Die Nährstoffversorgung verdient sich hier ebenfalls einen Platz, denn auch sie hat mir nicht wenig Kopfschmerzen bereitet: Im Internet ist das Angebot an \textit{Nutrientsolution-DIYs} so überwältigend - mit so vielen kleinen Details - dass man sich schnell verliert. Im Gartenmeiercenter Dürnten hat mir der Inhaber Herr Meier persöhnlich zu einer guten Lösung verholfen; Universaldünger mit ph-Anpassung. Es sind alle Nährstoffe vorhanden und die miteingebaute pH-Downlösung verwandelt Hahnenwasser in Regenwasser, was dem von Pflanzen bevorzugten pH-Wert von ca. 5.5 entspricht. Im Endeffekt eine Set&Forget-Lösung für dieses Problem, ich bin zufrieden.
+
+
+
+
+\subsection{Bau}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+
+\section{SWAP}
+
+
+Alle haben es in dieser Schule gelernt, einige schon im U1; Pflanzen brauchen Wasser, Luft, Licht und Nährstoffe für richtiges Wachstum. Die ersten drei sind notwendig für die Photosyntese. Ausserdem ist auch ein ädequates Klima von grosser Bedeutung; Eine Temperatur von 25-35°C und nicht zu trockene oder zu feuchte Luft.
+
+
+
+Das Wasser erhalten meine Pflanzen durch eine Technologie namens Aeroponik. Ich verwende einen sogenannten \textit{Fogger/Nebulizer}. Durch fünf kleine Porzellanscheiben, welche mit 1.9MHz vibrieren katapultiert er Wasserteilchen in die Luft. Der daraus entstehende Nebel verteilt sich im Behälter und wird von den Wurzeln aufgenommen. Die Wasstertröpfchen haben im Mittel eine Grösse von fünf Mikron, also ein Zweihundertstel  Millimeter. Je kleiner die Tröpchen sind, desto besser werden sie von den Wurzeln aufgenommen - Fünf Mikron sind sehr klein, was diese Bewässerungsmethode äusserst effizient macht.
+
+Da die Growbox nicht draussen steht und sie auch über das recht nützliche Attribut einer Decke verfügt, bin ich gezwungen, meine Pflanzen künstliche zu beleuchten. Nach kurzer Recherche habe ich mich für LED-Lampen entschieden; Sie sind günstig, effizient und werden somit auch nicht zu heiss.\\
+
+Das ist äusserst nützlich, denn somit absorbieren die Wände kein Licht und heizen sich auf, sondern das Licht, das nicht direkt auf die Blätter trifft, wird weiter umherreflektiert, bis es schliesslich beim Blatt ankommt. 
+
+\section{Danksagung}
+Vielen Dank Papa für deine unendlich ansteckende Begeisterung für die Materie der Technik.
 
 %Literaturverzeichniss ins Inhaltsverzeichnis einfügen
 \addcontentsline{toc}{section}{Glossar}
