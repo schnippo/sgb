@@ -1,5 +1,6 @@
 #include <TimerOne.h>
 
+#define ArduinoID "fan_controller"
 
 int Pin3 = 3; // is preset to be the small fogfan running on 35% PWM
 int Pin9 = 9; // is preset for the in- and outtake fans. (it powers two transistors);
@@ -25,6 +26,8 @@ void loop() {
   myParse(data);
 //  data = '\0';
   arrStr2Int(); 
+  
+  
   updatePWM(arg_int);
 }
 
@@ -40,6 +43,9 @@ void updatePWM(int args_int[10]){
         break;
       case 10:
         Timer1.setPwmDuty(Pin10, args_int[1]);
+        break;
+      case 99: // in case the raspi wants to know which Arduino this is
+        Serial.println(ArduinoID);
         break;
       default:
         Serial.println("Check your syntax: [id(3,9,10),[dutycycle(0-1023)]");

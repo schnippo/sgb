@@ -1,3 +1,5 @@
+#include <TimerOne.h>
+
 //Here I try to create a specific workflow for the Arduino:
 // I want it to handle the relay timers and in a later version i want to be able to
 // change the parameters of every timer via a serial connection with the Pi
@@ -10,6 +12,7 @@ int all_timers[2], arg_long[10], sec_count,new_time;
 char arg[10][10];
 String data;
 
+#define arduinoID "relay_controller"
 
 #define RLP1 9
 #define RLP2 8
@@ -227,6 +230,9 @@ void loop() {
 //    dump = Serial.read();
     myParse(data);
     arrStr2Int();
+    if (arg_long[0] == 99){ //this is the backend authentication -> signal 99 means 'authenticate urself plz'
+      Serial.println(arduinoID);
+    }
     reinit_rl(arg_long[0], arg_long[1], arg_long[2], arg_long[3]);
   }
 

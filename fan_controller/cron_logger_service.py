@@ -1,17 +1,21 @@
 # 
-# Logs 2 sensors as a cron service every min, in case of exception, the code tries again.
+# Logs 2 sensors as a cron service every min, in case of exception, the code # tries again.
 # 
 import sys,glob, os, adafruit_dht, datetime, board
 from time import sleep
+
+logfile_air_temp = "at_log"
+logfile_air_hum = "ah_log"
+logfile_water_temp = "wt_log"
+
+int # tries = 0
+
 ## ONEWIRE SETUP
 os.system('modprobe w1-gpio')                              # load one wire communication device kern$
 os.system('modprobe w1-therm')
 base_dir = '/sys/bus/w1/devices/'                          # point to the address
 device_folder = glob.glob(base_dir + '28*')[0]             # find device with address starting from $
 device_file = device_folder + '/w1_slave' 
-logfile_air_temp = "log_air_temp.txt"
-logfile_air_hum = "log_air_hum.txt"
-logfile_water_temp = "log_water_temp.txt"
 
 def reset_file(file):
    f = open(file, "w")
@@ -47,9 +51,13 @@ dht_device = adafruit_dht.DHT22(board.D2)
 logat = open(logfile_air_temp, "a")
 logah = open(logfile_air_hum, "a")
 logwt = open(logfile_water_temp, "a")
-print("new logcycle")
+# print("new logcycle")
+
+
+tries = 0
 while True: #TRYING TO GET AIR TEMP
     now = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))    
+    tries+= 1
     try:
         logat.write(now + " "+str(dht_device.temperature)+"\n")
         logat.close() #safe if done
@@ -58,9 +66,15 @@ while True: #TRYING TO GET AIR TEMP
     except: #a potential jitter connection is handled here, just wait a second and try again
         print(sys.exc_info()[0] + "on air hum, trying again in 1s")
         sleep(1)
+        if tries > 3:
+            logat.write(now + " \n")
+            break
         continue
+
+tries = 0        
 while True: #TRYING TO GET AIR HUM
     now = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))    
+    tries += 1
     try:
         logah.write(now + " "+str(dht_device.humidity)+"\n")
         logah.close() #safe if done
@@ -69,9 +83,15 @@ while True: #TRYING TO GET AIR HUM
     except: #a potential jitter connection is handled here, just wait a second and try again
         print(sys.exc_info()[0] + "on air hum, trying again in 1s")
         sleep(1)
+        if tries > 3: #escape the loop after the third try
+            logah.write(now + " \n")
+            break
         continue
+
+tries = 0
 while True: #TRYING TO GET WATER TEMP
     now = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))    
+    tries += 1
     try:
         logwt.write(now + " "+str(read_temp)+"\n")
         logwt.close()
@@ -80,6 +100,9 @@ while True: #TRYING TO GET WATER TEMP
     except: #a potential jitter connection is handled here, just wait a second and try again
         print(sys.exc_info()[0] + "on water temp, trying again in 1s")
         sleep(1)
+        if tries > 3:
+            logwt.write(now + " \n")
+            break
         continue
-    # break
+
 print("DONE")
