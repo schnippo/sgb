@@ -12,7 +12,7 @@ int all_timers[2], arg_long[10], sec_count,new_time;
 char arg[10][10];
 String data;
 
-#define arduinoID "relay_controller"
+#define ArduinoID "relay_controller"
 
 #define RLP1 9
 #define RLP2 8
@@ -149,9 +149,12 @@ void arrStr2Int() {
 
 //######################################33
 
+//Relay rlX(ID, PORT, ONTIME, OFFTIME, START_DELAY)
 
 Relay rl1(1,RLP1, 30, 10, 0);
-//Relay rl2(2,RLP2, 2, 2, 2);
+Relay rl2(2,RLP2, 24, 28, 4);
+Relay rl3(3,RLP3, 24, 32, 26);
+Relay rl4(4,RLP4, 23, 28, 20);
 
 
 //#######################3##########333
@@ -173,24 +176,26 @@ void reinit_rl(int _id, int _ontime, int _offtime, int _start_delay){
 
     case 2:
       Serial.println("### CHANGING //rl2 SETTINGS ###");
-      //rl2.ontime = _ontime;
-      //rl2.offtime = _offtime;
-      //rl2.start_delay = _start_delay;
+      rl2.ontime = _ontime;
+      rl2.offtime = _offtime;
+      rl2.start_delay = _start_delay;
       break;
-//    case 3:
-//      Serial.println("### CHANGING RL3 SETTINGS ###");
-//      rl3.ontime = _ontime;
-//      rl3.offtime = _offtime;
-//      rl3.start_delay = _start_delay; 
-//      break;
-//    
-//    case 4:
-//      Serial.println("### CHANGING RL4 SETTINGS ###");
-//      rl4.ontime = _ontime;
-//      rl4.offtime = _offtime;
-//      rl4.start_delay = _start_delay;
-//      break;
-      default:
+    case 3:
+      Serial.println("### CHANGING RL3 SETTINGS ###");
+      rl3.ontime = _ontime;
+      rl3.offtime = _offtime;
+      rl3.start_delay = _start_delay; 
+      break;
+    
+    case 4:
+      Serial.println("### CHANGING RL4 SETTINGS ###");
+      rl4.ontime = _ontime;
+      rl4.offtime = _offtime;
+      rl4.start_delay = _start_delay;
+      break;
+//    case 99:
+//      Serial.println(ArduinoID);
+    default:
         Serial.println("###Check your syntax!###");
         break;
   }
@@ -231,7 +236,7 @@ void loop() {
     myParse(data);
     arrStr2Int();
     if (arg_long[0] == 99){ //this is the backend authentication -> signal 99 means 'authenticate urself plz'
-      Serial.println(arduinoID);
+      Serial.println(ArduinoID);
     }
     reinit_rl(arg_long[0], arg_long[1], arg_long[2], arg_long[3]);
   }
