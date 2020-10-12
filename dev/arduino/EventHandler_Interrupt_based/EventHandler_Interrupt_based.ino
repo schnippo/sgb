@@ -201,13 +201,13 @@ void reinit_rl(int _id, int _ontime, int _offtime, int _start_delay){
   }
   Serial.println("###########Updating TIMERS");
   rl1.switch_to_startdelay(); 
-  //rl2.switch_to_startdelay(); 
-//  rl3.switch_to_startdelay(); 
-//  rl4.switch_to_startdelay(); 
-//  rl1.update_timers((int)time_passed_until_reinit / 1000);  
-//  //rl2.update_timers(time_passed_until_reinit);
-//  r3.update_timers(time_passed_until_reinit);
-//  r4.update_timers(time_passed_until_reinit);
+  rl2.switch_to_startdelay(); 
+  rl3.switch_to_startdelay(); 
+  rl4.switch_to_startdelay(); 
+  rl1.update_timers((int)time_passed_until_reinit / 1000);  
+  rl2.update_timers((int)time_passed_until_reinit / 1000);
+  rl3.update_timers((int)time_passed_until_reinit / 1000);
+  rl4.update_timers((int)time_passed_until_reinit / 1000);
   
   time_running = false; // so that it starts the new timer
 }
@@ -245,8 +245,10 @@ void loop() {
   
   if (time_running == false) { // check if i should start a timer
     all_timers[0] = rl1.timer;
-//    all_timers[1] = rl2.timer;
-    selectionSort(all_timers, 1);
+    all_timers[1] = rl2.timer;
+    all_timers[2] = rl3.timer;
+    all_timers[3] = rl4.timer;
+    selectionSort(all_timers, 1); //UPDATE THIS NUMBER, DEPENDING ON THE NUMBER OF OBJECTS
     new_time = all_timers[0];
     Serial.print("+ Starting timer: ");
     Serial.print(new_time);
@@ -262,7 +264,9 @@ void loop() {
     Serial.println("+ Time is over");
     Timer1.detachInterrupt();
     rl1.update_timers(all_timers[0]);
-    //rl2.update_timers(all_timers[0]);
+    rl2.update_timers(all_timers[0]);
+    rl3.update_timers(all_timers[0]);
+    rl4.update_timers(all_timers[0]);
     time_running = false;
   } else {
     Timer1.attachInterrupt(isr, 1000000); // wait another second
