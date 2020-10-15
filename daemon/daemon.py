@@ -28,12 +28,13 @@ vent_counter, tries = 0,0
 
 def update_rl_arr(serial_object, ID):
 	#expecting a key for a list as input that has the following format: [timer, ontime, offtime, state]
-	ID  = str(ID)
-	relays[ID][3] = str(relays[ID][3]) 
-	relays[ID][0] -= 1	
-	if relays[ID][0] < 1:
-		relays[ID][0] = relays[ID][1] if relays[ID][3]	== "off" else relay[ID][2] # set timer to ontime if the old state was off
-		relays[ID][3] = "off" if relays[ID][3] == "on" else "on" #set state to off if 
+
+	timer, ontime, offtime, state = 0, 1, 2, 3
+	# relays[ID][state] = str(relays[ID][state]) 
+	relays[ID][timer] -= 1	
+	if relays[ID][timer] < 1:
+		relays[ID][timer] = relays[ID][ontime] if relays[ID][state]	== "off" else relay[ID][offtime] # set timer to ontime if the old state was off
+		relays[ID][state] = "off" if relays[ID][state] == "on" else "on" #set state to off if 
 		send_flip_token(serial_object, ID)
 
 def send_flip_token(serial_object,ID):
