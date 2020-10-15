@@ -2,7 +2,7 @@ from file_handler import cache_properties, sync_properties, update_prop_or_relay
 from pwm import update_auto_pwm, send_update_sig
 from relay import update_rl_arr
 from time import sleep
-
+import os
 
 LOCAL_PROPERTIES = "/home/pi/git/ssgb/daemon/local_properties"
 REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
