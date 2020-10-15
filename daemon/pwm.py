@@ -1,10 +1,11 @@
 #README: This script updates the ventilation pwm(pin 9) automatically based on the temp and hum
 #values of the last N minutes -> specify this number of minutes in the properties file, after "auto_update_reference"
+LOCAL_PROPERTIES = "/home/pi/git/ssgb/daemon/local_properties"
+REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 
 
 from file_handler import get_prop_value, update_prop_or_relay, avg_lastNlines
 from dht_logger import get_at
-from daemon import LOCAL_PROPERTIES, REMOTE_PROPERTIES
 
 
 
