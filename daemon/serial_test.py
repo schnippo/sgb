@@ -9,7 +9,8 @@ def try_devices():
 			try:
 				ser.write("9".encode())
 				sleep(2)
-				print(ser.readline().decode())
+				print(device, ":")
+				print(ser.readline())
 			except:
 				print("error at", device)
 			
