@@ -23,7 +23,7 @@ REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 # 			continue
 def get_serial_devices():
 	devices = ["/dev/ttyACM0", "/dev/ttyACM1", "/dev/ttyACM2"]
-	ser_relay, pwm_ser = None
+	ser_relay, pwm_ser = None, None
 	i = 0
 	while ser_relay == None:
 		for device in devices:
