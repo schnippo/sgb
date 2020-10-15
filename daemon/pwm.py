@@ -3,7 +3,7 @@
 
 
 from file_handler import get_prop_value, update_prop_or_relay, avg_lastNlines
-import logger
+from dht_logger import get_at
 
 REMOTE_PROPERTIES = "/home/pi/git/web/remote_properties"
 
@@ -21,6 +21,8 @@ def update_auto_pwm():
 	pwm_boost_t = 0
 
 	curr_temp = get_at()
+	if not curr_temp:
+		return False
 
 	delta_t = curr_temp - opt_temp #subtract the smaller from the greater (supposing that we need to cool down, the current temp is above the threshold)
 
@@ -36,11 +38,11 @@ def update_auto_pwm():
 	# print(f"new pwm value is {new_pwm}%, writing to properties")
 
 	update_prop_or_relay("pwm_dutycycle", str(new_pwm), "remote_properties") # write it to properties.
-
+	return True
 
 
 def send_update_sig(serial_object, _id, dutycycle):
-	serial_object.write(_id, int(dutycycle * 10.23))
+	serial_object.write(f"{_id} {int(dutycycle * 10.23)}".encode())
 
 
 
