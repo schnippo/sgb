@@ -10,10 +10,8 @@ def try_devices():
 				ser.write("9".encode())
 				sleep(2)
 				print(ser.readline().decode())
-			except serial.serialutil.SerialException:
+			except:
 				print("error at", device)
-			except FileNotFoundError:
-				print("Directory not found,", device)
-
+			
 
 try_devices()
