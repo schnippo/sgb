@@ -67,8 +67,10 @@ while True:
 		print("props have changed, sync process starting")
 		changed_pwm_sigs = get_pwm_changes(properties, REMOTE_PROPERTIES) #working with "properties" before it gets updated
 		print(f"changed_pwm_sigs: {changed_pwm_sigs}")
-		send_update_sig(pwm_ser, changed_pwm_sigs[0], changed_pwm_sigs[1])
-		print("sent update sigs")
+		print(changed_pwm_sigs)
+		# if changed_pwm_sigs:
+		# 	send_update_sig(pwm_ser, changed_pwm_sigs[0], changed_pwm_sigs[1])
+		# 	print("sent update sigs")
 		sync_properties() #saving remotely modified data locally
 		properties, relays = cache_properties() #this func returns two dictionaries
 		print("SYNC DONE")
