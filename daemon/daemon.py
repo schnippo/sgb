@@ -75,7 +75,7 @@ while True:
 	# 	print("updating relay", relay)
 	# 	update_rl_arr(relay_ser ,relay)
 	for relay in relays:
-		print(relay)
+		print(type(relay))
 	print(relays, "\n\n\n")
 	print(properties, "\n\n\n")
 
