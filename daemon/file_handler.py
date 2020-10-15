@@ -20,7 +20,7 @@ def cache_properties():
 		for line in data:
 			values = line.split()
 			if values[0] == "relay":
-				myrelays[values[1]] = [values[2], values[3], values[4], values[5]]
+				myrelays[values[1]] = [int(values[2]), int(values[3]), int(values[4]), int(values[5])]
 			else:
 				myproperties[values[0]] = values[1]
 		return [myproperties, myrelays]
