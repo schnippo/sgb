@@ -57,6 +57,9 @@ def get_serial_devices():
 	return ser_relay, ser_pwm
 
 
+print("tryna get serial connections in: ")
+relay_ser, pwm_ser = get_serial_devices()
+print("CHECK")
 
 last_modified = os.path.getmtime(REMOTE_PROPERTIES)
 # relay_ser = get_serial("relay_controller")
