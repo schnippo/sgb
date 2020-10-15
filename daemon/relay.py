@@ -1,7 +1,3 @@
-import serial
-ser = serial.Serial()
-
-
 def update_rl_arr(_id):
 	#expecting a list as input with the following format: [timer, ontime, offtime, state]
 	relays[str(_id)][0] -= 1	
@@ -10,5 +6,5 @@ def update_rl_arr(_id):
 		relays[str(_id)][3] = "off" if relays[str(_id)][3] == "on" else "on" #set state to off if 
 		send_flip_token(_id)
 
-def send_flip_token(_id):
-	ser.write(_id.encode())
+def send_flip_token(serial_object,_id):
+	serial_object.write(_id.encode())

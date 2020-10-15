@@ -1,74 +1,23 @@
-from time import sleep, time
-import os, serial, relay, ard_auth
 from file_handler import cache_properties, sync_properties, update_prop_or_relay
 from pwm import update_auto_pwm, send_update_sig
+import os, serial, relay
+from time import sleep
 
 
 LOCAL_PROPERTIES = "/home/pi/git/ssgb/daemon/local_properties"
 REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 
 
-# def get_serial(flag):
-# 	devices = ["/dev/ttyACM0", "/dev/ttyACM1", "/dev/ttyACM2"]
-# 	for device in devices:
-# 		try:
-# 			ser = serial.Serial(device)
-# 			ser.write("9".encode())
-# 			sleep(2)
-# 			if ser.readline() == f"{flag}\r\n":
-# 				print(f"{flag} at {device}")
-# 				return ser
-# 		except serial.SerialException:
-# 			print("bad address: ", device)
-# 			continue
-def get_serial_devices():
-	devices = ["/dev/ttyACM0", "/dev/ttyACM1", "/dev/ttyACM2"]
-	ser_relay, pwm_ser = None, None
-	i = 0
-	while ser_relay == None:
-		for device in devices:
-			try:
-				ser_relay = serial.Serial(device, timeout=3)
-				ser_relay.write("9".encode())
-				sleep(2)
-				if ser_relay.readline() == "relay_controller\r\n":
-					break
-				else:
-					print(f"answer from {device} didn't mach 'relay_controller', try {i}")
-					continue
-			except serial.SerialException:
-				print("bad address: ", device)
-				continue
 
-	while ser_pwm == None:
-			for device in devices:
-				try:
-					ser_pwm = serial.Serial(device, timeout=3)
-					ser_pwm.write("9".encode())
-					sleep(2)
-					if ser_pwm.readline() == "pwm_controller\r\n":
-						break
-					else:
-						print(f"answer from {device} didn't mach 'relay_controller', try {i}")
-						continue
-				except serial.SerialException:
-					print("bad address: ", device)
-					continue
-	return ser_relay, ser_pwm
-
-
-print("tryna get serial connections in: ")
-relay_ser, pwm_ser = get_serial_devices()
-print("CHECK")
 
 last_modified = os.path.getmtime(REMOTE_PROPERTIES)
-# relay_ser = get_serial("relay_controller")
-# pwm_ser = get_serial("pwm_controller")
+relay_ser = serial.Serial("/dev/ttyACM1")
+pwm_ser = serial.Serial("/dev/ttyACM0")
 properties, relays = cache_properties() #this func returns two dictionaries
-
-
-
 vent_counter, tries = 0,0
+
+
+
 
 while True:
 	sleep(1)
