@@ -25,7 +25,7 @@ def get_serial_devices():
 	devices = ["/dev/ttyACM0", "/dev/ttyACM1", "/dev/ttyACM2"]
 	ser_relay, pwm_ser = None
 	i = 0
-	while not ser_relay:
+	while ser_relay == None:
 		for device in devices:
 			try:
 				ser_relay = serial.Serial(device, timeout=3)
@@ -40,7 +40,7 @@ def get_serial_devices():
 				print("bad address: ", device)
 				continue
 
-	while not ser_pwm:
+	while ser_pwm == None:
 			for device in devices:
 				try:
 					ser_pwm = serial.Serial(device, timeout=3)
