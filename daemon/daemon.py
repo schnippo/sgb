@@ -40,8 +40,8 @@ while True:
 		properties, relays = cache_properties() #this func returns two dictionaries
 		last_modified = os.path.getmtime(REMOTE_PROPERTIES)
 	#doing relay tasks
-	for relay in relays:
-		print("updating relay", relay)
-		update_rl_arr(relay)
+	# for relay in relays:
+		# print("updating relay", relay)
+		# update_rl_arr(relay)
 
 
