@@ -2,7 +2,7 @@ from file_handler import cache_properties, sync_properties, update_prop_or_relay
 from pwm import update_auto_pwm, send_update_sig
 from relay import update_rl_arr
 from time import sleep
-import os
+import os, serial
 
 LOCAL_PROPERTIES = "/home/pi/git/ssgb/daemon/local_properties"
 REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
@@ -11,8 +11,8 @@ REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 
 
 last_modified = os.path.getmtime(REMOTE_PROPERTIES)
-relay_ser = Serial("/dev/ttyACM1")
-pwm_ser = Serial("/dev/ttyACM0")
+relay_ser = serial.Serial("/dev/ttyACM1")
+pwm_ser = serial.Serial("/dev/ttyACM0")
 properties, relays = cache_properties() #this func returns two dictionaries
 vent_counter, tries = 0,0
 
