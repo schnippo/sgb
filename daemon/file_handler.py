@@ -1,6 +1,6 @@
 import os, time
 
-REMOTE_PROPERTIES_PATH = "/home/jonas/git/ssgb/daemon/local_properties"
+REMOTE_PROPERTIES = "/home/jonas/git/ssgb/daemon/local_properties"
 
 
 def sync_properties():
@@ -22,9 +22,26 @@ def cache_properties():
 				properties[values[0]] = values[1]
 		return [properties, relays]
 
-PROPERTIES_PATH = '/home/jonas/git/ssgb/daemon/remote_properties'
+LOCAL_PROPERTIES = '/home/jonas/git/ssgb/daemon/remote_properties'
 
-def save_props_and_relays(relays_to_save, properties_to_save, path=REMOTE_PROPERTIES_PATH):
+def get_pwm_changes(properties, remote_properties=REMOTE_PROPERTIES):
+	changes = {}
+	pin = 0
+	for key in properties:
+		if key == "pwm_vent" or key == "pwm_fog" or key == "pwm_turb": # find one of the three keys.
+			local_val, remote_val = properties[key], get_prop_value(key, remote_properties)
+			if local_val != remote_val:
+				if key == "pwm_vent":
+					pin = 9
+				elif key == "pwm_turb":
+					pin = 3
+				elif key == "pwm_fog":
+					pin = 1
+				changes[key] = [pin, remote_val]
+		return changes
+
+
+def save_props_and_relays(relays_to_save, properties_to_save, path=REMOTE_PROPERTIES):
 	with open(path, "w") as f:
 		for key in relays_to_save:
 			f.write(f"relay {key} {relays_to_save[key][0]} {relays_to_save[key][1]} {relays_to_save[key][2]} {relays_to_save[key][3]}\n")
@@ -32,7 +49,7 @@ def save_props_and_relays(relays_to_save, properties_to_save, path=REMOTE_PROPER
 			f.write(f"{key} {properties_to_save[key]}\n")
 
 #key can be just a key for properties or the id for relays
-def update_prop_or_relay(key, newvalue, path=PROPERTIES_PATH):
+def update_prop_or_relay(key, newvalue, path=REMOTE_PROPERTIES):
 	properties = {}
 	relays = {}
 	with open(path, "r") as f:
@@ -49,7 +66,7 @@ def update_prop_or_relay(key, newvalue, path=PROPERTIES_PATH):
 				properties[values[0]] = values[1]
 	save_props_and_relays(relays, properties, path)	#save them all
 
-# def update_relay(_id, values, path=PROPERTIES_PATH):
+# def update_relay(_id, values, path=LOCAL_PROPERTIES):
 # 	relays = {}
 # 	properties = {}
 # 	with open(path, "r") as f.
@@ -66,7 +83,7 @@ def update_prop_or_relay(key, newvalue, path=PROPERTIES_PATH):
 
 
 
-def get_prop_value(prop):
+def get_prop_value(prop, path=REMOTE_PROPERTIES):
 	properties = {}
 	lines = open("properties", "r").readlines()
 	for line in lines:

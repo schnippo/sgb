@@ -2,8 +2,10 @@
 #values of the last N minutes -> specify this number of minutes in the properties file, after "auto_update_reference"
 
 
-from file_handler import get_prop_value, update_prop, avg_lastNlines
+from file_handler import get_prop_value, update_prop_or_relay, avg_lastNlines
 import logger
+
+REMOTE_PROPERTIES = "/home/pi/git/web/remote_properties"
 
 
 def update_auto_pwm():
@@ -22,14 +24,9 @@ def update_auto_pwm():
 
 	delta_t = curr_temp - opt_temp #subtract the smaller from the greater (supposing that we need to cool down, the current temp is above the threshold)
 
-	# print(f"delta t is {delta_t}")
-	# delta_h = curr_hum - opt_hum # here we also suppose that we need to vent, cuz it's too humid
-
 	if delta_t > 0: #only act if necessary
 	    pwm_boost_t = (delta_t * (100 - std_pwm) / max_delta_t ) #multiplies delta_t with a factor, that is based on how far i assume i need to go
 	    # print(f"pwm boost is {pwm_boost_t}")
-	# elif delta_h > 0: #           ca. 60%      geteilt durch 3°  -> delta_t wird also mit diesen 20%/° multipliziert.
-	#     pwm_boost_h,pwm_boost_t = 0,0
 	else:
 	    pwm_boost_t = 0
 	    # print(f"pwm_boost is 0, staying on {std_pwm}% pwm and exiting...")
@@ -38,7 +35,8 @@ def update_auto_pwm():
 	new_pwm = min(100, round(std_pwm + pwm_boost_t, 2)) #dont go over 100%
 	# print(f"new pwm value is {new_pwm}%, writing to properties")
 
-	update_prop("pwm_dutycycle", str(new_pwm), "remote_properties") # write it to properties.
+	update_prop_or_relay("pwm_dutycycle", str(new_pwm), "remote_properties") # write it to properties.
+
 
 
 def send_update_sig(serial_object, _id, dutycycle):
@@ -46,6 +44,34 @@ def send_update_sig(serial_object, _id, dutycycle):
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+# def get_sigs_to_send(old_sigs, updated_file=REMOTE_PROPERTIES): #old_sigs are expected to be a dictionary
+# # also: old_sigs can just be properties, logic, right?
+# 	sigs_to_send = {}
+# 	for key in old_sigs:
+# 		if old_sigs[key] == get_prop_value(key, REMOTE_PROPERTIES):
+# 			continue
+# 		else:
+# 			sigs_to_send[key] = get_prop_value(key, REMOTE_PROPERTIES)
+# 	return sigs_to_send
+
+
+# old_sigs = {}
+
+# def update_in_old_sig(signals): #signal needs to be in dictionary format
+# 	for key in signals:
+# 		old_sigs[key] = signals[key]
 
 	""" HERLEITUNG DER FORMEL:
 	Ich gehe von 40% std_pwm aus, es bleiben also noch 60% welche ich auf die von mir angenommen moeglichen Temperaturschwankungen
