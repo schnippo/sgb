@@ -3,7 +3,7 @@ REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 
 from file_handler import cache_properties, sync_properties, update_prop_or_relay
 from pwm import update_auto_pwm, send_update_sig
-from relays import update_rl_arr
+from relay import update_rl_arr
 from time import sleep
 import os, serial
 
