@@ -10,17 +10,17 @@ def sync_properties():
 
 
 def cache_properties():
-	properties = {}
-	relays = {}
-	with open(LOCAL_PROPERTIES, "r") as f:
+	myproperties = {}
+	myrelays = {}
+	with open(LOCAL_myPROPERTIES, "r") as f:
 		data = f.readlines()
 		for line in data:
 			values = line.split()
 			if values[0] == "relay":
-				relays[values[1]] = [values[2], values[3], values[4], values[5]]
+				myrelays[values[1]] = [values[2], values[3], values[4], values[5]]
 			else:
-				properties[values[0]] = values[1]
-		return [properties, relays]
+				myproperties[values[0]] = values[1]
+		return [myproperties, myrelays]
 
 
 def get_pwm_changes(properties, remote_properties=REMOTE_PROPERTIES):
