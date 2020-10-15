@@ -14,7 +14,7 @@ for device in devices:
 		sleep(2)
 		answer = device.readline()
 		# print(device, answer)
-		if answer == "pwm_controller\r\n" or answer == "relay_controller\r\n":
+		if answer.decode() == "pwm_controller\r\n" or answer == "relay_controller\r\n":
 			print(device, ":", answer)
 			continue
 		else:
@@ -22,7 +22,7 @@ for device in devices:
 			sleep(2)
 			answer = device.readline()
 			# print(device, answer)
-			if answer == "pwm_controller\r\n" or answer == "relay_controller\r\n":
+			if answer.decode() == "pwm_controller\r\n" or answer == "relay_controller\r\n":
 				print(device, ":", answer)
 	except:
 		print("error at", device)
