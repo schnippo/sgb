@@ -19,11 +19,9 @@ print("serial connections established")
 sync_properties()
 print("synced properties for the first time")
 properties, relays = cache_properties() #this func returns two dictionaries
-
-# from relay import update_rl_arr
-
 vent_counter, tries = 0,0
 
+send_update_sig(pwm_ser,{"3": 35, "10": 40, "9": 40})
 
 
 def update_rl_arr(serial_object, ID):
@@ -68,9 +66,9 @@ while True:
 		changed_pwm_sigs = get_pwm_changes(properties, REMOTE_PROPERTIES) #working with "properties" before it gets updated
 		print(f"changed_pwm_sigs: {changed_pwm_sigs}")
 		print(changed_pwm_sigs)
-		# if changed_pwm_sigs:
-		# 	send_update_sig(pwm_ser, changed_pwm_sigs[0], changed_pwm_sigs[1])
-		# 	print("sent update sigs")
+		if changed_pwm_sigs:
+			send_update_sig(pwm_ser, changed_pwm_sigs[0], changed_pwm_sigs[1])
+			print("sent update sigs")
 		sync_properties() #saving remotely modified data locally
 		properties, relays = cache_properties() #this func returns two dictionaries
 		print("SYNC DONE")
