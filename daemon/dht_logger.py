@@ -1,7 +1,8 @@
 #this is an acustomed script, that only tries to log from the dht_sensor
 
 
-import sys, glob, os, adafruit_dht, board
+import sys, adafruit_dht, board
+from time import sleep
 
 dht_device = adafruit_dht.DHT22(board.D2)
 

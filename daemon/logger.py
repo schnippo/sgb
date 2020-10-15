@@ -1,4 +1,4 @@
-import sys,glob, os, adafruit_dht, datetime, board
+import sys, glob, os, adafruit_dht, datetime, board
 from time import sleep
 
 # logfile_air_temp = "logs/at_log"
@@ -67,8 +67,8 @@ def get_at():
           print(sys.exc_info()[0] + "on air hum, trying again in 1s")
           sleep(1)
           if tries > 3:
-            return None
-            logat.write(now + " \n")
+            return "NA"
+            # logat.write(now + " \n")
             break
           continue
 def get_ah():
@@ -91,25 +91,25 @@ def get_ah():
               # logah.write(now + " \n")
               break
           continue
-def get_wt():
-  tries = 0
-  while True: #TRYING TO GET WATER TEMP
-      now = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))    
-      tries += 1
-      try:
-          wtemp = read_temp()
-          return round(wtemp, 2)
-          # logwt.write(now + " "+str(read_temp)+"\n")
-          # logwt.close()
-          # print("water temp done")
-          break
-      except: #a potential jitter connection is handled here, just wait a second and try again
-          print(sys.exc_info()[0] + "on water temp, trying again in 1s")
-          sleep(1)
-          if tries > 3:
-              return None
-              # logwt.write(now + " \n")
-              break
-          continue
+# def get_wt():
+#   tries = 0
+#   while True: #TRYING TO GET WATER TEMP
+#       now = str(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'))    
+#       tries += 1
+#       try:
+#           wtemp = read_temp()
+#           return round(wtemp, 2)
+#           # logwt.write(now + " "+str(read_temp)+"\n")
+#           # logwt.close()
+#           # print("water temp done")
+#           break
+#       except: #a potential jitter connection is handled here, just wait a second and try again
+#           print(sys.exc_info()[0] + "on water temp, trying again in 1s")
+#           sleep(1)
+#           if tries > 3:
+#               return None
+#               # logwt.write(now + " \n")
+#               break
+#           continue
 
-print("DONE")
+# print("DONE")
