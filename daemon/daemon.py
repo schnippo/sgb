@@ -1,6 +1,7 @@
 from file_handler import cache_properties, sync_properties, update_prop_or_relay
 from pwm import update_auto_pwm, send_update_sig
-import os, serial, relay
+import os, serial, 
+from relay import update_rl_arr
 from time import sleep
 
 
