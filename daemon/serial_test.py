@@ -14,3 +14,6 @@ def try_devices():
 				print("error at", device)
 			except FileNotFoundError:
 				print("Directory not found,", device)
+
+
+try_devices()
