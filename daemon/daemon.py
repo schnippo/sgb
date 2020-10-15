@@ -44,7 +44,6 @@ def send_flip_token(serial_object,ID):
 
 
 
-
 while True:
 	sleep(1)
 	vent_counter += 1
@@ -72,8 +71,10 @@ while True:
 		print("SYNC DONE")
 		last_modified = os.path.getmtime(REMOTE_PROPERTIES)
 	#doing relay tasks
-	for relay in relays:
-		print("updating relay", relay)
-		update_rl_arr(relay_ser ,relay)
+	# for relay in relays:
+	# 	print("updating relay", relay)
+	# 	update_rl_arr(relay_ser ,relay)
+	print(relays, "\n\n\n")
+	print(properties, "\n\n\n")
 
 
