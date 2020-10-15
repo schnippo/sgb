@@ -1,3 +1,5 @@
+from daemon.py import relays
+
 def update_rl_arr(_id):
 	#expecting a list as input with the following format: [timer, ontime, offtime, state]
 	relays[str(_id)][0] -= 1	
