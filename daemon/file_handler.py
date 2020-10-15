@@ -1,18 +1,18 @@
 import os, time
+from daemon import LOCAL_PROPERTIES, REMOTE_PROPERTIES
 
-REMOTE_PROPERTIES = "/home/jonas/git/ssgb/daemon/local_properties"
 
 
 def sync_properties():
-	with open("local_properties", "w") as d:
-			with open("remote_properties", "r") as s:
+	with open(LOCAL_PROPERTIES, "w") as d:
+			with open(REMOTE_PROPERTIES, "r") as s:
 				d.write(s.read())
 
 
 def cache_properties():
 	properties = {}
 	relays = {}
-	with open("local_properties", "r") as f:
+	with open(LOCAL_PROPERTIES, "r") as f:
 		data = f.readlines()
 		for line in data:
 			values = line.split()
@@ -22,7 +22,6 @@ def cache_properties():
 				properties[values[0]] = values[1]
 		return [properties, relays]
 
-LOCAL_PROPERTIES = '/home/jonas/git/ssgb/daemon/remote_properties'
 
 def get_pwm_changes(properties, remote_properties=REMOTE_PROPERTIES):
 	changes = {}
@@ -85,7 +84,7 @@ def update_prop_or_relay(key, newvalue, path=REMOTE_PROPERTIES):
 
 def get_prop_value(prop, path=REMOTE_PROPERTIES):
 	properties = {}
-	lines = open("properties", "r").readlines()
+	lines = open(LOCAL_PROPERTIES, "r").readlines()
 	for line in lines:
 		properties[line.split()[0]] = line.split()[1]
 	return properties[prop]

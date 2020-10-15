@@ -4,8 +4,8 @@
 
 from file_handler import get_prop_value, update_prop_or_relay, avg_lastNlines
 from dht_logger import get_at
+from daemon import LOCAL_PROPERTIES, REMOTE_PROPERTIES
 
-REMOTE_PROPERTIES = "/home/pi/git/web/remote_properties"
 
 
 def update_auto_pwm():
