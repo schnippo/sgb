@@ -44,6 +44,6 @@ def get_ah():
 
 # Tryout
 
-while True:
-	sleep(2)
-	print(get_at())
+# while True:
+# 	sleep(2)
+# 	print(get_at())
