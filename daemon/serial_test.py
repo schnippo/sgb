@@ -5,6 +5,8 @@ addresses = ["/dev/ttyACM0", "/dev/ttyACM1"]
 
 devices = [serial.Serial(addresses[0]), serial.Serial(addresses[1])]
 
+print("hello")
+print(devices)
 
 for device in devices:
 	try:
@@ -24,4 +26,3 @@ for device in devices:
 		print("error at", device)
 			
 
-try_devices()
