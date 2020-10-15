@@ -15,7 +15,7 @@ def get_at():
           return round(temp, 2)
           break
       except: #a potential jitter connection is handled here, just wait a second and try again
-          print(sys.exc_info()[0] + "on air temp, trying again in 1s")
+          print(str(sys.exc_info()[0]) + "on air temp, trying again in 1s")
           sleep(1)
           if tries > 3:
             return None
@@ -33,7 +33,7 @@ def get_ah():
           return round(hum, 2)
           break
       except: #a potential jitter connection is handled here, just wait a second and try again
-          print(sys.exc_info()[0] + "on air hum, trying again in 1s")
+          print(str(sys.exc_info()[0]) + "on air hum, trying again in 1s")
           sleep(1)
           if tries > 3: #escape the loop after the third try
               return None
