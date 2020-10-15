@@ -12,14 +12,17 @@ for device in devices:
 	try:
 		device.write("9".encode())
 		sleep(2)
-		answer = device.readline().decode()
+		answer = device.readline()
+		print(answer)
 		if answer == "pwm_controller" or answer == "relay_controller":
 			print(device, ":", answer)
 			continue
 		else:
 			device.write("99".encode())
 			sleep(2)
-			answer = device.readline().decode()
+			answer = device.readline()
+		print(answer)
+
 			if answer == "pwm_controller" or answer == "relay_controller":
 				print(device, ":", answer)
 	except:
