@@ -41,6 +41,12 @@ def update_auto_pwm():
 	update_prop("pwm_dutycycle", str(new_pwm), "remote_properties") # write it to properties.
 
 
+def send_update_sig(serial_object, _id, dutycycle):
+	serial_object.write(_id, int(dutycycle * 10.23))
+
+
+
+
 	""" HERLEITUNG DER FORMEL:
 	Ich gehe von 40% std_pwm aus, es bleiben also noch 60% welche ich auf die von mir angenommen moeglichen Temperaturschwankungen
 	aufteile. BSP: Wir nehmen an, dass der Maximalwert der Temp auf max 3° ueber dem Normalwert liegt, ganz naiv angenommen:

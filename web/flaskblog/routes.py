@@ -5,6 +5,9 @@ from flaskblog.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 import os
 
+REMOTE_PROPERTIES = "/home/jonas/git/ssgb/web/remote_properties"
+
+
 posts = [
 	{
 	'author': 'Jonas Rose',
@@ -20,22 +23,39 @@ posts = [
 	}]
 
 
-def update_prop(prop, value):
-	properties = {}
-	lines = open(PROPERTIES_PATH, "r").readlines()
-	for line in lines:
-		properties[line.split()[0]] = line.split()[1]
-	properties[prop] = value
-	with open("properties", "w") as f:
-		for key in properties:
-			f.write(key + " " + properties[key] +"\n")
-def get_prop_value(prop):
-	properties = {}
-	lines = open(PROPERTIES_PATH, "r").readlines()
-	for line in lines:
-		properties[line.split()[0]] = line.split()[1]
-	return properties[prop]
 
+
+def save_props_and_relays(relays_to_save, properties_to_save, path=REMOTE_PROPERTIES):
+	with open(path, "w") as f:
+		for key in relays_to_save:
+			f.write(f"relay {key} {relays_to_save[key][0]} {relays_to_save[key][1]} {relays_to_save[key][2]} {relays_to_save[key][3]}\n")
+		for key in properties_to_save:
+			f.write(f"{key} {properties_to_save[key]}\n")
+
+#key can be just a key for properties or the id for relays
+def update_prop_or_relay(key, newvalue, path=REMOTE_PROPERTIES):
+	properties = {}
+	relays = {}
+	with open(path, "r") as f:
+		for line in f.readlines():
+			values = line.split()
+			if values[0] == "relay":
+				if values[1] == key: #check if i can already overwrite the old stuff
+					relays[key] = newvalue #as we expect to change a relay, "newvalue" should be a list.
+				else:
+					relays[values[1]] = [values[2], values[3], values[4], values[5]] # if it didn't match, write the normal values instead 
+			elif values[0] == key:
+				properties[key] = newvalue #and if it wasn't a relay, just save it as a property. Here it doesn't need to be a list.
+			else:
+				properties[values[0]] = values[1]
+	save_props_and_relays(relays, properties, path)	#save them all
+
+# def get_prop_value(prop, path=REMOTE_PROPERTIES):
+# 	properties = {}
+# 	lines = open(path, "r").readlines()
+# 	for line in lines:
+# 		properties[line.split()[0]] = line.split()[1]
+# 	return properties[prop]
 
 
 
@@ -95,9 +115,9 @@ def dashboard():
 # @login_required
 @app.route("/controls", methods=["POST", "GET"])
 def controls():
-	placeholders = {
-		"fan_value" : get_prop_value("pwm_dutycycle")
-	}
+	# placeholders = {
+	# 	"fan_value" : get_prop_value("pwm_dutycycle")
+	# }
 
 	if request.method == 'POST':
 		print(request.form)
@@ -105,39 +125,63 @@ def controls():
 		if request.form.get("relay_ID"):
 			print("Detected Relay Input")
 			ID = request.form.get('relay_ID')
+			TIMER = request.form.get('relay_TIMER')
 			ONTIME = request.form.get('relay_ONTIME')
 			OFFTIME = request.form.get('relay_OFFTIME')
-			STARTDELAY = request.form.get('relay_STARTDELAY')
-			values = f"{ID} {ONTIME} {OFFTIME} {STARTDELAY}\n"
+			STATE = request.form.get('relay_STATE')
+			values = f"{ID} {TIMER} {ONTIME} {OFFTIME} {STATE}\n"
 			print(values)
-			with open('output.txt', 'a') as f:
-				f.write(values)
+			update_prop_or_relay(ID, [TIMER, ONTIME, OFFTIME, STATE])
+
 		elif request.form.get("fan_number"):
 			print("Detected PWM Input")
 			fan_number = request.form.get("fan_number")
 			fan_value = request.form.get("fan_value")
 			fan_mode = request.form.get("fan_mode")
 			if fan_number == "9":
-				print("fan 9")
+				# print("fan 9")
 				if fan_mode == 'manual':
-					update_prop("pwm_mode", "manual")
-					update_prop("pwm_dutycycle", fan_value)
+					update_prop_or_relay("pwm_mode", "manual")
+					update_prop_or_relay("pwm_dutycycle", fan_value)
 					response = f"Updating properties to manual control with {fan_value}% dutycyle."
 					print(response)
 				else:
-					update_prop("pwm_mode", "auto")
+					update_prop_or_relay("pwm_mode", "auto")
 					response = f"Updating properties to automatic control."
 					print(response)
-				return render_template('controls.html', title='Controls', placeholders=placeholders, response=response)
-			else:
-				print(f"Change on Fan NR {fan_number}")
-				response = os.system(f"python3 /home/jonas/git/ssgb/controllers/pwm/force_pwm_update.py {fan_number} {fan_value}")
-				# sp_answer = subprocess.run(["/usr/bin/python3", "/home/jonas/git/controllers/pwm/force_pwm_update.py", str(fan_number), str(fan_value)])
+
+				return render_template('controls.html', title='Controls',  response=[response])
+
+			elif fan_number == "3":
+				update_prop_or_relay("pwm_turb", fan_value)
+				response = f"Updated Turbulence Fan in remote_properties to {fan_value}%"
 				print(response)
-				return render_template('controls.html', title='Controls', placeholders=placeholders, response=response)
+				return render_template('controls.html', title='Controls',  response=[response])
 
+			elif fan_number == "1":
+				update_prop_or_relay("pwm_fog", fan_value)
+				response = f"Updated Fog Fan in remote_properties to {fan_value}%"
+				print(response)
+				return render_template('controls.html', title='Controls',  response=[response])
+		elif request.form.get("opt_temp") or request.form.get("std_pwm") or request.form.get("max_delta_t"):
+			response1, response2, response3 = "", "", ""
+			if request.form.get("opt_temp"):
+				print("opt temp update")
+				update_prop_or_relay("opt_temp", request.form.get("opt_temp"))
+				response1 = f"Updated optimal temp to {request.form.get('opt_temp')}°\r"
 
-	return render_template('controls.html', title='Controls', placeholders=placeholders)
+			if request.form.get("std_pwm"):
+				print("std pwm update")
+				update_prop_or_relay("std_pwm", request.form.get("std_pwm"))
+				response2 = f"Updated std pwm to {request.form.get('std_pwm')}%\r"
+
+			if request.form.get("max_delta_t"):
+				print("max delta Tb update")
+				update_prop_or_relay("max_delta_t", request.form.get("max_delta_t"))
+				response3 = f"Updated max delta T to {request.form.get('max_delta_t')}°\r"
+			return render_template('controls.html', title='Controls',  response=[response1, response2, response3])
+
+	return render_template('controls.html', title='Controls')
 
 
 

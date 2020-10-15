@@ -1,12 +1,11 @@
-relay 1 0 40 10 on
-relay 2 0 30 13 off
-relay 3 0 12 51 on 
+relay 1 0 40 10 off
+relay 2 13 10 10 on
+relay 3 0 12 51 on
 relay 4 0 12 51 on
-ah_threshold -
-at_threshold 22
-max_delta_h -
+opt_temp 22
 max_delta_t 3
 std_pwm 40
-pwm_dutycycle 55
-auto_update_reference 10
+pwm_vent 55
 pwm_mode auto
+pwm_fog 35
+pwm_turb 50

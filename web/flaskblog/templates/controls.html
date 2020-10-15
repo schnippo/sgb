@@ -33,9 +33,22 @@ select{
 	margin-top: 12px;
 }*/
 
+#divl {
+	display: inline-block;
+}
+
+#divr {
+	display: inline-block;
+	vertical-align: top;
+}
+
 .align_left_pls {
 	float: left;
 	margin-left: 3px;
+
+}.align_right_pls {
+	float: right;
+	margin-right: 3px;
 }
 
 .small {
@@ -48,23 +61,27 @@ select{
 
 </style>
 
-
-<div class="content-section">
+<div  class="content-section">
 	<h3>relay controls</h3>
 	<form method="post">
 		<div id="form-group">
 		    <div class="align_left_pls" style="width: 33%;">
 		        <label for="relay_ID">ID</label><br>
+		    	<label for="relay_TIMER">Timer</label><br>
 		    	<label for="relay_ONTIME">Ontime</label><br>
 		    	<label for="relay_OFFTIME">Offtime</label><br>
-		    	<label for="relay_STARTDELAY">Start Delay<label><br>
+		    	<label for="relay_STATE">State<label><br>
 		   
 		    </div >
 		    <div class="align_left_pls" >
-		        <input type="number" placeholder = "1" name="relay_ID"><br>
+		        <input type="number" name="relay_ID"><br>
+		      	<input type="number" name="relay_TIMER"><br>
 		      	<input type="number" name="relay_ONTIME"><br>
 		      	<input type="number" name="relay_OFFTIME"><br>
-		      	<input type="number" name="relay_STARTDELAY"><br><br>
+		      	<select type="text" name="relay_STATE" id="relay_STATE">
+					<option value="on">on</option>
+					<option value="off">off</option>
+				</select><br><br>
 		      	<input type="submit">
 		    	
 		    </div>
@@ -80,6 +97,7 @@ select{
 		</div>
 	</form>
 </div>
+
 <div class="content-section">
 	<h3>fan controls</h3>
 	<form method="post">
@@ -95,7 +113,7 @@ select{
 					<option value="1">Fog</option>
 					<option value="3">Turbulence</option>
 				</select>
-		    	<input style="margin-top: 3px;" type="number" min="0" max="100" step='5'name="fan_value" placeholder="{{placeholders.fan_value}}"><br>
+		    	<input style="margin-top: 3px;" type="number" min="0" max="100" step='5'name="fan_value"><br>
 		    	<select style="margin-top: 3px;" class="mt4" name="fan_mode"id="fan_mode">
 					<option value="auto">Auto</option>
 					<option value="manual">Manual</option>
@@ -106,8 +124,31 @@ select{
 		</div>
 	</form>
 </div>
+
 <div class="content-section">
-	<p>Last Feedback:</p>
-	<small>{{ response }}</small>
+	<h3>auto pwm calc</h3>
+	<form method="post">
+		<div id="form-group">
+			<div class="align_left_pls" style="width: 33%;">
+		        <label for="opt_temp">optimal temp</label><br>
+		        <label for="std_pwm">std pwm</label><br>
+		        <label for="max_delta_t">max delta T</label><br>
+		    </div >
+		    <div class="align_left_pls">
+				<input style="margin-top: 0px;height: 28px;" type="number" name="opt_temp"><br>
+				<input style="margin-top: 0px; height: 28px;" type="number" name="std_pwm"><br>
+				<input style="margin-top: 0px;height: 28px;" type="number" name="max_delta_t">
+		    	<br><br>
+				<input type="submit">
+			</div>
+			<div style="clear: both;"></div>
+		</div>
+	</form>
 </div>
+<div class="content-section">
+	<h4>Console Output:</h4>
+	{% for line in response %}
+	<small>{{ line }}</small><br>
+	{% endfor %}
+<div style="clear: both;"></div> 
 {% endblock content%} 
