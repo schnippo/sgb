@@ -15,7 +15,7 @@ def sync_properties():
 def cache_properties():
 	myproperties = {}
 	myrelays = {}
-	with open(LOCAL_myPROPERTIES, "r") as f:
+	with open(LOCAL_PROPERTIES, "r") as f:
 		data = f.readlines()
 		for line in data:
 			values = line.split()
