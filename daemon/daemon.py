@@ -13,6 +13,9 @@ import os, serial
 last_modified = os.path.getmtime(REMOTE_PROPERTIES)
 relay_ser = serial.Serial("/dev/ttyACM1")
 pwm_ser = serial.Serial("/dev/ttyACM0")
+print("serial connections established")
+sync_properties()
+print("synced properties for the first time")
 properties, relays = cache_properties() #this func returns two dictionaries
 from relay import update_rl_arr
 vent_counter, tries = 0,0
@@ -47,8 +50,8 @@ while True:
 		print("SYNC DONE")
 		last_modified = os.path.getmtime(REMOTE_PROPERTIES)
 	#doing relay tasks
-	# for relay in relays:
-		# print("updating relay", relay)
-		# update_rl_arr(relay)
+	for relay in relays:
+		print("updating relay", relay)
+		update_rl_arr(relay)
 
 
