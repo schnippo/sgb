@@ -10,12 +10,12 @@ def try_devices():
 				ser.write("9".encode())
 				sleep(2)
 				answer = ser.readline().decode()
-				if answer == "pwm_controller" or answer == "relay_controller"
+				if answer == "pwm_controller" or answer == "relay_controller":
 					print(device, ":", answer)
 				ser.write("99".encode())
 				sleep(2)
 				answer = ser.readline().decode()
-				if answer == "pwm_controller" or answer == "relay_controller"
+				if answer == "pwm_controller" or answer == "relay_controller":
 					print(device, ":", answer)
 			except:
 				print("error at", device)
