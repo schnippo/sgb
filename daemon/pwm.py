@@ -39,7 +39,7 @@ def update_auto_pwm():
 	new_pwm = min(100, round(std_pwm + pwm_boost_t, 2)) #dont go over 100%
 	# print(f"new pwm value is {new_pwm}%, writing to properties")
 
-	update_prop_or_relay("pwm_dutycycle", str(new_pwm), "remote_properties") # write it to properties.
+	update_prop_or_relay("pwm_dutycycle", str(new_pwm), REMOTE_PROPERTIES) # write it to properties.
 	return True
 
 
