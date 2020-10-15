@@ -33,8 +33,10 @@ def update_rl_arr(serial_object, ID):
 	# relays[ID][state] = str(relays[ID][state]) 
 	relays[ID][timer] -= 1	
 	if relays[ID][timer] < 1:
-		relays[ID][timer] = relays[ID][ontime] if relays[ID][state]	== "off" else relay[ID][offtime] # set timer to ontime if the old state was off
+		print(f"relay {ID} has reached 0, swapping timers..")
+		relays[ID][timer] = relays[ID][ontime] if relays[ID][state]	== "off" else relays[ID][offtime] # set timer to ontime if the old state was off
 		relays[ID][state] = "off" if relays[ID][state] == "on" else "on" #set state to off if 
+		
 		send_flip_token(serial_object, ID)
 
 def send_flip_token(serial_object,ID):
@@ -74,5 +76,5 @@ while True:
 	#doing relay tasks
 	for relay in relays:
 		print("updating relay", relay)
-		update_rl_arr(relay_ser ,relay)
+		update_rl_arr(relay_ser, relay)
 
