@@ -11,8 +11,8 @@ REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 
 
 last_modified = os.path.getmtime(REMOTE_PROPERTIES)
-relay_ser = serial.Serial("/dev/ttyACM1")
-pwm_ser = serial.Serial("/dev/ttyACM0")
+relay_ser = Serial("/dev/ttyACM1")
+pwm_ser = Serial("/dev/ttyACM0")
 properties, relays = cache_properties() #this func returns two dictionaries
 vent_counter, tries = 0,0
 
