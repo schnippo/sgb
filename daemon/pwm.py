@@ -11,7 +11,7 @@ REMOTE_PROPERTIES = "/home/pi/git/web/remote_properties"
 def update_auto_pwm():
 	if get_prop_value("pwm_mode") == "manual":
 	    print("pwm_mode is on manual, exiting..")
-	    exit()
+	    return "auto-mode is off"
 
 	opt_temp = int(get_prop_value("at_threshold"))
 	# opt_hum = get_prop_value("ah_threshold")
@@ -21,6 +21,7 @@ def update_auto_pwm():
 	pwm_boost_t = 0
 
 	curr_temp = get_at()
+	# curr_temp = 23
 	if not curr_temp:
 		return False
 
