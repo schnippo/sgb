@@ -65,7 +65,7 @@ properties, relays = cache_properties() #this func returns two dictionaries
 
 
 
-vent_counter, tries = 0
+vent_counter, tries = 0,0
 
 while True:
 	sleep(1)
@@ -73,9 +73,9 @@ while True:
 	if vent_counter >= 10:
 		if update_auto_pwm() == True:
 			print("automatically updated vent pwm")
-			tries, vent_counter = 0
+			tries, vent_counter = 0,0
 		elif update_auto_pwm() == "auto-mode is off":
-			tries, vent_counter = 0
+			tries, vent_counter = 0,0
 		else:
 			tries += 1
 			print(f"dht-error, couldn't get temp, trying again next cycle, tries: {tries}")
