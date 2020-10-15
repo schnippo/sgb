@@ -5,7 +5,7 @@ from flaskblog.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 import os
 
-REMOTE_PROPERTIES = "/home/jonas/git/ssgb/web/remote_properties"
+REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 
 
 posts = [
