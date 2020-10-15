@@ -14,7 +14,7 @@ def update_auto_pwm():
 	    print("pwm_mode is on manual, exiting..")
 	    return "auto-mode is off"
 
-	opt_temp = int(get_prop_value("at_threshold"))
+	opt_temp = int(get_prop_value("opt_temp"))
 	# opt_hum = get_prop_value("ah_threshold")
 	std_pwm = int(get_prop_value("std_pwm"))
 	max_delta_t = int(get_prop_value("max_delta_t"))
