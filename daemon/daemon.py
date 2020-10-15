@@ -29,6 +29,7 @@ while True:
 			print("automatically updated vent pwm")
 			tries, vent_counter = 0,0
 		elif update_auto_pwm() == "auto-mode is off":
+			print("auto-mode is off, turn it on via web interface")
 			tries, vent_counter = 0,0
 		else:
 			tries += 1
@@ -40,8 +41,10 @@ while True:
 		changed_pwm_sigs = get_pwm_changes(properties, REMOTE_PROPERTIES) #working with "properties" before it gets updated
 		print(f"changed_pwm_sigs: {changed_pwm_sigs}")
 		send_update_sig(pwm_ser, changed_pwm_sigs[0], changed_pwm_sigs[1])
+		print("sent update sigs")
 		sync_properties() #saving remotely modified data locally
 		properties, relays = cache_properties() #this func returns two dictionaries
+		print("SYNC DONE")
 		last_modified = os.path.getmtime(REMOTE_PROPERTIES)
 	#doing relay tasks
 	# for relay in relays:

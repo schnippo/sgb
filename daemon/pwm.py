@@ -34,7 +34,7 @@ def update_auto_pwm():
 	else:
 	    pwm_boost_t = 0
 	    # print(f"pwm_boost is 0, staying on {std_pwm}% pwm and exiting...")
-	    exit()
+	    return True
 
 	new_pwm = min(100, round(std_pwm + pwm_boost_t, 2)) #dont go over 100%
 	# print(f"new pwm value is {new_pwm}%, writing to properties")
