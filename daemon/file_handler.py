@@ -36,9 +36,9 @@ def get_pwm_changes(properties, remote_properties=REMOTE_PROPERTIES):
 				if key == "pwm_vent":
 					pin = 9
 				elif key == "pwm_turb":
-					pin = 3
+					pin = 10
 				elif key == "pwm_fog":
-					pin = 1
+					pin = 3
 				changes[key] = [pin, remote_val]
 		return changes
 
