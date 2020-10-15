@@ -1,4 +1,4 @@
-from daemon.py import relays
+# from daemon.py import relays
 
 def update_rl_arr(_id):
 	#expecting a list as input with the following format: [timer, ontime, offtime, state]
