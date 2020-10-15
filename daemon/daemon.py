@@ -3,9 +3,23 @@ REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 
 from file_handler import cache_properties, sync_properties, update_prop_or_relay
 from pwm import update_auto_pwm, send_update_sig
-from relay import update_rl_arr
 from time import sleep
 import os, serial
+
+
+
+
+
+def update_rl_arr(_id):
+	#expecting a list as input with the following format: [timer, ontime, offtime, state]
+	relays[str(_id)][0] -= 1	
+	if relays[str(_id)][0] < 1:
+		relays[str(_id)][0] = relays[str(_id)][1] if relays[str(_id)][3]	== "off" else relay[str(_id)][2] # set timer to ontime if the old state was off
+		relays[str(_id)][3] = "off" if relays[str(_id)][3] == "on" else "on" #set state to off if 
+		send_flip_token(_id)
+
+def send_flip_token(serial_object,_id):
+	serial_object.write(_id.encode())
 
 
 
@@ -18,7 +32,9 @@ print("serial connections established")
 sync_properties()
 print("synced properties for the first time")
 properties, relays = cache_properties() #this func returns two dictionaries
-from relay import update_rl_arr
+
+# from relay import update_rl_arr
+
 vent_counter, tries = 0,0
 
 
