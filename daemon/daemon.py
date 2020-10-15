@@ -10,19 +10,6 @@ import os, serial
 
 
 
-def update_rl_arr(serial_object, _id):
-	#expecting a list as input with the following format: [timer, ontime, offtime, state]
-	relays[str(_id)][0] -= 1	
-	if relays[str(_id)][0] < 1:
-		relays[str(_id)][0] = relays[str(_id)][1] if relays[str(_id)][3]	== "off" else relay[str(_id)][2] # set timer to ontime if the old state was off
-		relays[str(_id)][3] = "off" if relays[str(_id)][3] == "on" else "on" #set state to off if 
-		send_flip_token(serial_object, _id)
-
-def send_flip_token(serial_object,_id):
-	serial_object.write(_id.encode())
-
-
-
 
 
 last_modified = os.path.getmtime(REMOTE_PROPERTIES)
@@ -36,6 +23,24 @@ properties, relays = cache_properties() #this func returns two dictionaries
 # from relay import update_rl_arr
 
 vent_counter, tries = 0,0
+
+
+
+def update_rl_arr(serial_object, ID):
+	#expecting a key for a list as input that has the following format: [timer, ontime, offtime, state]
+	ID  = str(ID)
+	relays[ID][3] = str(relays[ID][3]) 
+	relays[ID][0] -= 1	
+	if relays[ID][0] < 1:
+		relays[ID][0] = relays[ID][1] if relays[ID][3]	== "off" else relay[ID][2] # set timer to ontime if the old state was off
+		relays[ID][3] = "off" if relays[ID][3] == "on" else "on" #set state to off if 
+		send_flip_token(serial_object, ID)
+
+def send_flip_token(serial_object,ID):
+	serial_object.write(ID.encode())
+
+
+
 
 
 
