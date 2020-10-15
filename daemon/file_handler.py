@@ -1,5 +1,8 @@
+LOCAL_PROPERTIES = "/home/pi/git/ssgb/daemon/local_properties"
+REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
+
 import os, time
-from daemon import LOCAL_PROPERTIES, REMOTE_PROPERTIES
+
 
 
 
