@@ -13,8 +13,8 @@ import os, serial
 
 
 last_modified = os.path.getmtime(REMOTE_PROPERTIES)
-relay_ser = serial.Serial("/dev/ttyACM1")
-pwm_ser = serial.Serial("/dev/ttyACM0")
+relay_ser = serial.Serial("/dev/ttyACM0")
+pwm_ser = serial.Serial("/dev/ttyACM1")
 print("serial connections established")
 sync_properties()
 print("synced properties for the first time")
