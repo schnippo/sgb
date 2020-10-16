@@ -43,27 +43,30 @@ def update_rl_arr(serial_object, ID):
 def send_flip_token(serial_object,ID):
 	serial_object.write(ID.encode())
 
-
+asdfasdfasdfasdfasdf
 
 
 
 
 while True:
 	sleep(1)
-	vent_counter += 1
-	print(vent_counter)
-	if vent_counter >= 10:
-		if update_auto_pwm() == True:
-			print("automatically updated vent pwm")
-			tries, vent_counter = 0,0
-		elif update_auto_pwm() == "auto-mode is off":
-			print("auto-mode is off, turn it on via web interface")
-			tries, vent_counter = 0,0
-		else:
-			tries += 1
-			print(f"dht-error, couldn't get temp, trying again next cycle, tries: {tries}")
+	# vent_counter += 1
+	# print(vent_counter)
+	# if vent_counter >= 10:
+	# 	if update_auto_pwm() == True:
+	# 		print("automatically updated vent pwm")
+	# 		tries, vent_counter = 0,0
+	# 	elif update_auto_pwm() == "auto-mode is off":
+	# 		print("auto-mode is off, turn it on via web interface")
+	# 		tries, vent_counter = 0,0
+	# 	else:
+	# 		tries += 1
+	# 		print(f"dht-error, couldn't get temp, trying again next cycle, tries: {tries}")
 
 	#getting new properties in
+	
+	print("special thanks to wall-e")
+
 	if last_modified != os.path.getmtime(REMOTE_PROPERTIES):
 		print("props have changed, sync process starting")
 		changed_pwm_sigs = get_pwm_changes(properties, REMOTE_PROPERTIES) #working with "properties" before it gets updated
@@ -71,15 +74,16 @@ while True:
 		print(changed_pwm_sigs)
 		
 		if changed_pwm_sigs:
-#CRITICAL			send_update_sig(pwm_ser, changed_pwm_sigs[0], changed_pwm_sigs[1])
+			send_update_sig(pwm_ser, changed_pwm_sigs[0], changed_pwm_sigs[1])
 			print("sent update sigs")
 		
 		sync_properties() #saving remotely modified data locally
 		properties, relays = cache_properties() #this func returns two dictionaries
 		print("SYNC DONE")
 		last_modified = os.path.getmtime(REMOTE_PROPERTIES)
+	
 	#doing relay tasks
-	for relay in relays:
-		print("updating relay", relay)
-		update_rl_arr(relay_ser, relay)
+	# for relay in relays:
+	# 	print("updating relay", relay)
+	# 	update_rl_arr(relay_ser, relay)
 

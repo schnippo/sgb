@@ -45,7 +45,8 @@ def update_auto_pwm():
 
 def send_update_sig(serial_object, _id, dutycycle):
 	serial_object.write(f"{_id},{int(dutycycle * 10.23)}".encode())
-
+	sleep(0.5)
+	print(serial_object.readline())
 
 
 
