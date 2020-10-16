@@ -152,13 +152,13 @@ def controls():
 
 				return render_template('controls.html', title='Controls',  response=[response])
 
-			elif fan_number == "3":
+			elif fan_number == "10":
 				update_prop_or_relay("pwm_turb", fan_value)
 				response = f"Updated Turbulence Fan in remote_properties to {fan_value}%"
 				print(response)
 				return render_template('controls.html', title='Controls',  response=[response])
 
-			elif fan_number == "1":
+			elif fan_number == "3":
 				update_prop_or_relay("pwm_fog", fan_value)
 				response = f"Updated Fog Fan in remote_properties to {fan_value}%"
 				print(response)

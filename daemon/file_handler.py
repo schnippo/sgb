@@ -27,20 +27,26 @@ def cache_properties():
 
 
 def get_pwm_changes(properties, remote_properties=REMOTE_PROPERTIES):
+	print("STARTING COMPARISON")
+	print(properties)
 	changes = {}
-	pin = 0
+	# pin = 0
 	for key in properties:
-		if key == "pwm_vent" or key == "pwm_fog" or key == "pwm_turb": # find one of the three keys.
-			local_val, remote_val = properties[key], get_prop_value(key, remote_properties)
-			if local_val != remote_val:
-				if key == "pwm_vent":
-					pin = 9
-				elif key == "pwm_turb":
-					pin = 10
-				elif key == "pwm_fog":
-					pin = 3
-				changes[key] = [pin, remote_val]
-		return changes
+		print(key)
+		# if key == "pwm_vent" or key == "pwm_fog" or key == "pwm_turb": # find one of the three keys.
+		# 	print("found", key, "with value", properties[key])
+		# 	local_val, remote_val = properties[key], get_prop_value(key, remote_properties)
+		# 	if local_val != remote_val:
+		# 		if key == "pwm_vent":
+		# 			changes[key] = [9, remote_val]
+		# 		elif key == "pwm_turb":
+		# 			changes[key] = [10, remote_val]
+		# 		elif key == "pwm_fog":
+		# 			changes[key] = [3, remote_val]
+		# 		changes[key] = [pin, remote_val]
+		# else:
+		# 	print("key", key, "didn't match")
+	return changes
 
 
 def save_props_and_relays(relays_to_save, properties_to_save, path=REMOTE_PROPERTIES):

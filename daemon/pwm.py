@@ -6,7 +6,7 @@ REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 
 from file_handler import get_prop_value, update_prop_or_relay, avg_lastNlines
 from dht_logger import get_at
-
+from time import sleep
 
 
 def update_auto_pwm():
