@@ -34,6 +34,7 @@ def save_props_and_relays(relays_to_save, properties_to_save, path=REMOTE_PROPER
 
 #key can be just a key for properties or the id for relays
 def update_prop_or_relay(key, newvalue, path=REMOTE_PROPERTIES):
+	print(f"updating {key} in {path}")
 	properties = {}
 	relays = {}
 	with open(path, "r") as f:
@@ -141,24 +142,24 @@ def controls():
 			if fan_number == "9":
 				# print("fan 9")
 				if fan_mode == 'manual':
-					update_prop_or_relay("pwm_mode", "manual")
-					update_prop_or_relay("pwm_dutycycle", fan_value)
+					update_prop_or_relay("vent_mode", "manual")
+					update_prop_or_relay("pwm_vent", fan_value)
 					response = f"Updating properties to manual control with {fan_value}% dutycyle."
 					print(response)
 				else:
-					update_prop_or_relay("pwm_mode", "auto")
+					update_prop_or_relay("vent_mode", "auto")
 					response = f"Updating properties to automatic control."
 					print(response)
 
 				return render_template('controls.html', title='Controls',  response=[response])
 
-			elif fan_number == "3":
+			elif fan_number == "10":
 				update_prop_or_relay("pwm_turb", fan_value)
 				response = f"Updated Turbulence Fan in remote_properties to {fan_value}%"
 				print(response)
 				return render_template('controls.html', title='Controls',  response=[response])
 
-			elif fan_number == "1":
+			elif fan_number == "3":
 				update_prop_or_relay("pwm_fog", fan_value)
 				response = f"Updated Fog Fan in remote_properties to {fan_value}%"
 				print(response)

@@ -2,10 +2,10 @@ LOCAL_PROPERTIES = "/home/pi/git/ssgb/daemon/local_properties"
 REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 
 from file_handler import cache_properties, sync_properties, update_prop_or_relay, get_pwm_changes
-from pwm import update_auto_pwm, send_update_sig
+from pwm import get_auto_pwm, send_update_sig
 from time import sleep
 import os, serial
-
+from serial_test import get_address
 
 
 
@@ -13,19 +13,34 @@ import os, serial
 
 
 last_modified = os.path.getmtime(REMOTE_PROPERTIES)
-relay_ser = serial.Serial("/dev/ttyACM0")
-pwm_ser = serial.Serial("/dev/ttyACM1")
-print("serial connections established")
+relay_ser = serial.Serial(get_address("relay_controller"))
+pwm_ser = serial.Serial(get_address("fan_controller"))
+print("* relay on", relay_ser.port)
+print("* pwm on", pwm_ser.port)
+
+
+print("* serial connections established")
 sync_properties()
-print("synced properties for the first time")
+print("* synced properties for the first time")
 properties, relays = cache_properties() #this func returns two dictionaries
 vent_counter, tries = 0,0
 
-pwm_start_sigs = {"3": 35, "10": 40, "9": 40}
+pwm_sigs_now = { # last Value is if it needs to change still
+	"pwm_fog": [3, 0, True],
+	"pwm_turb": [10, 0, True], 
+	"pwm_vent": [9, 0, True]
+	}
 
-for ID in pwm_start_sigs:
-	send_update_sig(pwm_ser, ID, pwm_start_sigs[ID])
-print("started the fans, should be running now")
+for fan in pwm_sigs_now:
+	if pwm_sigs_now[fan][2]:
+		pwm_sigs_now[fan][2] = False
+		response = send_update_sig(pwm_ser, pwm_sigs_now[fan][0], pwm_sigs_now[fan][1])
+		if response:
+			print(f"- success on {fan} with {pwm_sigs_now[fan][1]}%")
+		else:
+			print(response)
+
+print("* started the fans, should be running now")
 
 def update_rl_arr(serial_object, ID):
 	#expecting a key for a list as input that has the following format: [timer, ontime, offtime, state]
@@ -43,47 +58,38 @@ def update_rl_arr(serial_object, ID):
 def send_flip_token(serial_object,ID):
 	serial_object.write(ID.encode())
 
-asdfasdfasdfasdfasdf
 
+def update_fans():
+	for fan in pwm_sigs_now:
+			if pwm_sigs_now[fan][2]: # check if it needs to be changed
+					pwm_sigs_now[fan][2] = False
+					if send_update_sig(pwm_ser, pwm_sigs_now[fan][0], pwm_sigs_now[fan][1]):
+						print(f"- success on {fan} with {pwm_sigs_now[fan][1]}%")
 
 
 
 while True:
 	sleep(1)
-	# vent_counter += 1
+	vent_counter += 1
 	# print(vent_counter)
-	# if vent_counter >= 10:
-	# 	if update_auto_pwm() == True:
-	# 		print("automatically updated vent pwm")
-	# 		tries, vent_counter = 0,0
-	# 	elif update_auto_pwm() == "auto-mode is off":
-	# 		print("auto-mode is off, turn it on via web interface")
-	# 		tries, vent_counter = 0,0
-	# 	else:
-	# 		tries += 1
-	# 		print(f"dht-error, couldn't get temp, trying again next cycle, tries: {tries}")
-
-	#getting new properties in
-	
-	print("special thanks to wall-e")
+	if vent_counter >= 10:
+		result = get_auto_pwm()
+		if result != pwm_sigs_now["pwm_vent"][1] and result != False:
+			pwm_sigs_now["pwm_vent"] = [9, result, True]
 
 	if last_modified != os.path.getmtime(REMOTE_PROPERTIES):
+		last_modified = os.path.getmtime(REMOTE_PROPERTIES)
 		print("props have changed, sync process starting")
-		changed_pwm_sigs = get_pwm_changes(properties, REMOTE_PROPERTIES) #working with "properties" before it gets updated
-		print(f"changed_pwm_sigs: {changed_pwm_sigs}")
-		print(changed_pwm_sigs)
-		
-		if changed_pwm_sigs:
-			send_update_sig(pwm_ser, changed_pwm_sigs[0], changed_pwm_sigs[1])
-			print("sent update sigs")
-		
+		pwm_sigs_now = get_pwm_changes(pwm_sigs_now) #working with "properties" before it gets updated
+		# print(f"changed_pwm_sigs: {pwm_sigs_now}")
 		sync_properties() #saving remotely modified data locally
 		properties, relays = cache_properties() #this func returns two dictionaries
 		print("SYNC DONE")
-		last_modified = os.path.getmtime(REMOTE_PROPERTIES)
 	
-	#doing relay tasks
-	# for relay in relays:
-	# 	print("updating relay", relay)
-	# 	update_rl_arr(relay_ser, relay)
+	update_fans()		
+
+	# doing relay tasks
+	for relay in relays:
+		# print("updating relay", relay)
+		update_rl_arr(relay_ser, relay)
 

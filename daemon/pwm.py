@@ -6,47 +6,41 @@ REMOTE_PROPERTIES = "/home/pi/git/ssgb/web/remote_properties"
 
 from file_handler import get_prop_value, update_prop_or_relay, avg_lastNlines
 from dht_logger import get_at
+from time import sleep
 
 
+def get_auto_pwm():
+	if get_prop_value("vent_mode") == "manual":
+	    print("vent_mode is on manual, exiting..")
+	    return False
 
-def update_auto_pwm():
-	if get_prop_value("pwm_mode") == "manual":
-	    print("pwm_mode is on manual, exiting..")
-	    return "auto-mode is off"
-
-	opt_temp = int(get_prop_value("opt_temp"))
-	# opt_hum = get_prop_value("ah_threshold")
 	std_pwm = int(get_prop_value("std_pwm"))
+	opt_temp = int(get_prop_value("opt_temp"))
 	max_delta_t = int(get_prop_value("max_delta_t"))
-	# max_delta_h = get_prop_value("max_delta_h")
 	pwm_boost_t = 0
-
 	curr_temp = get_at()
-	# curr_temp = 23
 	if not curr_temp:
 		return False
-
 	delta_t = curr_temp - opt_temp #subtract the smaller from the greater (supposing that we need to cool down, the current temp is above the threshold)
 
+
 	if delta_t > 0: #only act if necessary
-	    pwm_boost_t = (delta_t * (100 - std_pwm) / max_delta_t ) #multiplies delta_t with a factor, that is based on how far i assume i need to go
-	    # print(f"pwm boost is {pwm_boost_t}")
+		pwm_boost_t = (delta_t * (100 - std_pwm) / max_delta_t ) #multiplies delta_t with a factor, that is based on how far i assume i need to go
+		new_pwm = min(100, round(std_pwm + pwm_boost_t, 2)) #dont go over 100%
+		return new_pwm
 	else:
-	    pwm_boost_t = 0
-	    # print(f"pwm_boost is 0, staying on {std_pwm}% pwm and exiting...")
-	    return True
+	    return std_pwm
 
-	new_pwm = min(100, round(std_pwm + pwm_boost_t, 2)) #dont go over 100%
-	# print(f"new pwm value is {new_pwm}%, writing to properties")
-
-	update_prop_or_relay("pwm_dutycycle", str(new_pwm), REMOTE_PROPERTIES) # write it to properties.
-	return True
+	
 
 
-def send_update_sig(serial_object, _id, dutycycle):
-	serial_object.write(f"{_id},{int(dutycycle * 10.23)}".encode())
+def send_update_sig(serial_object, ID, dutycycle):
+	payload = f"{ID},{int(float(dutycycle) * 10.23)}".encode()
+	# print(f"Payload is: '{payload}'")
+	serial_object.write(payload)
 	sleep(0.5)
-	print(serial_object.readline())
+	arduino_response = serial_object.readline()
+	return True if arduino_response == f"P{ID}\r\n" else arduino_response
 
 
 

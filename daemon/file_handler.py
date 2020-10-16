@@ -26,21 +26,20 @@ def cache_properties():
 		return [myproperties, myrelays]
 
 
-def get_pwm_changes(properties, remote_properties=REMOTE_PROPERTIES):
+def get_pwm_changes(current_pwm_sigs, remote_properties=REMOTE_PROPERTIES):
 	changes = {}
-	pin = 0
-	for key in properties:
-		if key == "pwm_vent" or key == "pwm_fog" or key == "pwm_turb": # find one of the three keys.
-			local_val, remote_val = properties[key], get_prop_value(key, remote_properties)
-			if local_val != remote_val:
-				if key == "pwm_vent":
-					pin = 9
-				elif key == "pwm_turb":
-					pin = 10
-				elif key == "pwm_fog":
-					pin = 3
-				changes[key] = [pin, remote_val]
-		return changes
+	for fan in current_pwm_sigs:
+		# print(fan)
+		local_val, remote_val = current_pwm_sigs[fan], get_prop_value(fan, remote_properties)
+		# print(f"{fan} old value: {local_val}, remoteval: {remote_val}")
+		if local_val != remote_val:
+			if fan == "pwm_turb":
+				changes[fan] = ["10", remote_val, True]
+			elif fan == "pwm_fog":
+				changes[fan] = ["3", remote_val, True]
+		else:
+			continue
+	return changes
 
 
 def save_props_and_relays(relays_to_save, properties_to_save, path=REMOTE_PROPERTIES):
@@ -87,9 +86,16 @@ def update_prop_or_relay(key, newvalue, path=REMOTE_PROPERTIES):
 
 def get_prop_value(prop, path=REMOTE_PROPERTIES):
 	properties = {}
-	lines = open(LOCAL_PROPERTIES, "r").readlines()
+	lines = open(path, "r").readlines()
 	for line in lines:
 		properties[line.split()[0]] = line.split()[1]
+	return properties[prop]
+
+def get_prop_value(prop, path=REMOTE_PROPERTIES):
+	properties = {}
+	with open(path, "r") as f:
+		for line in f.readlines():
+			properties[line.split()[0]] = line.split()[1]
 	return properties[prop]
 
 

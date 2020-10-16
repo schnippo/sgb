@@ -31,26 +31,27 @@ tmargin={2.5cm},bmargin = {2.5cm}]{geometry}
 \newpage
 % Ab jetzt Fliesstext
 \section{Vorwort}
-Dies ist der schriftliche Teil meiner Maturarbeit, bei welcher ich mich  mit der Konstruktion einer smarten \& solarbetriebenen Growbox auseinandersetze. Ich stelle hier vor allem die Probleme und Fragestellungen vor, welche mich während den einzelnen Phasen beschäftigten. Darauf folgen gelungene und gescheiterte Lösungsansätze. Ganz am Schluss werden im Glossar Begriffe erklärt.
+Dies ist der schriftliche Teil meiner Maturarbeit, bei welcher ich mich  mit der Konstruktion einer möglichst smarten Growbox auseinandersetze. Ich stelle hier vor allem die Probleme und Fragestellungen vor, welche mich während den einzelnen Phasen beschäftigten. Darauf folgen gelungene und gescheiterte Lösungsansätze. Ganz am Schluss werden im Glossar Begriffe erklärt, es sind nur ein paar, was bedeutet, dass ein gewisses KnowHow im techischen Bereich vorausgesetzt wird.
 
 \section{Erste Herangehensweise}
-Ich mag Petersilie, Solarzellen, Arduinos und Effizienz. Was ich nicht mag, ist es, mich jede Woche aufraffen zu müssen um meine Pflanzen zu giessen. Ausserdem möchte ich in die Ferien fahren können, ohne meinem Grossvater zur Last zu werden, da er normalerweise immer unsere Pflanzen giesst, wenn wir als Familie verreisen. Im Sommer 2019 passierte genau das, meine Cherietomaten wurden durch ihn am Leben gehalten, was ich sehr schätze. Doch es wird Zeit für eine Lösung. \\Die Lösung muss so autonom und ökologisch wie möglich sein. Ausserdem soll sie Pflanzen schnell wachsen lassen können, sie muss also gute Wachstumsbedingungen liefern. \\ Vorab kann ich schon sagen, dass etwa 85\% meines neu gelernten Wissens aus Internetportalen, welche sich mit Cannabiszüchtung beschäftigen, stammt. Auch meine Bauteile kommen praktisch ausschliesslich von 420-Onlineshops. 
+Ich mag Petersilie, Solarzellen, die Programmiersprache Python und meinen Laptop. Was ich nicht mag? Jede Woche meine Pflanzen zu giessen, oder mich diesbezüglich auf andere zu verlassen. Ausserdem möchte ich in die Ferien fahren können, ohne meinem Grossvater zur Last zu werden, da er normalerweise immer unsere Pflanzen giesst, wenn wir als Familie verreisen. Im Sommer 2019 passierte genau das, meine Cherrytomaten wurden durch ihn am Leben gehalten, was ich sehr schätze. Doch es wird Zeit für eine richtige Lösung. \\Die Lösung muss so autonom und ökologisch wie möglich sein. Ausserdem soll sie Pflanzen schnell wachsen lassen können, sie muss also gute Wachstumsbedingungen liefern. \\ Vorab kann ich schon sagen, dass etwa 85\% meines neu gelernten Wissens aus Internetportalen, welche sich mit Cannabiszüchtung beschäftigen, stammt. Auch meine Bauteile kommen fast ausschliesslich aus dieser Ecke.
+
 \subsection{Wachstumsbedingungen}
-Das Hauptziel in dieser Arbeit ist die Lebenserhaltung von Pflanzen und das setzt gewisse Umgebungsaspekte voraus.
-Auf die genauen Techniken und den  Aufbau wird im Kapitel \textit{Konstruktion} eingegangen.
+Das Hauptziel in dieser Arbeit ist die Lebenserhaltung von Pflanzen durch eine künstliche Umgebung. Pflanzen bergen gewisse Ansprüche und um die geht es in diesem Kapitel
+Auf die die ersten Konstruktionsversuche und die Herangehensweise wird im Kapitel \textit{Konstruktion} eingegangen.
 
 \subsubsection{Wasser}
-Meine Pflanzen brauchen Wasser für den Transport von Nährstoffen, für die Photosynthese und um den Zelldruck und die damit verbundene Stabilität zu erhalten - unbewässerte Pflanzen lassen bekanntlich ihre Köpchen hängen.
+Pflanzen brauchen Wasser für den Transport von Nährstoffen, für die Photosynthese und um den Zelldruck und die damit verbundene Stabilität zu erhalten - unbewässerte Pflanzen lassen bekanntlich ihre Köpchen hängen.
 
 
 \subsubsection{Licht}
-Licht ist die Energieform, welche sich die Pflanze bei der Photosynthese zunutze macht, um energiearme Baustoffe in Energiereiche zu verwandeln. Diese werden für den Bau und die Energiespeicherung verwendet. Auf den genauen Prozess wird hier nicht eingegangen.
+Licht ist die Energieform, welche sich die Pflanze bei der Photosynthese zunutze macht, um energiearme Baustoffe in Energiereiche zu verwandeln. Diese werden für den Bau und die Energiespeicherung verwendet. Auf den genauen Prozess gehe ich  nicht ein.
 
 \subsubsection{Luft}
-Luft, auch wenn eigentlich überall vorhanden, muss einen genügend grossen CO2-Anteil bergen, um der Pflanze die Photosynthese zu ermöglichen. Sie wird wie ebenfalls über die Blätter aufgenommen.
+Luft, auch wenn eigentlich überall vorhanden, muss einen genügend grossen CO2-Anteil bergen, um der Pflanze die Photosynthese zu ermöglichen. Sie wird wie das Licht am meisten über die Blätter aufgenommen.
 
 \subsubsection{Nährstoffe}
-Nebst der selbst hergestellten Glucose verwendet die Pflanze auch noch andere Bausteine um sich Struktur zu geben, diese können nicht aus der Luft gefischt werden, sondern werden in gelöster Form von den Wurzeln aufgenommen.
+Nebst der selbst hergestellten Glucose verwendet die Pflanze auch noch andere Bausteine um sich Struktur zu geben, diese können nicht aus der Luft gefischt werden, sondern werden in gelöster Form von den Wurzeln aufgenommen. Dazu zählen Elemente wie Phosphor, Kalium und Stickstoff.
 
 
 
@@ -58,28 +59,49 @@ Nebst der selbst hergestellten Glucose verwendet die Pflanze auch noch andere Ba
 
 
 
-\section{Konstruktion}
-Jetzt gehts ans Eingemachte, der Bauprozess fängt an. Als erstes muss ich herausfinden, welche Teile ich für meine Konstruktion brauche. Nach fast endloser Recherche habe ich das meiste beisammen. Ein guter Teil meines Materials hatte ich zum Glück schon zuhause.
+\section{Meine erste Herangehensweise}
+Ich kenne nun die Ansprüche meiner Pflanzen, aber wie baue ich eine Maschine, die denen Genüge tut? Dies ist der Kern der Arbeit, alles dreht sich darum. In diesem Kapitel stelle ich vor, wie ich mir die Konstruktion vorgestellt habe, während ich im Internet recherchiert habe. Zuerst brauche ich Bauteile, doch von wo nu- Ach ja genau, das Internet, es ist voller Möglichkeit, Wissen und unnötigem Zeugs, wussten Sie, dass es eine Bewässerungsmöglichkeit gibt, welche komplett auf Substrate wie Erde oder Tonpellets verzichtet? Nennt sich Hydroponik und ist recht simpel: Eimer nehmen, Wasser rein, Nährstoffe rein, Pflanze rein. Alles ganz fein. Doch es geht besser. Mehr dazu im nächsten Kapitel ;)
+
+Eine gute Menge Material fand ich in unserer Kellerwerkstatt, mein Vater ist ein Nerd, der gerne Elektroteile sammelt, zu meinem Glück. Hier eine Liste der wichtigsten Elemente.
 
 \subsection{Bauteile}
 \begin{description}
-\item[Grow Box] Die Hülle stellt meine Grow Box dar, sie besteht aus einem Plastikgewebe, das an der Innenseite mit Mylar beschichtet ist - es reflektiert zu einem hohen Bestandteil Licht. 
-\item[LEDs] Ich beleuchte meine Pflanzen künstlich und zwar mit zwei 50 Watt LEDs. Beide sind auf die für die Pflanze essentiellen Lichtspektren eingestellt, was sich für das menschliche Auge als ein pinkes Helligkeitswunder herausstellt - sie schmerzen, ich hätte besser nicht reingeschaut..
-\item[Fogger] Ein Wundergerät, es macht aus flüssigem Wasser Nebel. Damit kann ich die Wurzeln über die Luft mit Wasser und Nährstoffen versorgen.
-\item[Wasserbecken] Hornbach hat ein beachtliches Sortiment an \textit{Zementmischeimern}.
-\item[Sensoren] Ich habe mehrere Temparatur- und Luftfeuchtigkeitssensore im Internet bestellt.
-\item[Microcontroller] Die meisten Microcontroller, namentlich Arduinos und einen Raspberry Pi hatte ich dank meinem \textit{Geekvater} schon zuhause
+\item[Grow Box] Die Hülle stellt meine Grow Box dar, sie besteht aus einem Plastikgewebe, das an der Innenseite mit Mylar beschichtet ist - es reflektiert zu einem hohen Bestandteil Licht. Sie gibt Form und ermöglicht es den Pflanzen, ein eigenes kleines Klima zu errichten, eine kleine Ökosphäre sozusagen.
+\item[LEDs] Ich beleuchte meine Pflanzen künstlich mit zwei 50 Watt LEDs. Beide sind auf die für die Pflanze essentiellen Lichtspektren eingestellt, was sich für das menschliche Auge als ein pinkes Helligkeitswunder herausstellt - sie schmerzen, ich hätte besser nicht reingeschaut..
+\item[Fogger] Ein Wundergerät, es macht aus flüssigem Wasser Nebel. Damit kann ich die Wurzeln über die Luft mit Wasser und Nährstoffen versorgen, ich habe es vorhin schon angedeutet, mehr dazu gleich ;)
+\item[Wasserbecken] Hornbach hat ein beachtliches Sortiment an \textit{Zementmischeimern}, einen davon habe ich erworben.
+\item[Sensoren] Um zu wissen, wie fest ich Lüften muss, brauche ich Sensoren. Ausserdem sind sie unglaublich billig.
+\item[Microcontroller] Die meisten Microcontroller, namentlich Arduinos und einen Raspberry Pi hatte ich dank meinem \textit{Geekvater} schon zuhause.
 \item[Sonstige Elektronik] Kleinere Bauteile für die verschiedenen Schaltungen hat ebenfalls die Kellerwerkstatt meines Vaters beigesteuert. Darunter befinden sich vor allem Drähte, Kabel, Widerstände,  Transistoren und Dioden.
-\item[Lüfter] Mein Vater sammelt gerne Elektroschrott, aus seiner CPU-Lüftersammlung konnte ich vier DC-Lüfter ergattern.
-\item[Pflanze] Das ganze Projekt würde ohne eine Pflanze gar nicht funktionieren. Beim Gartenmeier Center bescherte ich mich mit Tomatenstecklingen.
+\item[Lüfter] Aus der edlen CPU-Lüftersammlung meines Vaters konnte ich vier DC-Lüfter ergattern.
+\item[Pflanze] Das ganze Projekt würde ohne eine Pflanze gar nicht funktionieren. Beim Gartenmeier Center bescherte ich mich mit Tomatenstecklingen, zweimal, denn das Projekt hat länger gedauert als angenommen, wodurch der erste Satz Stecklinge leider dran glauben musste.
 \item[Nährstofflösung/Dünger] Mit einer Universalnährstofflösung (die sogar den richtigen pH-Wert mit sich bringt) kann ich nichts falsch machen - Jackpot.
-\item[Netcups und Steinwolle] In der gleichen Bestellung erwarb ich auch kleinere Sachen wie Netcups und Steinwolle, Sie dienen den Pflanzen als Halterung.
 \end{description}
 
+\subsection{Bewässerung}
+Die Recherche dauerte lange, vorallem weil ich nicht alles auf einmal bestellte. Viele Dinge ergaben erst im Laufe des Prozesses Sinn. Von der Hydroponik wusste ich schon vorher und durch Zufall stiess ich auf Fogponics, was sich als recht eleganten Ansatz herausstellt. Man zählt Fog-, respektive Aeroponik als eine Unterkategorie der Hydroponik. Konkret geht es dabei um die Bewässerung der Pflanze, während sich ihre Wurzeln \textit{in der Luft befinden}, also weder im Wasser, noch in einem Substrat. Düsen werden gerne in grossen, industriellen Gewächshäusern verwendet, doch das baue ich nicht und nach endloser Recherche musste ich mir eingestehen, dass Düsenn einfach keine Lösung sind. Fogponics sind genial, man nimmt den Fogger (ein recht schweres, wasserfestes Gerät mit fünf Porzellanscheiben), setzt ihn ins Wasser und schaltet ein. Die Porzellanscheiben vibrieren mit 1.7MHz, also etwa etwa alle 0.6 Microsekunden einmal, und spicken somit feinste Wassertröpchen in die Luft - Ein Nebel entsteht. Wenn im Wasser dann noch die essentiellen Nährstoffe gelöst sind, hat man einen Nährstoffnebel! Die Tröpfchen sind ca. ein Zweihundertstel Millimeter, was es ihnen ermöglicht, direkt in die Wurzeln aufgenommen zu werden, ohne dabei an der Wurzel zu kondensieren. Eine so direkte Nährstoffaufnahme ist nur bei Tröpfchen in dieser Grössenordnung möglich. Kleiner Seitenfakt: Beim Einatmen von solch kleinen Tröpfchen muss man Husten, denn sie ähneln mehr einer Art Staub als Wasser. Das ist wahrscheinlich auf ihre eingeschränkte Kondensfähigkeit zurückzuführen, was sie für uns \textit{nass} machen würde. Diese Technologie wurde durch die NASA markttauglich gemacht und wird heutzutage auch in der Raumfahrt eingesetzt. Ich verwende es nun um Pflanzen \textit{intrawurzulös} mit trockenem Wasser zu bewässern, auch gut. \n Der Fogger muss nicht 100\% der Zeit an sein. Es reicht ein Zyklus von 10s an, 20s aus.
 
-Die Recherche dauerte lange, vorallem weil ich nicht alles auf einmal bestellte. Viele Dinge ergaben erst im Laufe des Prozesses Sinn. So wollte ich die Wurzeln z.B. erst  mit Düsen besprühen, doch als ich merkte, dass der Bau eines solchen Systems \textit{giga-aufwändig} ist, musste ich meinen Horizont erweitern.
-Durch Zufall stiess ich auf Fogponics, was sich als recht eleganten Ansatz herausstellt.
-Die Lüfter waren ebenfalls ein lustiges (\textit{trockenes, ironisches Lachen...}) Teilprojekt: Um ein Lüftungssystem zu bauen, braucht man offensichtlich einen Lüfter, am besten gleich mehrere. Es gilt zwischen EC- und DC-Lüftern zu unterscheiden, wobei EC-Lüfter generell leiser und energieeffizienter sind. Naheliegenderweise hätte ich gerne einen Lüfter der EC-Gattung, doch da mein Vater wie schon erwähnt ein leidenschaftlicher Sammler jeglichen Elektroschrotts ist, konnte ich mich einfach im Keller bedienen.
+HIER QUERSCHNITT EINFÜGEN, STICHWORTE: EIMER, FOGGER, WASSER, NEBEL, WURZELN, DECKE, FOGFAN
+
+
+\subsection{Belüftung..}
+Die Lüfter waren ebenfalls ein lustiges (\textit{trockenes, kaltes Lachen...}) Teilprojekt: Um ein Lüftungssystem zu bauen, braucht man offensichtlich einen Lüfter, am besten gleich mehrere. Es gilt zwischen EC- und DC-Lüftern zu unterscheiden, wobei EC-Lüfter generell leiser und energieeffizienter sind. Naheliegenderweise hätte ich gerne einen Lüfter der EC-Gattung, doch da mein Vater wie schon erwähnt ein leidenschaftlicher Sammler jeglichen Elektroschrotts ist, konnte ich mich einfach im Keller bedienen. Um es jetzt kurz zu fassen: Bei der Belüftungskonstruktion habe ich meine Seele verloren, es ist das Teilprojekt mit dem meisten Aufwand, im Nachhinein habe ich mich wirklich gefragt, ob es dieser Aufwand nicht die 120Fr. wert gewesen wäre, was so ein EC-Lüfterchen kostet. Ich erläutere das mal: Einen DC-Lüfter (Gleichstrom) runterzuregeln, so dass er nicht volle Pulle lüftet, ist eine Wissenschaft für sich, ich bin recht gut geworden, doch zu welchem Preis? Einfach die Spannung runterzudrehen geht nicht wirklich, sie ist nicht proportional zur Umdrehungszahl. Was bleibt mir also? Ganz einfach - \textit{Pulsweitenmodulation}. Hier das Prinzip: Man versorgt den Lüfter entweder mit 12V oder mit 0V, aus dem zeitliche Verhältnis zwischen diesen beiden Zuständen erfolgt die effektive Lüfterleistung. Ist der \textit{Puls} also 75\% eines ganzen Zyklus', läuft der Lüfter auch mit 75\%, klingt einfach, ist es aber nicht. Die Krux liegt in der Frequenz dieser Zyklen, es macht nämlich einen Unterschied man ihn für 7.5 mit 12V versorgt, dann 2.5s Pause macht oder ob diese Zyklen mit einer Frequenz von 40'000Hertz aufgetischt werden. Beim ersten Beispiel stockt der Lüfter ja praktisch, doch beim Zweiten wird die Energie so unglaublich schnell an und abgestellt, dass der Motor gar nicht mehr zwischen An und Aus unterscheiden kann. Voilà, Pulweitenmodulation. \n Die Theorie mag noch so schön sein, aber wenn die Umsetzung einem die halbe Seele abverlangt ist es trotzdem \textit{recht} anstrengend. Hier die technische Herausforderung: Die von mir verwendeten Microcontroller besitzen eine PWM-Funktion, jedoch hat diese eine Maximalfrequenz von 1kHz, also 1000Hertz und das ist zu langsam, denn dadurch \textit{kann} der DC-Motor noch zwischen An und Aus unterscheiden und es kommt zu hörbaren Vibrationen, was einem nach 2min recht auf den Wecker schlägt. Es muss demnach eine andere Lösung her. Der Arduino (der Microcontroller) ist rein technisch gesehen dafür ausgerüstet, höhere Frequenzen zu takten, ein gutes Beispiel dafür ist der Prozessor, der, wenn er auf einem Kilohertz laufen würde, \textit{schnarchend} langsam wäre. Dem ist natürlich nicht so. Und auch wenn der eingebaute ATmega32U4 Prozessor mit seinen 16MHz das weitaus schnellste Glied auf der Platine ist, weilen die internen Timer-Register nicht viel hinten - und genau die will ich verwenden. Die C++-Bibliothek \textit{TimerOne.h} beherbergt die nötigen Werkzeuge. Man kann sich einen eigenen Timer stellen, sagen wir auf 25 Mikrosekunden, und wenn immer dieser Timer abläuft, schalten wir entweder an oder aus. So ungefähr lautet das Prinzip, effektiv existiert aber schon eine eigens dafür entwickelte Funktion. Man muss nur den Pin angeben, die Frequenz vorher eingestellt haben und sagen, welches Verhältnis man wünscht. Perfekt für meine Ansprüche. 
+OSZILLOSKOP EINTRAG
+Soviel zum Softwareteil, der Hardwareteil ist auch eine rechte Herausforderung. Ich brauche für jeweils vier Lüfter eine Schaltung, welche den Strom auf einer so hohen Frequenz an- und ausschalten kann. Viermal. Also gut, Platine her, Lötkolben und Oszilloskop raus und ab in die Werkstatt. Ich habe für diese Schaltung locker einen Monat gebraucht, natürlich war ich nicht jeden Abend dran, doch die alleinige Dauer, welche ich vor dem Oszilloskop verbracht habe, um die richtigen Verhältnisse zu sehen, hat mir die Seele wahrlich etwas betäubt. Man steht so oft vor einem Problem und weiss nicht mal \textit{wo} das Problem liegt, ist es die Schaltung? Habe ich ein paar Lötdrähte nicht gut genug verbunden, spinnt die Software oder ist mir der Transistor schon wieder durchgebrannt? Uff. Ich erspare Ihnen weitere Details, was ich schlussendlich in den Händen halte ist recht genial: Eine kleine Tupperwarebox mit einer Platine drin. Aus den Seiten kommen insgesamt 6 Kabel: Ein USB-Kabel, welches den auf die Platine gesteckten Arduino mit der zentralen Recheneinheit verbindet, die vier Kabel für die vier Lüfter und ein 12V-Stromkabel für die Lüfter. \n Die soeben erwähnte Recheneinheit ist das Gehirn, meiner Konstruktion, mehr dazu später. Zum Schluss noch ein kleiner Hinweis; Ich werde, wenn von nun an von der soeben Beschrieben Schaltung für die Lüfter die Rede ist, vom \textit{PWM-Controller} sprechen.
+
+\subsection{Belichtung}
+Die Belichtung ist um unser allen Dankbarkeit um einfaches simpler. Nichtsdestotrotz muss ich kurz ausholen:\n Um sowohl die Belichtung, als auch die Bewässerung zu steuern, brauche ich eine Schaltung, welche mal an und mal aus geht - und das bitte in einem von mir vorgegebenen Takt. Swoosh, geboren ist der \textit{Relay-Controller}! Diese kleine, graue Box, ist in der Lage, jede ihrer oben angebrachten Steckdosen individuell anzusteuern, die Zeitdaten teile ich ihr ebenfalls über ein USB-Kabel mit. Darin eingesteckt sind die zwei Stecker der beiden LED-\textit{Laser} (Kleiner Witz, Sie erinnern sich an den versteckten Warnhinweis bezüglich dem pinken Helligkeitswunder?) und der des Foggers/der Nebelmaschine. Dieses Stück Technik hat mir natürlich auch einen guten Teil der Seel abverlangt, doch ehrlich gesagt ging es bei diesem Teilprojekt um einiges fröhlicher zur Sache als beim PWM-Controller. Ich denke, es liegt am den vier kleinen Relay, welche jedesmal ein kleines Klickgeräusch machen, wenn sie umschalten.  \n Wie Sie merken, ist die Belichtung echt keine Hexerei, die LEDs gehören einfach eingesteckt und vorprogrammiert und es läuft. Etwas kleines gibt es jedoch noch. Ein solcher LED-Schweinwerfer kostet 65Fr und ist rein von der Leistung gesehen (50W) für meine zu belichtende Grundfläche hell genug. Warum habe ich also zwei davon? Erstens sehen diese LEDs total schön aus - sie haben auch so ein cooles Gehäuse, sollten Sie mal sehen und andererseits hat mich - ob relevant oder nicht - die Frage beschäftigt, wie lang diese Babies denn so halten, das Internet gibt keine genaue Angabe, deshalb habe ich mir, so genial wie ich bin, überlegt, dass ich, wenn ich den Arbeitsaufwand auf zwei verschiedene Lampen aufteile, die Haltbarkeit von diesem Teil der Machine wohl doppelt so hoch sein muss. Nebenbei ergibt sich die Möglichtkeit, beide aufs Mal laufen zu lassen, wovon ich mir einen Wachstumsboost der Pflanzen versprechen, wir werden sehen.
+
+
+
+
+
+
+
+
+
+
+
 Die Nährstoffversorgung verdient sich hier ebenfalls einen Platz, denn auch sie hat mir nicht wenig Kopfschmerzen bereitet: Im Internet ist das Angebot an \textit{Nutrientsolution-DIYs} so überwältigend - mit so vielen kleinen Details - dass man sich schnell verliert. Im Gartenmeiercenter Dürnten hat mir der Inhaber Herr Meier persöhnlich zu einer guten Lösung verholfen; Universaldünger mit ph-Anpassung. Es sind alle Nährstoffe vorhanden und die miteingebaute pH-Downlösung verwandelt Hahnenwasser in Regenwasser, was dem von Pflanzen bevorzugten pH-Wert von ca. 5.5 entspricht. Im Endeffekt eine Set&Forget-Lösung für dieses Problem, ich bin zufrieden.
 
 
@@ -109,13 +131,18 @@ Die Nährstoffversorgung verdient sich hier ebenfalls einen Platz, denn auch sie
 \section{SWAP}
 
 
+Glossar:
+CPU
+Timer-Register
+Relay
+Transistor
+
+
+
+
+
 Alle haben es in dieser Schule gelernt, einige schon im U1; Pflanzen brauchen Wasser, Luft, Licht und Nährstoffe für richtiges Wachstum. Die ersten drei sind notwendig für die Photosyntese. Ausserdem ist auch ein ädequates Klima von grosser Bedeutung; Eine Temperatur von 25-35°C und nicht zu trockene oder zu feuchte Luft.
 
-
-
-Das Wasser erhalten meine Pflanzen durch eine Technologie namens Aeroponik. Ich verwende einen sogenannten \textit{Fogger/Nebulizer}. Durch fünf kleine Porzellanscheiben, welche mit 1.9MHz vibrieren katapultiert er Wasserteilchen in die Luft. Der daraus entstehende Nebel verteilt sich im Behälter und wird von den Wurzeln aufgenommen. Die Wasstertröpfchen haben im Mittel eine Grösse von fünf Mikron, also ein Zweihundertstel  Millimeter. Je kleiner die Tröpchen sind, desto besser werden sie von den Wurzeln aufgenommen - Fünf Mikron sind sehr klein, was diese Bewässerungsmethode äusserst effizient macht.
-
-Da die Growbox nicht draussen steht und sie auch über das recht nützliche Attribut einer Decke verfügt, bin ich gezwungen, meine Pflanzen künstliche zu beleuchten. Nach kurzer Recherche habe ich mich für LED-Lampen entschieden; Sie sind günstig, effizient und werden somit auch nicht zu heiss.\\
 
 Das ist äusserst nützlich, denn somit absorbieren die Wände kein Licht und heizen sich auf, sondern das Licht, das nicht direkt auf die Blätter trifft, wird weiter umherreflektiert, bis es schliesslich beim Blatt ankommt. 
 

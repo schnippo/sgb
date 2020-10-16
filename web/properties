@@ -1,8 +1,1 @@
-ah_threshold -
-at_threshold 22
-max_delta_h -
-max_delta_t 3
-std_pwm 40
-pwm_dutycycle 55
-auto_update_reference 10
-pwm_mode auto
+hello

@@ -5,7 +5,7 @@ relay 4 0 12 51 on
 opt_temp 12
 max_delta_t 11
 std_pwm 21
-pwm_vent 55
-pwm_mode auto
-pwm_fog 50
-pwm_turb 40
+vent_mode auto
+pwm_vent 0
+pwm_fog 0
+pwm_turb 0
