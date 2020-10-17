@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.16)  17 OCT 2020 11:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.16)  17 OCT 2020 11:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -507,12 +507,23 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 \openout3 = `ssgb.ist'.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ssgb.toc)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ssgb.toc
+Overfull \hbox (14.98866pt too wide) in paragraph at lines 5--5
+ [] []\OT1/cmr/bx/n/12 Motivation K[]ONNTE ICH VER-SCHIE-BEN, UM DEN TRO-CKENEN
+, TECH- 
+ []
+
+)
 \tf@toc=\write5
 \openout5 = `ssgb.toc'.
 
- [1] [2] [3] [4]
-Overfull \hbox (34.36057pt too wide) in paragraph at lines 114--117
+ [1]
+Overfull \hbox (8.66669pt too wide) in paragraph at lines 64--64
+[]\OT1/cmr/bx/n/17.28 Motivation K[]ONNTE ICH VER-SCHIE-BEN, UM DEN
+ []
+
+[2] [3] [4]
+Overfull \hbox (34.36057pt too wide) in paragraph at lines 121--124
 \OT1/cmr/m/n/12 Die L[]ufter wa-ren eben-falls ein lus-ti-ges (\OT1/cmr/m/it/12
  tro-ckenes, kal-tes La-chen...\OT1/cmr/m/n/12 ) Teil-pro-jekt: Um ein L[]uftun
 gssystem
@@ -536,7 +547,7 @@ cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
 2.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on ssgb.pdf (10 pages, 104272 bytes).
+Output written on ssgb.pdf (10 pages, 105414 bytes).
 PDF statistics:
  66 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream

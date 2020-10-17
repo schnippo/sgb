@@ -53,28 +53,42 @@ description = {Elektronisches Bauteil mit 3 Pins. Wird gebraucht, um Stromflüss
 \tableofcontents
 \newpage
 % Ab jetzt Fliesstext
-\section{Vorwort}
-Dies ist der schriftliche Teil meiner Maturarbeit, bei welcher ich mich  mit der Konstruktion einer möglichst smarten Growbox auseinandersetze. Ich stelle hier vor allem die Probleme und Fragestellungen vor, welche mich während den einzelnen Phasen beschäftigten. Darauf folgen gelungene und gescheiterte Lösungsansätze. Ganz am Schluss werden im Glossar Begriffe erklärt, es sind nur ein paar, was bedeutet, dass ein gewisses KnowHow im techischen Bereich vorausgesetzt wird.
+\section{Einleitung}
+Dies ist der schriftliche Teil meiner Maturarbeit, bei welcher ich mich  mit der Konstruktion einer möglichst smarten Growbox auseinandersetze. Ich stelle hier so viel möglich und so wenig wie nötig alle meine Gedanken vor, welche mich während dieser Zeit motivierten oder plagten. Angefangen bei der Idee selbst, über die pflanzlichen Anforderungen, weiter zu den drei Kernelementen des Konstrukts bis hin zum esten Webserver, ich verhoffe mir, Ihnen einen möglichst nahen Einblick in meine letzten paar Monate zu geben.
 
-\subsection{Ping! Die Idee ist da.}
-Ich mag Petersilie, Solarzellen, die Programmiersprache Python und meinen Laptop. Was ich nicht mag? Jede Woche meine Pflanzen zu giessen, oder mich diesbezüglich auf andere zu verlassen. Ausserdem möchte ich in die Ferien fahren können, ohne meinem Grossvater zur Last zu werden, da er normalerweise immer unsere Pflanzen giesst, wenn wir als Familie verreisen. Im Sommer 2019 passierte genau das, meine Cherrytomaten wurden durch ihn am Leben gehalten, was ich sehr schätze. Doch es wird Zeit für eine richtige Lösung. \\Die Lösung muss so autonom und ökologisch wie möglich sein. Ausserdem soll sie Pflanzen schnell wachsen lassen können, sie muss also gute Wachstumsbedingungen liefern. \\ Vorab kann ich schon sagen, dass etwa 85\% meines neu gelernten Wissens aus Internetportalen, welche sich mit Cannabiszüchtung beschäftigen, stammt. Auch meine Bauteile kommen fast ausschliesslich aus dieser Ecke.
+\subsection{Idee}
+Mögen Sie Tomaten? Ich tue es, im Sommer 2019 habe ich meine eigenen gezüchtet, direkt auf meinem Balkon. Sie stellten sich als recht gut gereift heraus. Allerdings plagte es mich, während des vierwöchigen Korsika-Urlaubs die Verantwortung bezüglich der Bewässerung abzugeben. Nicht dass ich gerne selbst Pflanzen bewässere, klar es hat durchaus etwas magisches an sich, doch nein, ich in faul. Magisch faul. Faul lässt es sich am besten clever leben, ergo: Es muss eine richtige Lösung her. Ich will in den Urlaub fahren können, ohne die Verantwortung meiner Stecklinge abgeben zu müssen, aber ich will mir auch nicht die ganze Zeit Sorgen machen müssen. Ich will sozusagen den \textit{Föifer} und \textit{s'Weggli}. Zur Motivation komme ich erst im nächsten Kapitel, doch lassen Sie mich Ihnen eins versichern: Das Internet kann sehr inspirierend wirken. Lange Rede, kurzer Sinn - Ich will Tomaten essen, ohne mich um Sie kümmern zu müssen. Sie sollen wachsen, aber ohne meine Bemühungen. Klar doch, eine Maschine muss her! Eine solche, mit der man dem Tomätchen die perfekten Wachstumsbedingunen geben kann, ohne sich auch nur darum zu bemühen. \\ Das mit der Bemühung ist so ein Thema, denn zuerst will die Maschine gebaut werden. Ich stelle sie mir so vor: Eine Growbox in meinem Zimmer mit elektronischer Beleuchtung, automatischer Bewässerung und einem sich selbstregulierenden Belüftungssystem. Klingt gewagt, aber nicht unmachbar. Ich beweise es Ihnen.
+
+\section{Ziel und Abgrenzung}
+\subsection{Das Konstrukt}
+Im praktischen Teil konstruiere ich eine Maschine, welche mir Esspflanzen züchtet. Sie soll die drei Hauptaufgaben übernehmen, welche ich als Belüftung, Beleuchtung und Bewässerung identifizere. Sie soll selbst gebaut sein, d.h. keine fremde Regelungstechnik wie Zeitstromschalter oder Thermostaten. Die finanzierung erfolgt selbst. Ich werde die Bauteile selbst kaufen/zusammenbauen/konstruieren/programmieren und das dazugehörige Wissen beziehe ich grösstenteils aus dem Internet. Ich mache auch von der Erfahrung meines Vaters gebrauch, er steht mir in besonders abstrakten Problemstellungen bei.
+\subsection{Schriftlicher Teil}
+Hier im schriftlichen Teil versuche ich, wie in der Einleitung bereits erwähnt, dem Leser einen möglichst direkten Einblick in die Lösungsfindung der Teilprojekte zu bieten. Was ich nicht vorhabe, ist es, Ihnen Python, C++ oder Löten beizubringen. Sie werden hin und wieder auf Codesnippets treffen, bei denen es um die Funktion des jeweiligen Ausschnitts geht. Aus all diesen Gründen ist es von Vorteil, wenn Sie schon etwas mit Technik zu tun hatten. Nebst dem Arbeitsprozess schildere ich im nächsten Kapitel auch meine Motivation, dieses Projekt nicht \textit{nur} als Maturarbeit zu verfolgen. Das Kapitel \textit{Arbeitsprozess} ist als Hauptteil des Kommentars gedacht. Anschliessend werde Ich mit möglichst wenigen aber klaren Sätzen das \textit{Konstrukt} selbst noch kurz erklären, wie es funktioniert, wo die Tücken liegen und worauf ich besonders Stolz bin. Im Kapitel \textit{Perspektiven} gehe ich auf alles ein, was mich rund um die Arbeit beschäftigte. Zu guter Letzt ziehe ich ein Fazit und bedanke mich bei allen Menschen, welche mir geholfen haben, mein Vorhaben in die Realität umzusetzen.
 
 
-\section{Wachstumsbedingungen}
-Das Hauptziel in dieser Arbeit ist die Lebenserhaltung von Pflanzen durch eine künstliche Umgebung. Pflanzen bergen gewisse Ansprüche und um die geht es in diesem Kapitel
-Auf die die ersten Konstruktionsversuche und die Herangehensweise wird im nächsten Kapitel eingegangen.
+\section{Motivation KÖNNTE ICH VERSCHIEBEN, UM DEN TROCKENEN, TECHNISCHEN TEIL AUFZUFRISCHEN}
+\subsection{Was mich inspiriert}
+Ich verbringe (zu) viel Zeit auf YouTube. Dort beriesle ich mich Videos, welche mich nicht selten recht inspirieren, eine Gattung davon sind alle Videos, welche sich mit Offgrid-Versorgungssystemen beschäftigen, also der Nahrungs-/Energieversorgung eines Lebensraums ohne am Hauptnahrungs-/energienetz angeschlossen zu sein. Dieses Autarksein fasziniert mich. Des weiteren stiess ich vor etwa 10 Monaten auf den Kanal von Jeb Gardener. Ich fasse die Gemeinsamkeiten seiner Videos im folgenden Satz zusammen: Verrückter Gärtner züchtet mit komplett unkonventionellen und (laut einigen Stimmen seitens des \textit{traditionellen Gärtnermilieus}) ethisch kritischen Methoden Pflanzen. Seine Bewässerungsmethoden sind überaus selten traditionell, bedeutet, dass er fast immer auf Erde verzichtet. Er stellt die Pflanzen direkt ins Wasser. Beleuchtet wird künstlich, mit pinken LEDs und die Nährstoffe sind synthetisiert und werden einfach ins Wasser geworfen, woe sie sich auflösen. Konventionalität interessiert ihn nicht. Dazu kommt noch, und das ist fast das Beste, dass seine Videos durch die musikalisch Begleitung von epischer Orchestermusik eine fast zerreissende Spannung erreichen. Stellen Sie sich einen durchgeknallten Gärtner vor, der von einem Streichorchester begleitet, Wurzeln filmt.
 
-\subsection{Wasser}
+Papa, Segeln, Offgrid, Homestead, Rob Greenfield, Jeb Gardener, Solar, Tinkering.
+Ich mach das nicht \textit{nur} als Maturarbeit
+
+
+\section{An die Arbeit}
+\subsection{Wachstumsbedingungen}
+Das Hauptziel in dieser Arbeit ist die Lebenserhaltung von Pflanzen durch eine künstliche Umgebung. Pflanzen bergen gewisse Ansprüche und um die geht es in diesem Kapitel.
+
+\subsubsection{Wasser}
 Pflanzen brauchen Wasser für den Transport von Nährstoffen, für die Photosynthese und um den Zelldruck und die damit verbundene Stabilität zu erhalten - unbewässerte Pflanzen lassen bekanntlich ihre Köpchen hängen.
 
 
-\subsection{Licht}
+\subsubsection{Licht}
 Licht ist die Energieform, welche sich die Pflanze bei der Photosynthese zunutze macht, um energiearme Baustoffe in Energiereiche zu verwandeln. Diese werden für den Bau und die Energiespeicherung verwendet. Auf den genauen Prozess gehe ich  nicht ein.
 
-\subsection{Luft}
+\subsubsection{Luft}
 Luft, auch wenn eigentlich überall vorhanden, muss einen genügend grossen CO2-Anteil bergen, um der Pflanze die Photosynthese zu ermöglichen. Sie wird wie das Licht am meisten über die Blätter aufgenommen.
 
-\subsection{Nährstoffe}
+\subsubsection{Nährstoffe}
 Nebst der selbst hergestellten Glucose verwendet die Pflanze auch noch andere Bausteine um sich Struktur zu geben, diese können nicht aus der Luft gefischt werden, sondern werden in gelöster Form von den Wurzeln aufgenommen. Dazu zählen Elemente wie Phosphor, Kalium und Stickstoff.
 \newpage
 
@@ -83,7 +97,7 @@ Nebst der selbst hergestellten Glucose verwendet die Pflanze auch noch andere Ba
 
 
 
-\section{Meine erste Herangehensweise}
+\subsection{Wie weiter?}
 Ich kenne nun die Ansprüche meiner Pflanzen, aber wie baue ich eine Maschine, die denen Genüge tut? Dies ist der Kern der Arbeit, alles dreht sich darum. In diesem Kapitel stelle ich vor, wie ich mir die Konstruktion vorgestellt habe, während ich im Internet recherchiert habe. Zuerst brauche ich Bauteile, doch von wo nu- Ach ja genau, das Internet, es ist voller Möglichkeit, Wissen und unnötigem Zeugs, wussten Sie, dass es eine Bewässerungsmöglichkeit gibt, welche komplett auf Substrate wie Erde oder Tonpellets verzichtet? Nennt sich Hydroponik und ist recht simpel: Eimer nehmen, Wasser rein, Nährstoffe rein, Pflanze rein. Alles ganz fein. Doch es geht besser. Mehr dazu im nächsten Kapitel ;)
 
 Eine gute Menge Material fand ich in unserer Kellerwerkstatt, mein Vater ist ein Nerd, der gerne Elektroteile sammelt, zu meinem Glück. Hier eine Liste der wichtigsten Elemente.
@@ -137,6 +151,9 @@ Wie genau bin ich wann vorgegangen? Auf diese Frage gibt es viele Antworten, hie
 
 
 
+\section{Technische Hintergründe}
+\subsection{Ganz von vorn.}
+Arduinos.
 
 
 
@@ -150,12 +167,11 @@ asdf
 asdf
 
 
-\section{Technische Hintergründe}
-\subsection{Ganz von vorn.}
-Arduinos.
+\section{Fazit}
 
 
-
+\section{Danke sagen}
+Vielen Dank Papa für deine unendlich ansteckende Begeisterung für die Materie der Technik.
 
 
 
@@ -186,8 +202,6 @@ Das ist äusserst nützlich, denn somit absorbieren die Wände kein Licht und he
 
 
 
-\section{Danke sagen}
-Vielen Dank Papa für deine unendlich ansteckende Begeisterung für die Materie der Technik.
 
 %Literaturverzeichniss ins Inhaltsverzeichnis einfügen
 \addcontentsline{toc}{section}{Glossar}

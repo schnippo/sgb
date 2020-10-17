@@ -1,26 +1,31 @@
 \babel@toc {ngerman}{}
-\contentsline {section}{\numberline {1}Vorwort}{2}%
-\contentsline {subsection}{\numberline {1.1}Ping! Die Idee ist da.}{2}%
-\contentsline {section}{\numberline {2}Wachstumsbedingungen}{2}%
-\contentsline {subsection}{\numberline {2.1}Wasser}{2}%
-\contentsline {subsection}{\numberline {2.2}Licht}{2}%
-\contentsline {subsection}{\numberline {2.3}Luft}{2}%
-\contentsline {subsection}{\numberline {2.4}Nährstoffe}{3}%
-\contentsline {section}{\numberline {3}Meine erste Herangehensweise}{4}%
-\contentsline {subsection}{\numberline {3.1}Hornbach, Cannabis-Shops und mein Keller}{4}%
-\contentsline {subsection}{\numberline {3.2}Trockenes Wasser}{5}%
-\contentsline {subsection}{\numberline {3.3}Belüftung..}{5}%
-\contentsline {subsection}{\numberline {3.4}Es soll hell sein}{6}%
-\contentsline {subsection}{\numberline {3.5}Das Hirn!}{7}%
-\contentsline {subsection}{\numberline {3.6}Meiers Tageshit: Universaldünger, leicht säuerlich.}{7}%
-\contentsline {subsection}{\numberline {3.7}Löcher im Boden}{7}%
-\contentsline {section}{\numberline {4}Arbeitsprozess}{8}%
-\contentsline {section}{\numberline {5}Perspektiven}{8}%
-\contentsline {subsection}{\numberline {5.1}Technische Einsichten}{8}%
-\contentsline {subsection}{\numberline {5.2}Mögliche Weltverbesserung}{8}%
-\contentsline {subsection}{\numberline {5.3}Warum \textit {genau} baue ich das eigentlich?}{8}%
+\contentsline {section}{\numberline {1}Einleitung}{2}%
+\contentsline {subsection}{\numberline {1.1}Idee}{2}%
+\contentsline {section}{\numberline {2}Ziel und Abgrenzung}{2}%
+\contentsline {section}{\numberline {3}Motivation KÖNNTE ICH VERSCHIEBEN, UM DEN TROCKENEN, TECHNISCHEN TEIL AUFZUFRISCHEN}{2}%
+\contentsline {subsection}{\numberline {3.1}Was mich inspiriert}{2}%
+\contentsline {section}{\numberline {4}An die Arbeit}{2}%
+\contentsline {subsection}{\numberline {4.1}Wachstumsbedingungen}{2}%
+\contentsline {subsubsection}{\numberline {4.1.1}Wasser}{2}%
+\contentsline {subsubsection}{\numberline {4.1.2}Licht}{3}%
+\contentsline {subsubsection}{\numberline {4.1.3}Luft}{3}%
+\contentsline {subsubsection}{\numberline {4.1.4}Nährstoffe}{3}%
+\contentsline {subsection}{\numberline {4.2}Wie weiter?}{4}%
+\contentsline {subsection}{\numberline {4.3}Hornbach, Cannabis-Shops und mein Keller}{4}%
+\contentsline {subsection}{\numberline {4.4}Trockenes Wasser}{5}%
+\contentsline {subsection}{\numberline {4.5}Belüftung..}{5}%
+\contentsline {subsection}{\numberline {4.6}Es soll hell sein}{6}%
+\contentsline {subsection}{\numberline {4.7}Das Hirn!}{7}%
+\contentsline {subsection}{\numberline {4.8}Meiers Tageshit: Universaldünger, leicht säuerlich.}{7}%
+\contentsline {subsection}{\numberline {4.9}Löcher im Boden}{7}%
+\contentsline {section}{\numberline {5}Arbeitsprozess}{8}%
 \contentsline {section}{\numberline {6}Technische Hintergründe}{8}%
 \contentsline {subsection}{\numberline {6.1}Ganz von vorn.}{8}%
-\contentsline {section}{\numberline {7}SWAP}{9}%
-\contentsline {section}{\numberline {8}Danke sagen}{9}%
+\contentsline {section}{\numberline {7}Perspektiven}{8}%
+\contentsline {subsection}{\numberline {7.1}Technische Einsichten}{8}%
+\contentsline {subsection}{\numberline {7.2}Mögliche Weltverbesserung}{8}%
+\contentsline {subsection}{\numberline {7.3}Warum \textit {genau} baue ich das eigentlich?}{8}%
+\contentsline {section}{\numberline {8}Fazit}{9}%
+\contentsline {section}{\numberline {9}Danke sagen}{9}%
+\contentsline {section}{\numberline {10}SWAP}{9}%
 \contentsline {section}{Glossar}{9}%
