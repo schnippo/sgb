@@ -13,8 +13,31 @@ tmargin={2.5cm},bmargin = {2.5cm}]{geometry}
 \usepackage{natbib}
 \usepackage{blindtext}
 \usepackage{enumitem}
-
+\usepackage[toc]{glossaries}
 %\setlist[description]{leftmargin=\parindent, labelindent=\parindent}
+
+
+\makeglossaries
+\newglossaryentry{cpu}
+{
+name = CPU,
+description = {\textit{Central processing unit}, alias Prozessor, erledigt die meisten Aufgaben eines Computer bei der es um die Berechnung von Werten geht.}
+}
+
+\newglossaryentry{Transistor}
+{
+name = Transistor,
+description = {Elektronisches Bauteil mit 3 Pins. Wird gebraucht, um Stromflüsse zu kontrollieren und zu verstärken.}}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -22,7 +45,7 @@ tmargin={2.5cm},bmargin = {2.5cm}]{geometry}
 \begin{document}
 %Titlepage
 \begin{titlepage}
-\title{Smart Solar Growbox}
+\title{Smart Growbox}
 \date{2020}
 \author{Jonas Valentin Rose}
 \end{titlepage}
@@ -33,26 +56,27 @@ tmargin={2.5cm},bmargin = {2.5cm}]{geometry}
 \section{Vorwort}
 Dies ist der schriftliche Teil meiner Maturarbeit, bei welcher ich mich  mit der Konstruktion einer möglichst smarten Growbox auseinandersetze. Ich stelle hier vor allem die Probleme und Fragestellungen vor, welche mich während den einzelnen Phasen beschäftigten. Darauf folgen gelungene und gescheiterte Lösungsansätze. Ganz am Schluss werden im Glossar Begriffe erklärt, es sind nur ein paar, was bedeutet, dass ein gewisses KnowHow im techischen Bereich vorausgesetzt wird.
 
-\section{Erste Herangehensweise}
+\subsection{Ping! Die Idee ist da.}
 Ich mag Petersilie, Solarzellen, die Programmiersprache Python und meinen Laptop. Was ich nicht mag? Jede Woche meine Pflanzen zu giessen, oder mich diesbezüglich auf andere zu verlassen. Ausserdem möchte ich in die Ferien fahren können, ohne meinem Grossvater zur Last zu werden, da er normalerweise immer unsere Pflanzen giesst, wenn wir als Familie verreisen. Im Sommer 2019 passierte genau das, meine Cherrytomaten wurden durch ihn am Leben gehalten, was ich sehr schätze. Doch es wird Zeit für eine richtige Lösung. \\Die Lösung muss so autonom und ökologisch wie möglich sein. Ausserdem soll sie Pflanzen schnell wachsen lassen können, sie muss also gute Wachstumsbedingungen liefern. \\ Vorab kann ich schon sagen, dass etwa 85\% meines neu gelernten Wissens aus Internetportalen, welche sich mit Cannabiszüchtung beschäftigen, stammt. Auch meine Bauteile kommen fast ausschliesslich aus dieser Ecke.
 
-\subsection{Wachstumsbedingungen}
-Das Hauptziel in dieser Arbeit ist die Lebenserhaltung von Pflanzen durch eine künstliche Umgebung. Pflanzen bergen gewisse Ansprüche und um die geht es in diesem Kapitel
-Auf die die ersten Konstruktionsversuche und die Herangehensweise wird im Kapitel \textit{Konstruktion} eingegangen.
 
-\subsubsection{Wasser}
+\section{Wachstumsbedingungen}
+Das Hauptziel in dieser Arbeit ist die Lebenserhaltung von Pflanzen durch eine künstliche Umgebung. Pflanzen bergen gewisse Ansprüche und um die geht es in diesem Kapitel
+Auf die die ersten Konstruktionsversuche und die Herangehensweise wird im nächsten Kapitel eingegangen.
+
+\subsection{Wasser}
 Pflanzen brauchen Wasser für den Transport von Nährstoffen, für die Photosynthese und um den Zelldruck und die damit verbundene Stabilität zu erhalten - unbewässerte Pflanzen lassen bekanntlich ihre Köpchen hängen.
 
 
-\subsubsection{Licht}
+\subsection{Licht}
 Licht ist die Energieform, welche sich die Pflanze bei der Photosynthese zunutze macht, um energiearme Baustoffe in Energiereiche zu verwandeln. Diese werden für den Bau und die Energiespeicherung verwendet. Auf den genauen Prozess gehe ich  nicht ein.
 
-\subsubsection{Luft}
+\subsection{Luft}
 Luft, auch wenn eigentlich überall vorhanden, muss einen genügend grossen CO2-Anteil bergen, um der Pflanze die Photosynthese zu ermöglichen. Sie wird wie das Licht am meisten über die Blätter aufgenommen.
 
-\subsubsection{Nährstoffe}
+\subsection{Nährstoffe}
 Nebst der selbst hergestellten Glucose verwendet die Pflanze auch noch andere Bausteine um sich Struktur zu geben, diese können nicht aus der Luft gefischt werden, sondern werden in gelöster Form von den Wurzeln aufgenommen. Dazu zählen Elemente wie Phosphor, Kalium und Stickstoff.
-
+\newpage
 
 
 
@@ -64,7 +88,7 @@ Ich kenne nun die Ansprüche meiner Pflanzen, aber wie baue ich eine Maschine, d
 
 Eine gute Menge Material fand ich in unserer Kellerwerkstatt, mein Vater ist ein Nerd, der gerne Elektroteile sammelt, zu meinem Glück. Hier eine Liste der wichtigsten Elemente.
 
-\subsection{Bauteile}
+\subsection{Hornbach, Cannabis-Shops und mein Keller}
 \begin{description}
 \item[Grow Box] Die Hülle stellt meine Grow Box dar, sie besteht aus einem Plastikgewebe, das an der Innenseite mit Mylar beschichtet ist - es reflektiert zu einem hohen Bestandteil Licht. Sie gibt Form und ermöglicht es den Pflanzen, ein eigenes kleines Klima zu errichten, eine kleine Ökosphäre sozusagen.
 \item[LEDs] Ich beleuchte meine Pflanzen künstlich mit zwei 50 Watt LEDs. Beide sind auf die für die Pflanze essentiellen Lichtspektren eingestellt, was sich für das menschliche Auge als ein pinkes Helligkeitswunder herausstellt - sie schmerzen, ich hätte besser nicht reingeschaut..
@@ -78,36 +102,36 @@ Eine gute Menge Material fand ich in unserer Kellerwerkstatt, mein Vater ist ein
 \item[Nährstofflösung/Dünger] Mit einer Universalnährstofflösung (die sogar den richtigen pH-Wert mit sich bringt) kann ich nichts falsch machen - Jackpot.
 \end{description}
 
-\subsection{Bewässerung}
-Die Recherche dauerte lange, vorallem weil ich nicht alles auf einmal bestellte. Viele Dinge ergaben erst im Laufe des Prozesses Sinn. Von der Hydroponik wusste ich schon vorher und durch Zufall stiess ich auf Fogponics, was sich als recht eleganten Ansatz herausstellt. Man zählt Fog-, respektive Aeroponik als eine Unterkategorie der Hydroponik. Konkret geht es dabei um die Bewässerung der Pflanze, während sich ihre Wurzeln \textit{in der Luft befinden}, also weder im Wasser, noch in einem Substrat. Düsen werden gerne in grossen, industriellen Gewächshäusern verwendet, doch das baue ich nicht und nach endloser Recherche musste ich mir eingestehen, dass Düsenn einfach keine Lösung sind. Fogponics sind genial, man nimmt den Fogger (ein recht schweres, wasserfestes Gerät mit fünf Porzellanscheiben), setzt ihn ins Wasser und schaltet ein. Die Porzellanscheiben vibrieren mit 1.7MHz, also etwa etwa alle 0.6 Microsekunden einmal, und spicken somit feinste Wassertröpchen in die Luft - Ein Nebel entsteht. Wenn im Wasser dann noch die essentiellen Nährstoffe gelöst sind, hat man einen Nährstoffnebel! Die Tröpfchen sind ca. ein Zweihundertstel Millimeter, was es ihnen ermöglicht, direkt in die Wurzeln aufgenommen zu werden, ohne dabei an der Wurzel zu kondensieren. Eine so direkte Nährstoffaufnahme ist nur bei Tröpfchen in dieser Grössenordnung möglich. Kleiner Seitenfakt: Beim Einatmen von solch kleinen Tröpfchen muss man Husten, denn sie ähneln mehr einer Art Staub als Wasser. Das ist wahrscheinlich auf ihre eingeschränkte Kondensfähigkeit zurückzuführen, was sie für uns \textit{nass} machen würde. Diese Technologie wurde durch die NASA markttauglich gemacht und wird heutzutage auch in der Raumfahrt eingesetzt. Ich verwende es nun um Pflanzen \textit{intrawurzulös} mit trockenem Wasser zu bewässern, auch gut. \n Der Fogger muss nicht 100\% der Zeit an sein. Es reicht ein Zyklus von 10s an, 20s aus.
+\subsection{Trockenes Wasser}
+Die Recherche dauerte lange, vorallem weil ich nicht alles auf einmal bestellte. Viele Dinge ergaben erst im Laufe des Prozesses Sinn. Von der Hydroponik wusste ich schon vorher und durch Zufall stiess ich auf Fogponics, was sich als recht eleganten Ansatz herausstellt. Man zählt Fog-, respektive Aeroponik als eine Unterkategorie der Hydroponik. Konkret geht es dabei um die Bewässerung der Pflanze, während sich ihre Wurzeln \textit{in der Luft befinden}, also weder im Wasser, noch in einem Substrat. Düsen werden gerne in grossen, industriellen Gewächshäusern verwendet, doch das baue ich nicht und nach endloser Recherche musste ich mir eingestehen, dass Düsenn einfach keine Lösung sind. Fogponics sind genial, man nimmt den Fogger (ein recht schweres, wasserfestes Gerät mit fünf Porzellanscheiben), setzt ihn ins Wasser und schaltet ein. 
+Die Porzellanscheiben vibrieren mit 1.7MHz, also etwa etwa alle 0.6 Microsekunden einmal, und spicken somit feinste Wassertröpchen in die Luft - Ein Nebel entsteht. Wenn im Wasser dann noch die essentiellen Nährstoffe gelöst sind, hat man einen Nährstoffnebel! Die Tröpfchen sind ca. ein Zweihundertstel Millimeter, was es ihnen ermöglicht, direkt in die Wurzeln aufgenommen zu werden, ohne dabei an der Wurzel zu kondensieren. Eine so direkte Nährstoffaufnahme ist nur bei Tröpfchen in dieser Grössenordnung möglich. 
+Kleiner Seitenfakt: Beim Einatmen von solch kleinen Tröpfchen muss man Husten, denn sie ähneln mehr einer Art Staub als Wasser. Das ist wahrscheinlich auf ihre eingeschränkte Kondensfähigkeit zurückzuführen, was sie für uns \textit{nass} machen würde. Diese Technologie wurde durch die NASA markttauglich gemacht und wird heutzutage auch in der Raumfahrt eingesetzt.Ich verwende es nun um Pflanzen \textit{intrawurzulös} mit trockenem Wasser zu bewässern, auch gut. \\ Der Fogger muss nicht 100\% der Zeit an sein. Es reicht ein Zyklus von 10s an, 20s aus.
 
 HIER QUERSCHNITT EINFÜGEN, STICHWORTE: EIMER, FOGGER, WASSER, NEBEL, WURZELN, DECKE, FOGFAN
 
 
 \subsection{Belüftung..}
-Die Lüfter waren ebenfalls ein lustiges (\textit{trockenes, kaltes Lachen...}) Teilprojekt: Um ein Lüftungssystem zu bauen, braucht man offensichtlich einen Lüfter, am besten gleich mehrere. Es gilt zwischen EC- und DC-Lüftern zu unterscheiden, wobei EC-Lüfter generell leiser und energieeffizienter sind. Naheliegenderweise hätte ich gerne einen Lüfter der EC-Gattung, doch da mein Vater wie schon erwähnt ein leidenschaftlicher Sammler jeglichen Elektroschrotts ist, konnte ich mich einfach im Keller bedienen. Um es jetzt kurz zu fassen: Bei der Belüftungskonstruktion habe ich meine Seele verloren, es ist das Teilprojekt mit dem meisten Aufwand, im Nachhinein habe ich mich wirklich gefragt, ob es dieser Aufwand nicht die 120Fr. wert gewesen wäre, was so ein EC-Lüfterchen kostet. Ich erläutere das mal: Einen DC-Lüfter (Gleichstrom) runterzuregeln, so dass er nicht volle Pulle lüftet, ist eine Wissenschaft für sich, ich bin recht gut geworden, doch zu welchem Preis? Einfach die Spannung runterzudrehen geht nicht wirklich, sie ist nicht proportional zur Umdrehungszahl. Was bleibt mir also? Ganz einfach - \textit{Pulsweitenmodulation}. Hier das Prinzip: Man versorgt den Lüfter entweder mit 12V oder mit 0V, aus dem zeitliche Verhältnis zwischen diesen beiden Zuständen erfolgt die effektive Lüfterleistung. Ist der \textit{Puls} also 75\% eines ganzen Zyklus', läuft der Lüfter auch mit 75\%, klingt einfach, ist es aber nicht. Die Krux liegt in der Frequenz dieser Zyklen, es macht nämlich einen Unterschied man ihn für 7.5 mit 12V versorgt, dann 2.5s Pause macht oder ob diese Zyklen mit einer Frequenz von 40'000Hertz aufgetischt werden. Beim ersten Beispiel stockt der Lüfter ja praktisch, doch beim Zweiten wird die Energie so unglaublich schnell an und abgestellt, dass der Motor gar nicht mehr zwischen An und Aus unterscheiden kann. Voilà, Pulweitenmodulation. \n Die Theorie mag noch so schön sein, aber wenn die Umsetzung einem die halbe Seele abverlangt ist es trotzdem \textit{recht} anstrengend. Hier die technische Herausforderung: Die von mir verwendeten Microcontroller besitzen eine PWM-Funktion, jedoch hat diese eine Maximalfrequenz von 1kHz, also 1000Hertz und das ist zu langsam, denn dadurch \textit{kann} der DC-Motor noch zwischen An und Aus unterscheiden und es kommt zu hörbaren Vibrationen, was einem nach 2min recht auf den Wecker schlägt. Es muss demnach eine andere Lösung her. Der Arduino (der Microcontroller) ist rein technisch gesehen dafür ausgerüstet, höhere Frequenzen zu takten, ein gutes Beispiel dafür ist der Prozessor, der, wenn er auf einem Kilohertz laufen würde, \textit{schnarchend} langsam wäre. Dem ist natürlich nicht so. Und auch wenn der eingebaute ATmega32U4 Prozessor mit seinen 16MHz das weitaus schnellste Glied auf der Platine ist, weilen die internen Timer-Register nicht viel hinten - und genau die will ich verwenden. Die C++-Bibliothek \textit{TimerOne.h} beherbergt die nötigen Werkzeuge. Man kann sich einen eigenen Timer stellen, sagen wir auf 25 Mikrosekunden, und wenn immer dieser Timer abläuft, schalten wir entweder an oder aus. So ungefähr lautet das Prinzip, effektiv existiert aber schon eine eigens dafür entwickelte Funktion. Man muss nur den Pin angeben, die Frequenz vorher eingestellt haben und sagen, welches Verhältnis man wünscht. Perfekt für meine Ansprüche. 
+Die Lüfter waren ebenfalls ein lustiges (\textit{trockenes, kaltes Lachen...}) Teilprojekt: Um ein Lüftungssystem zu bauen, braucht man offensichtlich einen Lüfter, am besten gleich mehrere. Es gilt zwischen EC- und DC-Lüftern zu unterscheiden, wobei EC-Lüfter generell leiser und energieeffizienter sind. Naheliegenderweise hätte ich gerne einen Lüfter der EC-Gattung, doch da mein Vater wie schon erwähnt ein leidenschaftlicher Sammler jeglichen Elektroschrotts ist, konnte ich mich einfach im Keller bedienen. Um es jetzt kurz zu fassen: Bei der Belüftungskonstruktion habe ich meine Seele verloren, es ist das Teilprojekt mit dem meisten Aufwand, im Nachhinein habe ich mich wirklich gefragt, ob es dieser Aufwand nicht die 120Fr. wert gewesen wäre, was so ein EC-Lüfterchen kostet. Ich erläutere das mal: Einen DC-Lüfter (Gleichstrom) runterzuregeln, so dass er nicht volle Pulle lüftet, ist eine Wissenschaft für sich, ich bin recht gut geworden, doch zu welchem Preis? Einfach die Spannung runterzudrehen geht nicht wirklich, sie ist nicht proportional zur Umdrehungszahl. Was bleibt mir also? Ganz einfach - \textit{Pulsweitenmodulation}. Hier das Prinzip: Man versorgt den Lüfter entweder mit 12V oder mit 0V, aus dem zeitliche Verhältnis zwischen diesen beiden Zuständen erfolgt die effektive Lüfterleistung. Ist der \textit{Puls} also 75\% eines ganzen Zyklus', läuft der Lüfter auch mit 75\%, klingt einfach, ist es aber nicht. Die Krux liegt in der Frequenz dieser Zyklen, es macht nämlich einen Unterschied man ihn für 7.5 mit 12V versorgt, dann 2.5s Pause macht oder ob diese Zyklen mit einer Frequenz von 40'000Hertz aufgetischt werden. Beim ersten Beispiel stockt der Lüfter ja praktisch, doch beim Zweiten wird die Energie so unglaublich schnell an und abgestellt, dass der Motor gar nicht mehr zwischen An und Aus unterscheiden kann. Voilà, Pulweitenmodulation. \\ Die Theorie mag noch so schön sein, aber wenn die Umsetzung einem die halbe Seele abverlangt ist es trotzdem \textit{recht} anstrengend. Hier die technische Herausforderung: Die von mir verwendeten Microcontroller besitzen eine PWM-Funktion, jedoch hat diese eine Maximalfrequenz von 1kHz, also 1000Hertz und das ist zu langsam, denn dadurch \textit{kann} der DC-Motor noch zwischen An und Aus unterscheiden und es kommt zu hörbaren Vibrationen, was einem nach 2min recht auf den Wecker schlägt. Es muss demnach eine andere Lösung her. Der Arduino (der Microcontroller) ist rein technisch gesehen dafür ausgerüstet, höhere Frequenzen zu takten, ein gutes Beispiel dafür ist der Prozessor, der, wenn er auf einem Kilohertz laufen würde, \textit{schnarchend} langsam wäre. Dem ist natürlich nicht so. Und auch wenn der eingebaute ATmega32U4 Prozessor mit seinen 16MHz das weitaus schnellste Glied auf der Platine ist, weilen die internen Timer-Register nicht viel hinten - und genau die will ich verwenden. Die C++-Bibliothek \textit{TimerOne.h} beherbergt die nötigen Werkzeuge. Man kann sich einen eigenen Timer stellen, sagen wir auf 25 Mikrosekunden, und wenn immer dieser Timer abläuft, schalten wir entweder an oder aus. So ungefähr lautet das Prinzip, effektiv existiert aber schon eine eigens dafür entwickelte Funktion. Man muss nur den Pin angeben, die Frequenz vorher eingestellt haben und sagen, welches Verhältnis man wünscht. Perfekt für meine Ansprüche. 
 OSZILLOSKOP EINTRAG
-Soviel zum Softwareteil, der Hardwareteil ist auch eine rechte Herausforderung. Ich brauche für jeweils vier Lüfter eine Schaltung, welche den Strom auf einer so hohen Frequenz an- und ausschalten kann. Viermal. Also gut, Platine her, Lötkolben und Oszilloskop raus und ab in die Werkstatt. Ich habe für diese Schaltung locker einen Monat gebraucht, natürlich war ich nicht jeden Abend dran, doch die alleinige Dauer, welche ich vor dem Oszilloskop verbracht habe, um die richtigen Verhältnisse zu sehen, hat mir die Seele wahrlich etwas betäubt. Man steht so oft vor einem Problem und weiss nicht mal \textit{wo} das Problem liegt, ist es die Schaltung? Habe ich ein paar Lötdrähte nicht gut genug verbunden, spinnt die Software oder ist mir der Transistor schon wieder durchgebrannt? Uff. Ich erspare Ihnen weitere Details, was ich schlussendlich in den Händen halte ist recht genial: Eine kleine Tupperwarebox mit einer Platine drin. Aus den Seiten kommen insgesamt 6 Kabel: Ein USB-Kabel, welches den auf die Platine gesteckten Arduino mit der zentralen Recheneinheit verbindet, die vier Kabel für die vier Lüfter und ein 12V-Stromkabel für die Lüfter. \n Die soeben erwähnte Recheneinheit ist das Gehirn, meiner Konstruktion, mehr dazu später. Zum Schluss noch ein kleiner Hinweis; Ich werde, wenn von nun an von der soeben Beschrieben Schaltung für die Lüfter die Rede ist, vom \textit{PWM-Controller} sprechen.
+Soviel zum Softwareteil, der Hardwareteil ist auch eine rechte Herausforderung. Ich brauche für jeweils vier Lüfter eine Schaltung, welche den Strom auf einer so hohen Frequenz an- und ausschalten kann. Viermal. Also gut, Platine her, Lötkolben und Oszilloskop raus und ab in die Werkstatt. Ich habe für diese Schaltung locker einen Monat gebraucht, natürlich war ich nicht jeden Abend dran, doch die alleinige Dauer, welche ich vor dem Oszilloskop verbracht habe, um die richtigen Verhältnisse zu sehen, hat mir die Seele wahrlich etwas betäubt. Man steht so oft vor einem Problem und weiss nicht mal \textit{wo} das Problem liegt, ist es die Schaltung? Habe ich ein paar Lötdrähte nicht gut genug verbunden, spinnt die Software oder ist mir der Transistor schon wieder durchgebrannt? Uff. Ich erspare Ihnen weitere Details, was ich schlussendlich in den Händen halte ist recht genial: Eine kleine Tupperwarebox mit einer Platine drin. Aus den Seiten kommen insgesamt 6 Kabel: Ein USB-Kabel, welches den auf die Platine gesteckten Arduino mit der zentralen Recheneinheit verbindet, die vier Kabel für die vier Lüfter und ein 12V-Stromkabel für die Lüfter. \\ Die soeben erwähnte Recheneinheit ist das Gehirn, meiner Konstruktion, mehr dazu später. Zum Schluss noch ein kleiner Hinweis; Ich werde, wenn von nun an von der soeben Beschrieben Schaltung für die Lüfter die Rede ist, vom \textit{PWM-Controller} sprechen.
 
-\subsection{Belichtung}
-Die Belichtung ist um unser allen Dankbarkeit um einfaches simpler. Nichtsdestotrotz muss ich kurz ausholen:\n Um sowohl die Belichtung, als auch die Bewässerung zu steuern, brauche ich eine Schaltung, welche mal an und mal aus geht - und das bitte in einem von mir vorgegebenen Takt. Swoosh, geboren ist der \textit{Relay-Controller}! Diese kleine, graue Box, ist in der Lage, jede ihrer oben angebrachten Steckdosen individuell anzusteuern, die Zeitdaten teile ich ihr ebenfalls über ein USB-Kabel mit. Darin eingesteckt sind die zwei Stecker der beiden LED-\textit{Laser} (Kleiner Witz, Sie erinnern sich an den versteckten Warnhinweis bezüglich dem pinken Helligkeitswunder?) und der des Foggers/der Nebelmaschine. Dieses Stück Technik hat mir natürlich auch einen guten Teil der Seel abverlangt, doch ehrlich gesagt ging es bei diesem Teilprojekt um einiges fröhlicher zur Sache als beim PWM-Controller. Ich denke, es liegt am den vier kleinen Relay, welche jedesmal ein kleines Klickgeräusch machen, wenn sie umschalten.  \n Wie Sie merken, ist die Belichtung echt keine Hexerei, die LEDs gehören einfach eingesteckt und vorprogrammiert und es läuft. Etwas kleines gibt es jedoch noch. Ein solcher LED-Schweinwerfer kostet 65Fr und ist rein von der Leistung gesehen (50W) für meine zu belichtende Grundfläche hell genug. Warum habe ich also zwei davon? Erstens sehen diese LEDs total schön aus - sie haben auch so ein cooles Gehäuse, sollten Sie mal sehen und andererseits hat mich - ob relevant oder nicht - die Frage beschäftigt, wie lang diese Babies denn so halten, das Internet gibt keine genaue Angabe, deshalb habe ich mir, so genial wie ich bin, überlegt, dass ich, wenn ich den Arbeitsaufwand auf zwei verschiedene Lampen aufteile, die Haltbarkeit von diesem Teil der Machine wohl doppelt so hoch sein muss. Nebenbei ergibt sich die Möglichtkeit, beide aufs Mal laufen zu lassen, wovon ich mir einen Wachstumsboost der Pflanzen versprechen, wir werden sehen.
-
-
+\subsection{Es soll hell sein}
+Die Belichtung ist um unser allen Dankbarkeit um einfaches simpler. Nichtsdestotrotz muss ich kurz ausholen:\\ Um sowohl die Belichtung, als auch die Bewässerung zu steuern, brauche ich eine Schaltung, welche mal an und mal aus geht - und das bitte in einem von mir vorgegebenen Takt. Swoosh, geboren ist der \textit{Relay-Controller}! Diese kleine, graue Box, ist in der Lage, jede ihrer oben angebrachten Steckdosen individuell anzusteuern, die Zeitdaten teile ich ihr ebenfalls über ein USB-Kabel mit. Darin eingesteckt sind die zwei Stecker der beiden LED-\textit{Laser} (Kleiner Witz, Sie erinnern sich an den versteckten Warnhinweis bezüglich dem pinken Helligkeitswunder?) und der des Foggers/der Nebelmaschine. Dieses Stück Technik hat mir natürlich auch einen guten Teil der Seel abverlangt, doch ehrlich gesagt ging es bei diesem Teilprojekt um einiges fröhlicher zur Sache als beim PWM-Controller. Ich denke, es liegt am den vier kleinen Relay, welche jedesmal ein kleines Klickgeräusch machen, wenn sie umschalten.  \\Wie Sie merken, ist die Belichtung echt keine Hexerei, die LEDs gehören einfach eingesteckt und vorprogrammiert und es läuft. Etwas kleines gibt es jedoch noch. Ein solcher LED-Schweinwerfer kostet 65Fr und ist rein von der Leistung gesehen (50W) für meine zu belichtende Grundfläche hell genug. Warum habe ich also zwei davon? Erstens sehen diese LEDs total schön aus - sie haben auch so ein cooles Gehäuse, sollten Sie mal sehen und andererseits hat mich - ob relevant oder nicht - die Frage beschäftigt, wie lang diese Babies denn so halten, das Internet gibt keine genaue Angabe, deshalb habe ich mir, so genial wie ich bin, überlegt, dass ich, wenn ich den Arbeitsaufwand auf zwei verschiedene Lampen aufteile, die Haltbarkeit von diesem Teil der Machine wohl doppelt so hoch sein muss. Nebenbei ergibt sich die Möglichtkeit, beide aufs Mal laufen zu lassen, wovon ich mir einen Wachstumsboost der Pflanzen versprechen, wir werden sehen.
 
 
+\subsection{Das Hirn!}
+Irgendjemand, oder besser gesagt irgend\textit{was} muss diesen gutmütigen Controllern eine Richtung weisen, ihnen sagen, was sie überhaupt zu tun haben. An diesem Punkt würde ich mich gerne bei Herrn Upton, dem Gründer der Raspberrypi-Foundation bedanken, ohne ihn wäre dieses ganze Vorhaben nämlich recht \textit{hirnlos}, im wahrsten Sinne des Wortes: Ich verwende eine RaspberryPi als Zentrum für alle Steuerprozesse. Der Raspi (umgangssprachlich auch \textit{Pi}) beherbergt alle Funktionen welche man von einem normalen Computer erwarten würde, nur kleiner, denn er passt Problemlos in die Hosentasche. Die Leistung ist logischerweise geriner als bei Computer mit normalen Dimensionen, doch Rechenleistung steht bei vielen Projekten erst an zweiter Stelle. Ich z.B. brauche einfach ein kleines Linux-Compüterchen und genau das ist der Pi. Mit Linux bin ich gleichermassen aufgewachsen wie mit einem Fahrrad, es war einfach da. Deshalb ist es für mich kein Problem, dieses Schätzchen auf meine Bedürfnisse anzupassen. Da es in diesem Kapitel generell nur um die erste Herangehensweise geht, fasse ich mich kurz, denn der Pi kommt zeitlich erst recht am Schluss ins Projekt. Die meiste Zeit verbrachte ich von Arduinos und Lüftern umgeben im Keller, von einem angemessenen Linux-Kernel war da keine Spur..
 
 
+\subsection{Meiers Tageshit: Universaldünger, leicht säuerlich.}
+Dieses Unterkapitel mag Sie etwas überraschen, doch es sei angemerkt, dass sich mir dieses Thema recht lange zur Last machte. Die Frage, \textit{wie} und mit welcher Nährstofflösung (eng. \textit{Nutrientsolution} oder einfach \textit{Solution}) ich meine Pflänzchen füttere, hat mich lange geplagt. Eine einfache Antwort darauf lässt sich im Internet \textbf{nicht} finden. Bei einem meiner Besuche in Meiers Gartencenter in Dürnten stiess ich auf \textit{the man himself}, Herr Meier. \\ Wahrlich ein Engel; Er stand hinter dem Kundenberatungsthresen und als ich endlich dran war, ging es keine halbe Minute und er wusste \textit{welche Solution} ich \textit{wo} zu suchen hatte. Gesagt, getan, gefunden, in den Händen hielt ich eine grüne 1L Flasche mit Wunderzeugs. Sie enthält, soweit mich meine eigenen Sinne und Kenntnisse nicht trügen, um weites mehr Nährstoffe, als alle anderen Dünger aus unserem Gartenschuppen. Das Zeug mit Leitungswasservermischt soll angeblich auch direkt denn perfekten pH-Werte haben, 5.5, also leicht auf der sauren Seite.
+
+\subsection{Löcher im Boden}
+Die Pflanzen finden Halt in sogenanannten Steinwolleblöckchen, diese widerrum stehen in kleinen Netzbechern/Netcups und \textit{diese} hängen durch ein Brett durch, sodass die Würzelchen im Nährnebel hängen. Das Brett ist aus beschichtetem Holz. Ich habe es zusammen mit dem Zementeimer im Hornbach gefunden. Zum Leid jeder Nase stank diese Brett so wahnsinnig bestialisch nach dieser chemischen Beschichtung, dass ich mehr als einmal keinen Appetit verspürte, nachdem ich die Growbox aufmachte, wo ich alles Material verstaute. Es stank, aber es nicht unhygienisch wie gewisse andere Sachen, doch es stank. Eines Tages wusste ich, dass ich Löcher in das Brett machen musste. Logisch, das ist ja der Sinn des Brettes. Also ab in den Keller und - Hmm, wie macht ohne es je einmal gemacht zu haben 8cm breite Löcher in chemisch verstärktes Holz? Die Werkstatt offerierte mir einen Bohrer und ein Löcherbohrset, eines mit einer dieser Scheiben, vo man verschiedene, kreisrunde Sägeblätter einstecken kann. Das Problem dabei war jedoch die vorhandenen Durchmesser, 6cm war das grösstmögliche. Mir fehlten also 2cm. Haben sie schon einmal von einer \textit{Fräse} gehört? Nun, mein Vater hat so ein Ding und ich habe es gefunden. Dieses Stück Maschine funktioniert im Prinzip wie ein normaler Bohrer, aber seitwärts. Anstatt nach unten zu bohren, ist der Fräsenkopf an der Seite mit Klingen bewaffnet, welche sich sterbenshungrig ins Holz fressen. So fest, dass man das ganze Konstrukt leicht verlieren kann, wenn sich die Fräse erst mal festgebissen hat, gibt es kein entkommen. Das ganze Gerät, welches man an zwei (!) massiven Haltern hält, rennt praktisch durchs Holz und es stäubt, oh wie es stäubt. Für die Atemmaske war ich dankbar. Diese Fräse ist ein Erlebnis, das sieht man an der tiefen Kerbe in einem der Löcher, der Netzbecher fällt fast raus.. Den Fräsenabend werde ich nicht so schnell vergessen, ich bin noch nie mit so viel Sägestaub aus dem Keller gekommen, meine Augen enthielten mehr Sägemehl als Tränenflüssigkeit.
 
 
-
-
-
-Die Nährstoffversorgung verdient sich hier ebenfalls einen Platz, denn auch sie hat mir nicht wenig Kopfschmerzen bereitet: Im Internet ist das Angebot an \textit{Nutrientsolution-DIYs} so überwältigend - mit so vielen kleinen Details - dass man sich schnell verliert. Im Gartenmeiercenter Dürnten hat mir der Inhaber Herr Meier persöhnlich zu einer guten Lösung verholfen; Universaldünger mit ph-Anpassung. Es sind alle Nährstoffe vorhanden und die miteingebaute pH-Downlösung verwandelt Hahnenwasser in Regenwasser, was dem von Pflanzen bevorzugten pH-Wert von ca. 5.5 entspricht. Im Endeffekt eine Set&Forget-Lösung für dieses Problem, ich bin zufrieden.
-
-
-
-
-\subsection{Bau}
+\section{Arbeitsprozess}
+Wie genau bin ich wann vorgegangen? Auf diese Frage gibt es viele Antworten, hier sind die wichtigsten.
 
 
 
@@ -116,16 +140,26 @@ Die Nährstoffversorgung verdient sich hier ebenfalls einen Platz, denn auch sie
 
 
 
+\section{Perspektiven}
+Einhergehend mit den Arbeitsprozessen, bekam ich auch neue, mir zuvor völlig undenkbare Einsichten und Perspektiven auf mehreren Ebenen
+\subsection{Technische Einsichten}
+asdf
+\subsection{Mögliche Weltverbesserung}
+asdf
+\subsection{Warum \textit{genau} baue ich das eigentlich?}
+asdf
+
+
+\section{Technische Hintergründe}
+\subsection{Ganz von vorn.}
+Arduinos.
 
 
 
 
 
 
-
-
-
-\newpage
+\printglossary[title=Glossar, toctitle=Glossar]
 
 
 \section{SWAP}
@@ -137,6 +171,10 @@ Timer-Register
 Relay
 Transistor
 
+\begin{verbatim}
+for i in range(19):
+	
+\end{verbatim}
 
 
 
@@ -146,12 +184,19 @@ Alle haben es in dieser Schule gelernt, einige schon im U1; Pflanzen brauchen Wa
 
 Das ist äusserst nützlich, denn somit absorbieren die Wände kein Licht und heizen sich auf, sondern das Licht, das nicht direkt auf die Blätter trifft, wird weiter umherreflektiert, bis es schliesslich beim Blatt ankommt. 
 
-\section{Danksagung}
+
+
+\section{Danke sagen}
 Vielen Dank Papa für deine unendlich ansteckende Begeisterung für die Materie der Technik.
 
 %Literaturverzeichniss ins Inhaltsverzeichnis einfügen
 \addcontentsline{toc}{section}{Glossar}
+
 %\bibliography{ssgb}
 \bibliographystyle{agsm}
 \end{document}
+
+
+
+
 
