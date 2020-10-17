@@ -1,0 +1,30 @@
+\ifglsentryexists{CPU}{}%
+{%
+\gls@defglossaryentry{CPU}%
+{%
+name={CPU},%
+sort={CPU},%
+type={main},%
+first={CPU},%
+firstplural={CPUs},%
+text={CPU},%
+plural={CPUs},%
+description={\textit {Central processing unit}, alias Prozessor, erledigt die meisten Aufgaben eines Computer bei der es um die Berechnung von Werten geht.},%
+descriptionplural={\textit {Central processing unit}, alias Prozessor, erledigt die meisten Aufgaben eines Computer bei der es um die Berechnung von Werten geht.},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
