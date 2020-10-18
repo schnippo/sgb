@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.16)  18 OCT 2020 23:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.10.16)  19 OCT 2020 00:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,19 +6,20 @@ entering extended mode
 (./ssgb.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2019/12/20 v1.4l Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
 )
 \c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
+\c@chapter=\count168
+\c@section=\count169
+\c@subsection=\count170
+\c@subsubsection=\count171
+\c@paragraph=\count172
+\c@subparagraph=\count173
+\c@figure=\count174
+\c@table=\count175
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen134
@@ -63,12 +64,12 @@ aphy)
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2020/02/14 3.40 Babel common definitions
-\babel@savecnt=\count175
+\babel@savecnt=\count176
 \U@D=\dimen137
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
-\bbl@dirlevel=\count176
+\bbl@dirlevel=\count177
 )
 Package babel Info: Making " an active character on input line 121.
 )))
@@ -94,9 +95,9 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/usr/share/texlive/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2019/11/07 v1.0c TeX engine tests
 ))
-\Gm@cnth=\count177
-\Gm@cntv=\count178
-\c@Gm@tempcnt=\count179
+\Gm@cnth=\count178
+\Gm@cntv=\count179
+\c@Gm@tempcnt=\count180
 \Gm@bindingoffset=\dimen138
 \Gm@wd@mp=\dimen139
 \Gm@odd@mp=\dimen140
@@ -136,7 +137,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip52
 \bibsep=\skip53
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count180
+\c@NAT@ctr=\count181
 )
 (/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
@@ -144,24 +145,24 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count181
-\c@Blindtext=\count182
-\c@blind@countparstart=\count183
-\blind@countxx=\count184
-\blindtext@numBlindtext=\count185
-\blind@countyy=\count186
-\c@blindlist=\count187
-\c@blindlistlevel=\count188
-\c@blindlist@level=\count189
-\blind@listitem=\count190
-\c@blind@listcount=\count191
-\c@blind@levelcount=\count192
-\blind@mathformula=\count193
-\blind@Mathformula=\count194
-\c@blind@randomcount=\count195
-\c@blind@randommax=\count196
-\c@blind@pangramcount=\count197
-\c@blind@pangrammax=\count198
+\c@blindtext=\count182
+\c@Blindtext=\count183
+\c@blind@countparstart=\count184
+\blind@countxx=\count185
+\blindtext@numBlindtext=\count186
+\blind@countyy=\count187
+\c@blindlist=\count188
+\c@blindlistlevel=\count189
+\c@blindlist@level=\count190
+\blind@listitem=\count191
+\c@blind@listcount=\count192
+\c@blind@levelcount=\count193
+\blind@mathformula=\count194
+\blind@Mathformula=\count195
+\c@blind@randomcount=\count196
+\c@blind@randommax=\count197
+\c@blind@pangramcount=\count198
+\c@blind@pangrammax=\count199
 )
 (/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
@@ -169,8 +170,8 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@outerparindent=\dimen146
 \enit@toks=\toks25
 \enit@inbox=\box45
-\enit@count@id=\count199
-\enitdp@description=\count266
+\enit@count@id=\count266
+\enitdp@description=\count267
 )
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
 Package: glossaries 2020/02/13 v4.45 (NLCT)
@@ -186,7 +187,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks26
 \XKV@tempa@toks=\toks27
 )
-\XKV@depth=\count267
+\XKV@depth=\count268
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
@@ -194,7 +195,7 @@ Package: mfirstuc 2017/11/14 v2.06 (NLCT)
 
 (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2019/09/21 v2.5h e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count268
+\etb@tempcnta=\count269
 )
 \@glsmfirst=\toks28
 \@glsmrest=\toks29
@@ -228,13 +229,13 @@ Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count269
+\inf@bad=\count270
 LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count270
-\leftroot@=\count271
+\uproot@=\count271
+\leftroot@=\count272
 LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count272
-\DOTSCASE@=\count273
+\classnum@=\count273
+\DOTSCASE@=\count274
 LaTeX Info: Redefining \ldots on input line 486.
 LaTeX Info: Redefining \dots on input line 489.
 LaTeX Info: Redefining \cdots on input line 610.
@@ -243,15 +244,15 @@ LaTeX Info: Redefining \cdots on input line 610.
 \big@size=\dimen149
 LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count274
-\c@MaxMatrixCols=\count275
+\macc@depth=\count275
+\c@MaxMatrixCols=\count276
 \dotsspace@=\muskip16
-\c@parentequation=\count276
-\dspbrk@lvl=\count277
+\c@parentequation=\count277
+\dspbrk@lvl=\count278
 \tag@help=\toks31
-\row@=\count278
-\column@=\count279
-\maxfields@=\count280
+\row@=\count279
+\column@=\count280
+\maxfields@=\count281
 \andhelp@=\toks32
 \eqnshift@=\dimen150
 \alignsep@=\dimen151
@@ -268,7 +269,7 @@ LaTeX Info: Redefining \] on input line 2860.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty
 Package: substr 2009/10/20 v1.2 Handle substrings
-\c@su@anzahl=\count281
+\c@su@anzahl=\count282
 )
 (/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
 Package: datatool-fp 2019/09/27 v2.32 (NLCT)
@@ -279,19 +280,19 @@ Package: fp 1995/04/02
 `Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
 (/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
-\actioncount=\count282
+\actioncount=\count283
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
-\FP@xs=\count283
-\FP@xia=\count284
-\FP@xib=\count285
-\FP@xfa=\count286
-\FP@xfb=\count287
-\FP@rega=\count288
-\FP@regb=\count289
-\FP@regs=\count290
-\FP@times=\count291
+\FP@xs=\count284
+\FP@xia=\count285
+\FP@xib=\count286
+\FP@xfa=\count287
+\FP@xfb=\count288
+\FP@rega=\count289
+\FP@regb=\count290
+\FP@regs=\count291
+\FP@times=\count292
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
@@ -310,7 +311,7 @@ Package: fp-pas 1994/08/29
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
-\FPseed=\count292
+\FPseed=\count293
 )
 (/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
@@ -322,14 +323,14 @@ Package: fp-upn 1996/10/21
 Package: fp-eval 1995/04/03
 )))
 \@dtl@toks=\toks35
-\@dtl@tmpcount=\count293
+\@dtl@tmpcount=\count294
 \dtl@tmplength=\skip58
-\dtl@sortresult=\count294
-\@dtl@numgrpsepcount=\count295
-\@dtl@datatype=\count296
-\dtl@codeA=\count297
-\dtl@codeB=\count298
-\@dtl@foreach@level=\count299
+\dtl@sortresult=\count295
+\@dtl@numgrpsepcount=\count296
+\@dtl@datatype=\count297
+\dtl@codeA=\count298
+\dtl@codeB=\count299
+\@dtl@foreach@level=\count300
 )
 (/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
 307.sty
@@ -345,7 +346,7 @@ Package: translator 2019-05-31 v1.12a Easy translation of strings in LaTeX
 f
 File: glossaries-german.ldf 2014/11/23 v1.0
 )
-\gls@level=\count300
+\gls@level=\count301
 \@gls@tmpb=\toks36
 \gls@tmplen=\skip59
 \glskeylisttok=\toks37
@@ -368,16 +369,16 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTright=\skip62
 \LTpre=\skip63
 \LTpost=\skip64
-\LTchunksize=\count301
+\LTchunksize=\count302
 \LTcapwidth=\dimen156
 \LT@head=\box48
 \LT@firsthead=\box49
 \LT@foot=\box50
 \LT@lastfoot=\box51
-\LT@cols=\count302
-\LT@rows=\count303
-\c@LT@tables=\count304
-\c@LT@chunks=\count305
+\LT@cols=\count303
+\LT@rows=\count304
+\c@LT@tables=\count305
+\c@LT@chunks=\count306
 \LT@p@ftn=\toks41
 )
 \glsdescwidth=\skip65
@@ -388,7 +389,7 @@ Package: glossary-super 2020/02/13 v4.45 (NLCT)
 
 (/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty
 Package: supertabular 2020/02/02 v4.1g the supertabular environment
-\c@tracingst=\count306
+\c@tracingst=\count307
 \ST@wd=\dimen157
 \ST@rightskip=\skip67
 \ST@leftskip=\skip68
@@ -411,29 +412,29 @@ Package: glossary-tree 2020/02/13 v4.45 (NLCT)
 (/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen167
 \WF@size=\dimen168
-\c@WF@wrappedlines=\count307
+\c@WF@wrappedlines=\count308
 \WF@box=\box53
 \WF@everypar=\toks42
 Package: wrapfig 2003/01/31  v 3.6
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count308
+\lst@mode=\count309
 \lst@gtempboxa=\box54
 \lst@token=\toks43
-\lst@length=\count309
+\lst@length=\count310
 \lst@currlwidth=\dimen169
-\lst@column=\count310
-\lst@pos=\count311
+\lst@column=\count311
+\lst@pos=\count312
 \lst@lostspace=\dimen170
 \lst@width=\dimen171
-\lst@newlines=\count312
-\lst@lineno=\count313
+\lst@newlines=\count313
+\lst@lineno=\count314
 \lst@maxwidth=\dimen172
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count314
-\lst@skipnumbers=\count315
+\c@lstnumber=\count315
+\lst@skipnumbers=\count316
 \lst@framebox=\box55
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -448,7 +449,7 @@ Package glossaries Info: Writing glossary file ssgb.glo on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count316
+\l__kernel_color_stack_int=\count317
 \l__pdf_internal_box=\box56
 )
 (./ssgb.aux)
@@ -470,16 +471,16 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
 LaTeX Font Info:    ... okay on input line 48.
  (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count317
+\scratchcounter=\count318
 \scratchdimen=\dimen173
 \scratchbox=\box57
-\nofMPsegments=\count318
-\nofMParguments=\count319
+\nofMPsegments=\count319
+\nofMParguments=\count320
 \everyMPshowfont=\toks44
-\MPscratchCnt=\count320
+\MPscratchCnt=\count321
 \MPscratchDim=\dimen174
-\MPnumerator=\count321
-\makeMPintoPDFobject=\count322
+\MPnumerator=\count322
+\makeMPintoPDFobject=\count323
 \everyMPtoPDFconversion=\toks45
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -525,39 +526,46 @@ e
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 (./ssgb.glsdefs)
-\c@lstlisting=\count323
-LaTeX Font Info:    Trying to load font information for U+msa on input line 55.
+\c@lstlisting=\count324
+LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
 
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 55.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1
+)
+
+LaTeX Warning: No \author given.
+
+[1
 
 \openout3 = `ssgb.ist'.
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ssgb.toc [1])
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./ssgb.toc [1
+
+])
 \tf@toc=\write5
 \openout5 = `ssgb.toc'.
 
- [2]
-Overfull \hbox (19.0896pt too wide) in paragraph at lines 70--71
+
+[2]
+Overfull \hbox (19.0896pt too wide) in paragraph at lines 79--80
 \OT1/cmr/m/n/12 Hier im schrift-li-chen Teil ge-be ich dem Le-ser einen m[]ogli
 chst di-rek-ten Ein-blick in die L[]osungsfindung
  []
 
 [3] [4]
-Overfull \hbox (9.56044pt too wide) in paragraph at lines 74--75
+Overfull \hbox (9.56044pt too wide) in paragraph at lines 83--84
 \OT1/cmr/m/n/12 wel-che sich mit Offgrid-Versorgungssystemen besch[]aftigen, al
 -so der Nahrungs-/Energieversorgung
  []
 
 [5]
-Underfull \hbox (badness 1838) in paragraph at lines 98--98
+Underfull \hbox (badness 1838) in paragraph at lines 107--107
 [][]\OT1/cmr/m/n/10 Selbsverst[]andlich gibt es mehr, die ge-nann-te wer-den zu
  den \OT1/cmr/m/it/10 Ma-kron[]ahrstoffen \OT1/cmr/m/n/10 gez[]ahlt. $\OML/cmm/
 m/it/10 https \OT1/cmr/m/n/10 :
@@ -566,7 +574,7 @@ m/it/10 https \OT1/cmr/m/n/10 :
 [6] [7
 
 ] [8] [9]
-Underfull \hbox (badness 6542) in paragraph at lines 136--136
+Underfull \hbox (badness 6542) in paragraph at lines 145--145
 [][]\OT1/cmr/m/n/10 dem ur-spr[]unglichen Ent-wick-ler und heu-ti-gem CEO der R
 aspber-ry Pi Foun-da-ti-on $\OML/cmm/m/it/10 https \OT1/cmr/m/n/10 :
  []
@@ -574,42 +582,42 @@ aspber-ry Pi Foun-da-ti-on $\OML/cmm/m/it/10 https \OT1/cmr/m/n/10 :
 <images/raspi.jpg, id=45, 4175.6pt x 3131.7pt>
 File: images/raspi.jpg Graphic file (type jpg)
 <use images/raspi.jpg>
-Package pdftex.def Info: images/raspi.jpg  used on input line 138.
+Package pdftex.def Info: images/raspi.jpg  used on input line 147.
 (pdftex.def)             Requested size: 208.79224pt x 156.59416pt.
 [10 <./images/raspi.jpg>] [11] [12]
 <images/schaltplan.jpg, id=57, 4175.6pt x 3131.7pt>
 File: images/schaltplan.jpg Graphic file (type jpg)
 <use images/schaltplan.jpg>
-Package pdftex.def Info: images/schaltplan.jpg  used on input line 172.
+Package pdftex.def Info: images/schaltplan.jpg  used on input line 181.
 (pdftex.def)             Requested size: 483.69687pt x 362.74225pt.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 172--173
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 181--182
 [][] 
  []
 
 [13] [14 <./images/schaltplan.jpg>] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 196--197
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
 
  []
 
 
-Overfull \hbox (10.60619pt too wide) in paragraph at lines 199--205
+Overfull \hbox (10.60619pt too wide) in paragraph at lines 208--214
 \OT1/cmr/m/n/12 Nicht, dass das Relay-Timer-Script lan-ge ge-hal-ten h[]atte, i
 ch hab's zwei Ta-ge nach der []Ubersetzung
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--205
+Underfull \hbox (badness 10000) in paragraph at lines 208--214
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--205
+Underfull \hbox (badness 10000) in paragraph at lines 208--214
 
  []
 
 [16] [17] [18] [19] [20] [21]
-Underfull \hbox (badness 10000) in paragraph at lines 269--273
+Underfull \hbox (badness 10000) in paragraph at lines 278--282
 
  []
 
@@ -617,33 +625,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 269--273
 <images/Querschnitt.png, id=93, 590.9277pt x 418.6842pt>
 File: images/Querschnitt.png Graphic file (type png)
 <use images/Querschnitt.png>
-Package pdftex.def Info: images/Querschnitt.png  used on input line 285.
+Package pdftex.def Info: images/Querschnitt.png  used on input line 294.
 (pdftex.def)             Requested size: 227.62204pt x 161.27377pt.
  [24] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 )
 [25 <./images/Querschnitt.png>]
 LaTeX Font Info:    Trying to load font information for OML+cmr on input line 3
-02.
+11.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <12> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 302.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 311.
 
-Overfull \hbox (418.70157pt too wide) in paragraph at lines 303--304
+Overfull \hbox (418.70157pt too wide) in paragraph at lines 312--313
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (926.30069pt too wide) in paragraph at lines 304--305
+Overfull \hbox (926.30069pt too wide) in paragraph at lines 313--314
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (580.85129pt too wide) in paragraph at lines 305--306
+Overfull \hbox (580.85129pt too wide) in paragraph at lines 314--315
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -652,31 +660,31 @@ Overfull \hbox (580.85129pt too wide) in paragraph at lines 305--306
 <images/relay.jpg, id=107, 4175.6pt x 3131.7pt>
 File: images/relay.jpg Graphic file (type jpg)
 <use images/relay.jpg>
-Package pdftex.def Info: images/relay.jpg  used on input line 317.
+Package pdftex.def Info: images/relay.jpg  used on input line 326.
 (pdftex.def)             Requested size: 193.47578pt x 145.07779pt.
 
-Underfull \hbox (badness 4291) in paragraph at lines 318--318
+Underfull \hbox (badness 4291) in paragraph at lines 327--327
 []\OT1/cmr/m/n/12 Abbildung 1: []Der auf-ge-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--318
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
 \OT1/cmr/m/n/12 klapp-te Relay-Controller.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--318
+Underfull \hbox (badness 10000) in paragraph at lines 327--327
 \OT1/cmr/m/n/12 Re-lays: links in blau.
  []
 
 [27 <./images/relay.jpg>]
-Overfull \hbox (35.00339pt too wide) in paragraph at lines 346--346
+Overfull \hbox (35.00339pt too wide) in paragraph at lines 355--355
 []\OT1/cmtt/m/n/12 relays[key] = newvalue #as we expect to change a relay, "new
 value" should be a list.[] 
  []
 
 
-Overfull \hbox (244.95349pt too wide) in paragraph at lines 346--346
+Overfull \hbox (244.95349pt too wide) in paragraph at lines 355--355
 []\OT1/cmtt/m/n/12 relays[values[1]] = [values[2], values[3], values[4], values
 [5]] # if it didn't match, write the normal values instead[] 
  []
@@ -684,13 +692,13 @@ Overfull \hbox (244.95349pt too wide) in paragraph at lines 346--346
 [28
 
 ]
-Overfull \hbox (232.60349pt too wide) in paragraph at lines 346--346
+Overfull \hbox (232.60349pt too wide) in paragraph at lines 355--355
 []\OT1/cmtt/m/n/12 properties[key] = newvalue #and if it wasn't a relay, just s
 ave it as a property. Here it doesn't need to be a list.[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--362
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
 
@@ -698,14 +706,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 361--362
 <images/oszi2.jpg, id=121, 4175.6pt x 3131.7pt>
 File: images/oszi2.jpg Graphic file (type jpg)
 <use images/oszi2.jpg>
-Package pdftex.def Info: images/oszi2.jpg  used on input line 382.
+Package pdftex.def Info: images/oszi2.jpg  used on input line 391.
 (pdftex.def)             Requested size: 292.32187pt x 219.2414pt.
 File: images/schaltplan.jpg Graphic file (type jpg)
 <use images/schaltplan.jpg>
-Package pdftex.def Info: images/schaltplan.jpg  used on input line 385.
+Package pdftex.def Info: images/schaltplan.jpg  used on input line 394.
 (pdftex.def)             Requested size: 483.69687pt x 362.74225pt.
 
-Overfull \hbox (17.62482pt too wide) in paragraph at lines 385--386
+Overfull \hbox (17.62482pt too wide) in paragraph at lines 394--395
 [][] 
  []
 
@@ -713,11 +721,11 @@ Overfull \hbox (17.62482pt too wide) in paragraph at lines 385--386
 No file ssgb.gls.
 [35] (./ssgb.aux) ) 
 Here is how much of TeX's memory you used:
- 12602 strings out of 483089
- 202414 string characters out of 5962867
- 710013 words of memory out of 5000000
- 27416 multiletter control sequences out of 15000+600000
- 542945 words of font info for 65 fonts, out of 8000000 for 9000
+ 12623 strings out of 483089
+ 202678 string characters out of 5962867
+ 710410 words of memory out of 5000000
+ 27437 multiletter control sequences out of 15000+600000
+ 544205 words of font info for 69 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  51i,8n,74p,3797b,1463s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/jonas/.texlive2019/texmf-var/fonts/pk/ljfour/jknappe
@@ -734,7 +742,7 @@ ts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 c/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmtt12.pfb>
-Output written on ssgb.pdf (36 pages, 15723315 bytes).
+Output written on ssgb.pdf (36 pages, 15723830 bytes).
 PDF statistics:
  186 PDF objects out of 1000 (max. 8388607)
  124 compressed objects within 2 object streams
