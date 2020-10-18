@@ -1,63 +1,63 @@
 \babel@toc {ngerman}{}
-\contentsline {section}{\numberline {1}Einleitung}{3}%
-\contentsline {subsection}{\numberline {1.1}Idee}{3}%
-\contentsline {subsection}{\numberline {1.2}Ziel und Abgrenzung}{3}%
-\contentsline {subsubsection}{\numberline {1.2.1}Das Konstrukt}{3}%
-\contentsline {subsubsection}{\numberline {1.2.2}Schriftlicher Teil}{3}%
-\contentsline {section}{\numberline {2}Motivation}{5}%
-\contentsline {section}{\numberline {3}An die Arbeit}{6}%
-\contentsline {subsection}{\numberline {3.1}Wachstumsbedingungen}{6}%
-\contentsline {subsubsection}{\numberline {3.1.1}Wasser}{6}%
-\contentsline {subsubsection}{\numberline {3.1.2}Licht}{6}%
-\contentsline {subsubsection}{\numberline {3.1.3}Luft}{6}%
-\contentsline {subsubsection}{\numberline {3.1.4}Nährstoffe}{6}%
-\contentsline {subsection}{\numberline {3.2}Wie weiter?}{7}%
-\contentsline {subsection}{\numberline {3.3}Baumarkt, Cannabis-Shops und der Keller}{7}%
-\contentsline {subsection}{\numberline {3.4}Trockenes Wasser}{8}%
-\contentsline {subsection}{\numberline {3.5}Belüftung..}{8}%
-\contentsline {subsection}{\numberline {3.6}Es soll hell sein}{9}%
-\contentsline {subsection}{\numberline {3.7}Das Hirn!}{10}%
-\contentsline {subsection}{\numberline {3.8}Gartencenter Classic: Universaldünger, leicht säuerlich.}{10}%
-\contentsline {subsection}{\numberline {3.9}Löcher im Boden}{11}%
-\contentsline {section}{\numberline {4}Arbeitsprozess}{12}%
-\contentsline {subsection}{\numberline {4.1}Recherche}{12}%
-\contentsline {subsection}{\numberline {4.2}Löten, testen, löten}{12}%
-\contentsline {subsubsection}{\numberline {4.2.1}Die Hassliebe zu PWM}{13}%
-\contentsline {subsubsection}{\numberline {4.2.2}Relays als nette Abwechslung}{14}%
-\contentsline {subsection}{\numberline {4.3}Oszilloskopisches Wunder}{14}%
-\contentsline {subsection}{\numberline {4.4}Code}{15}%
-\contentsline {subsubsection}{\numberline {4.4.1}C++/Arduino}{15}%
-\contentsline {subsubsection}{\numberline {4.4.2}Python}{16}%
-\contentsline {subsection}{\numberline {4.5}GitHub, the Beast}{17}%
-\contentsline {subsection}{\numberline {4.6}Bash}{18}%
-\contentsline {subsubsection}{\numberline {4.6.1}rsync}{18}%
-\contentsline {subsubsection}{\numberline {4.6.2}Secure Shell - SSH}{19}%
-\contentsline {subsubsection}{\numberline {4.6.3}Tilix}{20}%
-\contentsline {subsection}{\numberline {4.7}Forschung}{20}%
-\contentsline {subsection}{\numberline {4.8}LaTeX}{20}%
-\contentsline {subsection}{\numberline {4.9}Logging}{20}%
-\contentsline {section}{\numberline {5}Technische Hintergründe}{21}%
-\contentsline {subsection}{\numberline {5.1}Ganz von vorn.}{21}%
-\contentsline {subsection}{\numberline {5.2}Bitte nicht reinschauen}{21}%
-\contentsline {subsection}{\numberline {5.3}Das Ding atmet ja!}{21}%
-\contentsline {subsubsection}{\numberline {5.3.1}Die Zauberformel mag es lieber trocken}{22}%
-\contentsline {subsection}{\numberline {5.4}Vom Gravitropismus und der Zukunft}{23}%
-\contentsline {subsection}{\numberline {5.5}Wurzelfütterung}{24}%
-\contentsline {subsubsection}{\numberline {5.5.1}Nährnebelpegel}{24}%
-\contentsline {subsubsection}{\numberline {5.5.2}Klick, klick}{25}%
-\contentsline {subsubsection}{\numberline {5.5.3}Die kleine, graue Box mit Steckdosen drin}{26}%
-\contentsline {subsection}{\numberline {5.6}Der Dämon}{26}%
-\contentsline {subsection}{\numberline {5.7}Den Code selbst lesen}{28}%
-\contentsline {subsection}{\numberline {5.8}Ungenauigkeiten}{28}%
-\contentsline {section}{\numberline {6}Perspektiven}{29}%
-\contentsline {subsection}{\numberline {6.1}Technisches Upgrade}{29}%
-\contentsline {subsubsection}{\numberline {6.1.1}Oszilloskop und Elektronik}{29}%
-\contentsline {subsubsection}{\numberline {6.1.2}Python und Flask}{30}%
-\contentsline {subsubsection}{\numberline {6.1.3}Bash und so}{30}%
-\contentsline {subsection}{\numberline {6.2}Signifikanz}{31}%
-\contentsline {subsubsection}{\numberline {6.2.1}Bewässerung mit Düsen}{31}%
-\contentsline {subsection}{\numberline {6.3}Solar overkill}{31}%
-\contentsline {subsection}{\numberline {6.4}Mögliche Weltverbesserung}{32}%
-\contentsline {section}{\numberline {7}Fazit}{32}%
-\contentsline {section}{\numberline {8}Danke sagen}{33}%
-\contentsline {section}{Glossar}{33}%
+\contentsline {section}{\numberline {1}Einleitung}{2}%
+\contentsline {subsection}{\numberline {1.1}Idee}{2}%
+\contentsline {subsection}{\numberline {1.2}Ziel und Abgrenzung}{2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Das Konstrukt}{2}%
+\contentsline {subsubsection}{\numberline {1.2.2}Schriftlicher Teil}{2}%
+\contentsline {section}{\numberline {2}Motivation}{4}%
+\contentsline {section}{\numberline {3}An die Arbeit}{5}%
+\contentsline {subsection}{\numberline {3.1}Wachstumsbedingungen}{5}%
+\contentsline {subsubsection}{\numberline {3.1.1}Wasser}{5}%
+\contentsline {subsubsection}{\numberline {3.1.2}Licht}{5}%
+\contentsline {subsubsection}{\numberline {3.1.3}Luft}{5}%
+\contentsline {subsubsection}{\numberline {3.1.4}Nährstoffe}{5}%
+\contentsline {subsection}{\numberline {3.2}Wie weiter?}{6}%
+\contentsline {subsection}{\numberline {3.3}Baumarkt, Cannabis-Shops und der Keller}{6}%
+\contentsline {subsection}{\numberline {3.4}Trockenes Wasser}{7}%
+\contentsline {subsection}{\numberline {3.5}Belüftung..}{7}%
+\contentsline {subsection}{\numberline {3.6}Es soll hell sein}{8}%
+\contentsline {subsection}{\numberline {3.7}Das Hirn!}{9}%
+\contentsline {subsection}{\numberline {3.8}Gartencenter Classic: Universaldünger, leicht säuerlich.}{9}%
+\contentsline {subsection}{\numberline {3.9}Löcher im Boden}{10}%
+\contentsline {section}{\numberline {4}Arbeitsprozess}{11}%
+\contentsline {subsection}{\numberline {4.1}Recherche}{11}%
+\contentsline {subsection}{\numberline {4.2}Löten, testen, löten}{11}%
+\contentsline {subsubsection}{\numberline {4.2.1}Die Hassliebe zu PWM}{12}%
+\contentsline {subsubsection}{\numberline {4.2.2}Relays als nette Abwechslung}{13}%
+\contentsline {subsection}{\numberline {4.3}Oszilloskopisches Wunder}{13}%
+\contentsline {subsection}{\numberline {4.4}Code}{14}%
+\contentsline {subsubsection}{\numberline {4.4.1}C++/Arduino}{14}%
+\contentsline {subsubsection}{\numberline {4.4.2}Python}{15}%
+\contentsline {subsection}{\numberline {4.5}GitHub, the Beast}{16}%
+\contentsline {subsection}{\numberline {4.6}Bash}{17}%
+\contentsline {subsubsection}{\numberline {4.6.1}rsync}{17}%
+\contentsline {subsubsection}{\numberline {4.6.2}Secure Shell - SSH}{18}%
+\contentsline {subsubsection}{\numberline {4.6.3}Tilix}{19}%
+\contentsline {subsection}{\numberline {4.7}Forschung}{19}%
+\contentsline {subsection}{\numberline {4.8}LaTeX}{19}%
+\contentsline {subsection}{\numberline {4.9}Logging}{19}%
+\contentsline {section}{\numberline {5}Technische Hintergründe}{19}%
+\contentsline {subsection}{\numberline {5.1}Ganz von vorn.}{20}%
+\contentsline {subsection}{\numberline {5.2}Bitte nicht reinschauen}{20}%
+\contentsline {subsection}{\numberline {5.3}Das Ding atmet ja!}{20}%
+\contentsline {subsubsection}{\numberline {5.3.1}Die Zauberformel mag es lieber trocken}{21}%
+\contentsline {subsection}{\numberline {5.4}Vom Gravitropismus und der Zukunft}{22}%
+\contentsline {subsection}{\numberline {5.5}Wurzelfütterung}{23}%
+\contentsline {subsubsection}{\numberline {5.5.1}Nährnebelpegel}{23}%
+\contentsline {subsubsection}{\numberline {5.5.2}Klick, klick}{24}%
+\contentsline {subsubsection}{\numberline {5.5.3}Die kleine, graue Box mit Steckdosen drin}{25}%
+\contentsline {subsection}{\numberline {5.6}Der Dämon}{25}%
+\contentsline {subsection}{\numberline {5.7}Den Code selbst lesen}{27}%
+\contentsline {subsection}{\numberline {5.8}Ungenauigkeiten}{27}%
+\contentsline {section}{\numberline {6}Perspektiven}{28}%
+\contentsline {subsection}{\numberline {6.1}Technisches Upgrade}{28}%
+\contentsline {subsubsection}{\numberline {6.1.1}Oszilloskop und Elektronik}{28}%
+\contentsline {subsubsection}{\numberline {6.1.2}Python und Flask}{29}%
+\contentsline {subsubsection}{\numberline {6.1.3}Bash und so}{29}%
+\contentsline {subsection}{\numberline {6.2}Signifikanz}{29}%
+\contentsline {subsubsection}{\numberline {6.2.1}Bewässerung mit Düsen}{30}%
+\contentsline {subsection}{\numberline {6.3}Solar overkill}{30}%
+\contentsline {subsection}{\numberline {6.4}Mögliche Weltverbesserung}{31}%
+\contentsline {section}{\numberline {7}Fazit}{31}%
+\contentsline {section}{\numberline {8}Danke sagen}{32}%
+\contentsline {section}{Glossar}{32}%
