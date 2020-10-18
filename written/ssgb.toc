@@ -34,23 +34,29 @@
 \contentsline {subsubsection}{\numberline {5.6.2}Secure Shell - SSH}{18}%
 \contentsline {subsubsection}{\numberline {5.6.3}Tilix}{19}%
 \contentsline {subsection}{\numberline {5.7}Forschung}{19}%
-\contentsline {section}{\numberline {6}Technische Hintergründe}{19}%
-\contentsline {subsection}{\numberline {6.1}Ganz von vorn.}{19}%
+\contentsline {subsection}{\numberline {5.8}LaTeX}{19}%
+\contentsline {section}{\numberline {6}Technische Hintergründe}{20}%
+\contentsline {subsection}{\numberline {6.1}Ganz von vorn.}{20}%
 \contentsline {subsection}{\numberline {6.2}Bitte nicht reinschauen}{20}%
 \contentsline {subsection}{\numberline {6.3}Das Ding atmet ja!}{20}%
 \contentsline {subsubsection}{\numberline {6.3.1}Die Zauberformel mag keine Luftfeuchte}{21}%
 \contentsline {subsection}{\numberline {6.4}Vom Gravitropismus und der Zukunft}{22}%
-\contentsline {subsection}{\numberline {6.5}Wurzelfütterung}{22}%
-\contentsline {subsubsection}{\numberline {6.5.1}Nährnebelpegel}{22}%
-\contentsline {subsubsection}{\numberline {6.5.2}Klick, klick}{23}%
-\contentsline {subsubsection}{\numberline {6.5.3}Die kleine, graue Box mit Steckdosen drin}{24}%
+\contentsline {subsection}{\numberline {6.5}Wurzelfütterung}{23}%
+\contentsline {subsubsection}{\numberline {6.5.1}Nährnebelpegel}{23}%
+\contentsline {subsubsection}{\numberline {6.5.2}Klick, klick}{24}%
+\contentsline {subsubsection}{\numberline {6.5.3}Die kleine, graue Box mit Steckdosen drin}{25}%
 \contentsline {subsection}{\numberline {6.6}Der Dämon}{25}%
-\contentsline {subsection}{\numberline {6.7}Ungenauigkeiten}{27}%
-\contentsline {section}{\numberline {7}Perspektiven}{27}%
-\contentsline {subsection}{\numberline {7.1}Technische Einsichten}{27}%
-\contentsline {subsection}{\numberline {7.2}Solar overkill}{27}%
-\contentsline {subsection}{\numberline {7.3}Mögliche Weltverbesserung}{27}%
-\contentsline {section}{\numberline {8}Fazit}{27}%
-\contentsline {section}{\numberline {9}Danke sagen}{27}%
-\contentsline {section}{\numberline {10}SWAP}{27}%
-\contentsline {section}{Glossar}{27}%
+\contentsline {subsection}{\numberline {6.7}Den Code selbst lesen}{27}%
+\contentsline {subsection}{\numberline {6.8}Ungenauigkeiten}{27}%
+\contentsline {section}{\numberline {7}Perspektiven}{28}%
+\contentsline {subsection}{\numberline {7.1}Technisches Upgrade}{28}%
+\contentsline {subsubsection}{\numberline {7.1.1}Oszilloskop und Elektronik}{28}%
+\contentsline {subsection}{\numberline {7.2}Signifikanz}{29}%
+\contentsline {subsubsection}{\numberline {7.2.1}Bewässerung mit Düsen}{29}%
+\contentsline {subsection}{\numberline {7.3}Solar overkill}{29}%
+\contentsline {subsubsection}{\numberline {7.3.1}Python und Flask}{30}%
+\contentsline {subsection}{\numberline {7.4}Mögliche Weltverbesserung}{30}%
+\contentsline {section}{\numberline {8}Fazit}{30}%
+\contentsline {section}{\numberline {9}Danke sagen}{30}%
+\contentsline {section}{\numberline {10}SWAP}{31}%
+\contentsline {section}{Glossar}{31}%
