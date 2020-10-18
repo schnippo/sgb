@@ -1,6 +1,6 @@
-# ssgb
+# sgb
 
-smart solar grow box
+smart (solar - not yet) grow box
 
 Basic Usage:
 Deploy the webserver with "python3 run.py"
