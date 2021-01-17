@@ -48,7 +48,7 @@ void updatePWM(int args_int[10]){
         Timer1.setPwmDuty(Pin10, args_int[1]);
         Serial.println("P10");
         break;
-      case 99: // in case the raspi wants to know which Arduino this is
+      case 7: // in case the raspi wants to know which Arduino this is
         Serial.println(ArduinoID);
         break;
       default:
