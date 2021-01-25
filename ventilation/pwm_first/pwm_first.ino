@@ -1,8 +1,8 @@
 #include <TimerOne.h>
 
-int pwmPin = ;
+int pwmPin = 9;
 
-int potiPin = A3;
+//int potiPin = A3;
 int dutycycle = 0;
 
 void setup(void)
@@ -18,11 +18,14 @@ void setup(void)
 void loop(void)
 {
 //  dutycycle = analogRead(potiPin); //get the poti value
-
-    Timer1.setPwmDuty(pwmPin,512); // set the new poti value as dutycycle
+    dutycycle = 512;
+    Timer1.setPwmDuty(pwmPin,dutycycle); // set the new poti value as dutycycle
+    Serial.println(dutycycle / 10.23); //print dutycycle in percentages
     delay(3000);
-//    Timer1.setPwmDuty(pwmPin,1023); // set the new poti value as dutycycle
-//    delay(1000);
-
-  Serial.println(dutycycle / 10.23); //print dutycycle in percentages
+    
+    dutycycle = 1023;
+    Timer1.setPwmDuty(pwmPin,dutycycle); // set the new poti value as dutycycle
+    Serial.println(dutycycle / 10.23); //print dutycycle in percentages
+    delay(1000);
+    
 }

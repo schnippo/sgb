@@ -16,6 +16,7 @@ void setup() {
   pinMode(Pin9, OUTPUT);
   pinMode(Pin10, OUTPUT);  
   Timer1.initialize(25); // Set PWM Frequency to 40kH
+//  Timer1.pwm(Pin3, 0);
   Timer1.pwm(Pin9, 0); // start the two pwm clocks
   Timer1.pwm(Pin10, 0);
 }
@@ -36,15 +37,18 @@ void updatePWM(int args_int[10]){
       switch (args_int[0])
       {
       case 3:
-        analogWrite(Pin3, args_int[1] / 4);
+        analogWrite(Pin3, args_int[1]);
+        Serial.println("P3");
         break;
       case 9:
         Timer1.setPwmDuty(Pin9, args_int[1]);
+        Serial.println("P9");
         break;
       case 10:
         Timer1.setPwmDuty(Pin10, args_int[1]);
+        Serial.println("P10");
         break;
-      case 9: // in case the raspi wants to know which Arduino this is
+      case 7: // in case the raspi wants to know which Arduino this is
         Serial.println(ArduinoID);
         break;
       default:
@@ -77,7 +81,7 @@ void arrStr2Int() { // converts my string-based argument-array to a int-based ar
 //      continue;
 //    }
     arg_int[i] = atoi(arg[i]); //assigning the old "char"  to a new "int"
-    Serial.println(arg_int[i]);
+//    Serial.println(arg_int[i]);
     i++;
   }
 }
