@@ -11,8 +11,8 @@ from time import sleep
 
 def get_auto_pwm():
 	if get_prop_value("vent_mode") == "manual":
-	    print("vent_mode is on manual, exiting..")
-	    return False
+            print("vent_mode is on manual, returning default value")
+            return get_prop_value("pwm_vent")
 
 	std_pwm = int(get_prop_value("std_pwm"))
 	opt_temp = int(get_prop_value("opt_temp"))

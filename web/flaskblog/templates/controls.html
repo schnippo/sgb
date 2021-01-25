@@ -2,7 +2,7 @@
 {% block content %}
 
 <style type="text/css">
-input[type=number] {
+input{
 	width: 50%;
 	/*padding: 12px 20px;*/
 	left-margin: `0;
@@ -75,9 +75,9 @@ select{
 		    </div >
 		    <div class="align_left_pls" >
 		        <input type="number" min="1", max="4" name="relay_ID"><br>
-		      	<input type="number" name="relay_TIMER"><br>
-		      	<input type="number" name="relay_ONTIME"><br>
-		      	<input type="number" name="relay_OFFTIME"><br>
+		      	<input type="text" name="relay_TIMER"><br>
+		      	<input type="text" name="relay_ONTIME"><br>
+		      	<input type="text" name="relay_OFFTIME"><br>
 		      	<select type="text" name="relay_STATE" id="relay_STATE">
 					<option value="on">on</option>
 					<option value="off">off</option>
@@ -87,7 +87,7 @@ select{
 		    </div>
 			<div class="align_left_pls">
 		        <small class="small text-muted ">[1-4]</small><br>
-		    	<small class="text-muted small">[seconds]</small><br>
+		    	<small class="text-muted small">[sec|"inactive"|"persist"]</small><br>
 		    	<small class="text-muted small">[seconds]</small><br>
 		    	<small class="text-muted small">[seconds]</small><br>
 		    </div>
@@ -111,7 +111,7 @@ select{
 				<select type="text" name="fan_number" id="fan_number">
 					<option value="9">Ventilation</option>
 					<option value="3">Fog</option>
-					<option value="10">Turbulence</option>
+          <!-- <option value="10">Turbulence</option> # removed on 3.1.21 due to the turb-fan being too weak, see "PWM Probleme" in tomboy.--> 
 				</select>
 		    	<input style="margin-top: 3px;" type="number" min="0" max="100" name="fan_value"><br>
 		    	<select style="margin-top: 3px;" class="mt4" name="fan_mode"id="fan_mode">

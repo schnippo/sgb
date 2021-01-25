@@ -1,11 +1,10 @@
-relay 1 2 2 2 off
-relay 2 0 30 14 off
-relay 3 0 12 51 on
-relay 4 0 12 51 on
-opt_temp 12
-max_delta_t 11
-std_pwm 21
+relay 1 0 persist persist on
+relay 2 5 persist persist on
+relay 3 inactive 30 30 on
+relay 4 inactive 40 40 on
+opt_temp 21
+max_delta_t 4
+std_pwm 40
 vent_mode auto
-pwm_vent 0
-pwm_fog 0
-pwm_turb 0
+pwm_vent 60
+pwm_fog 60

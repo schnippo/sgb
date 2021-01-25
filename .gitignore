@@ -1,8 +1,9 @@
 latex-vorlage-diplom-bachelor-masterarbeiten/
 daemon/__pycache__
-
 *.aux
 *.log
 *.synctex.gz
 *.toc
-
+__pycache__
+.vscode
+*~

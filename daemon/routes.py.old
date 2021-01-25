@@ -132,10 +132,10 @@ def controls():
 			STATE = request.form.get('relay_STATE')
 			values = f"{ID} {TIMER} {ONTIME} {OFFTIME} {STATE}\n"
 			print(values)
-			if ONTIME is None:
-				ONTIME = "persist"
-			elif OFFTIME is None:
-				OFFTIME = "persist"
+                        if ONTIME is None:
+                                ONTIME = "persist"
+                        elif OFFTIME is None:
+                                OFFTIME = "persist"
 			update_prop_or_relay(ID, [TIMER, ONTIME, OFFTIME, STATE])
 
 		elif request.form.get("fan_number"):

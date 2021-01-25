@@ -1,49 +1,30 @@
 #this is an acustomed script, that only tries to log from the dht_sensor
 
 
-import sys, adafruit_dht, board
+import Adafruit_DHT
 from time import sleep
 
-dht_device = adafruit_dht.DHT22(board.D2)
+
+#this script is inspired by dht_adafruit_test.py and aims to replace dht_logger_old.py
+
+#dht_device = adafruit_dht.DHT22(board.D2)
+
+PIN = 4 #GPIO4 on the board, see https://microcontrollerslab.com/wp-content/uploads/2019/12/Raspberry-Pi-pinout.png
+SENSOR = Adafruit_DHT.DHT22
+
+
+# Try to grab a sensor reading.  Use the read_retry method which will retry up
+# to 15 times to get a sensor reading (waiting 2 seconds between each retry).
+#humidity, temperature = Adafruit_DHT.read_retry(SENSOR, PIN)
 
 def get_at():
-  tries = 0
-  while True: #TRYING TO GET AIR TEMP
-      tries+= 1
-      try:
-          temp = dht_device.temperature #CRITICAL
-          return round(temp, 2)
-          break
-      except: #a potential jitter connection is handled here, just wait a second and try again
-          print(str(sys.exc_info()[0]) + "on air temp, trying again in 1s")
-          sleep(1)
-          if tries > 3:
-            return None
-            break
-          continue
-
-
-
+    #return round(Adafruit_DHT.read_retry(SENSOR, PIN)[1], 2) # return the second value(temp) rounded to two digits
+    return Adafruit_DHT.read_retry(SENSOR, PIN)[1]
 def get_ah():
-  tries = 0        
-  while True: #TRYING TO GET AIR HUM
-      tries += 1
-      try:
-          hum = dht_device.temperature #CRITICAL
-          return round(hum, 2)
-          break
-      except: #a potential jitter connection is handled here, just wait a second and try again
-          print(str(sys.exc_info()[0]) + "on air hum, trying again in 1s")
-          sleep(1)
-          if tries > 3: #escape the loop after the third try
-              return None
-              break
-          continue
+    #return round(Adafruit_DHT.read_retry(SENSOR, PIN)[0], 2) # return the first value(humidity) rounded to two digits
+    return Adafruit_DHT.read_retry(SENSOR, PIN)[0]
 
-
-
-# Tryout
-
-# while True:
-# 	sleep(2)
-# 	print(get_at())
+if __name__ == "__main__":
+    for i in range(5):
+        print("temp: ", get_at())
+        print("hum: ", get_ah())
